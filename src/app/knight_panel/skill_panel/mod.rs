@@ -60,12 +60,12 @@ pub(crate) const SKILL_IMAGES: &[&[SkillImage]] = &[
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_add_hp_per_kill.png"),
             "Passive Add HP Per Kill",
-            8,
+            10,
         ),
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_block_chance.png"),
             "Passive Block Chance",
-            8,
+            10,
         ),
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/skill_aegis_field.png"),
@@ -77,12 +77,12 @@ pub(crate) const SKILL_IMAGES: &[&[SkillImage]] = &[
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_physical_damage_percent.png"),
             "Passive Physical Damage Percent",
-            8,
+            10,
         ),
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_max_hp.png"),
             "Passive Max HP",
-            8,
+            10,
         ),
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/skill_sacred_blade.png"),
@@ -94,12 +94,12 @@ pub(crate) const SKILL_IMAGES: &[&[SkillImage]] = &[
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_cooldown_reduction.png"),
             "Passive Cooldown Reduction",
-            8,
+            10,
         ),
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_hp_regen_per_sec.png"),
             "Passive HP Regen Per Sec",
-            5,
+            10,
         ),
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/skill_unyielding_will.png"),
@@ -111,36 +111,36 @@ pub(crate) const SKILL_IMAGES: &[&[SkillImage]] = &[
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_add_hp_per_kill.png"),
             "Passive Add HP Per Kill",
-            8,
+            10,
         ),
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_max_hp.png"),
             "Passive Max HP",
-            8,
+            10,
         ),
     ],
     &[
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_attack_speed.png"),
             "Passive Attack Speed",
-            8,
+            10,
         ),
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_all_elemental_resistance.png"),
             "Passive All Elemental Resistance",
-            8,
+            10,
         ),
     ],
     &[
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_damage_reduction.png"),
             "Passive Damage Reduction",
-            8,
+            10,
         ),
         SkillImage::new(
             egui::include_image!("../../../../assets/images/knight/passive_attack_damage.png"),
             "Passive Attack Damage",
-            3,
+            10,
         ),
     ],
 ];
