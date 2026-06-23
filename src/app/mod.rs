@@ -1,3 +1,5 @@
+mod knight_panel;
+
 /// Deserialize/Serialize を derive して、終了時にアプリの状態を保存できるようにする。
 #[derive(serde::Deserialize, serde::Serialize)]
 // 新しいフィールドを追加したとき、古い状態を復元する際にデフォルト値を使う
@@ -50,66 +52,22 @@ impl eframe::App for App {
             style.interaction.selectable_labels = false;
         });
 
+        // 中央パネルを表示する。
         egui::CentralPanel::default().show_inside(ui, |ui| {
-            self.character_panel(ui);
+            knight_panel::hero::hero_panel(ui);
 
             ui.separator();
 
-            self.level_panel(ui);
+            knight_panel::level::level_panel(ui, self);
 
             ui.separator();
 
+            knight_panel::skill::skill_list_panel(ui, self);
+
+            // デバッグビルドの警告を表示する。
             ui.with_layout(egui::Layout::bottom_up(egui::Align::LEFT), |ui| {
                 egui::warn_if_debug_build(ui);
             });
-        });
-    }
-}
-
-/// パネルのメソッドを定義する。
-impl App {
-    // キャラクターパネル
-    fn character_panel(&mut self, ui: &mut egui::Ui) {
-        ui.horizontal(|ui| {
-            ui.vertical(|ui| {
-                ui.add(egui::Image::new(egui::include_image!("../../assets/images/hero_knight.png"))
-                    .fit_to_original_size(1.0)
-                    .corner_radius(5.0),
-                );
-                ui.heading("Knight");
-            });
-        });
-    }
-
-    // レベルパネル
-    fn level_panel(&mut self, ui: &mut egui::Ui) {
-        ui.horizontal(|ui| {
-            ui.label("Level:");
-            if ui.add(egui::Slider::new(&mut self.level, 1..=100)).changed() {
-                self.skill_points = self.level - 1;
-            }
-
-            ui.horizontal(|ui| {
-                if ui.button("Down").clicked() {
-                    if self.level > 1 {
-                        self.level -= 1;
-                    }
-                    if self.skill_points > 0 {
-                        self.skill_points -= 1;
-                    }
-                }
-                if ui.button("Up").clicked() {
-                    self.level += 1;
-                    if self.skill_points < 100 {
-                        self.skill_points += 1;
-                    }
-                }
-            });
-        });
-
-        ui.horizontal(|ui| {
-            ui.label("Skill Points:");
-            ui.label(self.skill_points.to_string());
         });
     }
 }
