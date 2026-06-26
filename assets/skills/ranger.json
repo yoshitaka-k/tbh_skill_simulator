@@ -1,0 +1,128 @@
+{
+    "level0": [
+        {
+            "image": "assets/images/knight/passive_attack_damage.png",
+            "name": "Passive Attack Damage",
+            "max_level": 3
+        },
+        {
+            "image": "assets/images/knight/passive_max_hp.png",
+            "name": "Passive Max HP",
+            "max_level": 8
+        },
+        {
+            "image": "assets/images/knight/skill_piercing_thrust.png",
+            "name": "Skill Piercing Thrust",
+            "max_level": 5
+        },
+        {
+            "image": "assets/images/knight/skill_shield_charge.png",
+            "name": "Skill Shield Charge",
+            "max_level": 5
+        }
+    ],
+    "level10": [
+        {
+            "image": "assets/images/knight/passive_armor.png",
+            "name": "Passive Armor",
+            "max_level": 8
+        },
+        {
+            "image": "assets/images/knight/passive_hp_regen_per_sec.png",
+            "name": "Passive HP Regen Per Sec",
+            "max_level": 5
+        },
+        {
+            "image": "assets/images/knight/skill_retribution_strike.png",
+            "name": "Skill Retribution Strike",
+            "max_level": 5
+        }
+    ],
+    "level20": [
+        {
+            "image": "assets/images/knight/passive_add_hp_per_kill.png",
+            "name": "Passive Add HP Per Kill",
+            "max_level": 10
+        },
+        {
+            "image": "assets/images/knight/passive_block_chance.png",
+            "name": "Passive Block Chance",
+            "max_level": 10
+        },
+        {
+            "image": "assets/images/knight/skill_aegis_field.png",
+            "name": "Skill Aegis Field",
+            "max_level": 5
+        }
+    ],
+    "level30": [
+        {
+            "image": "assets/images/knight/passive_physical_damage_percent.png",
+            "name": "Passive Physical Damage Percent",
+            "max_level": 10
+        },
+        {
+            "image": "assets/images/knight/passive_max_hp.png",
+            "name": "Passive Max HP",
+            "max_level": 10
+        },
+        {
+            "image": "assets/images/knight/skill_sacred_blade.png",
+            "name": "Skill Sacred Blade",
+            "max_level": 5
+        }
+    ],
+    "level40": [
+        {
+            "image": "assets/images/knight/passive_cooldown_reduction.png",
+            "name": "Passive Cooldown Reduction",
+            "max_level": 10
+        },
+        {
+            "image": "assets/images/knight/passive_hp_regen_per_sec.png",
+            "name": "Passive HP Regen Per Sec",
+            "max_level": 10
+        },
+        {
+            "image": "assets/images/knight/skill_unyielding_will.png",
+            "name": "Skill Unyielding Will",
+            "max_level": 5
+        }
+    ],
+    "level50": [
+        {
+            "image": "assets/images/knight/passive_add_hp_per_kill.png",
+            "name": "Passive Add HP Per Kill",
+            "max_level": 10
+        },
+        {
+            "image": "assets/images/knight/passive_max_hp.png",
+            "name": "Passive Max HP",
+            "max_level": 10
+        }
+    ],
+    "level60": [
+        {
+            "image": "assets/images/knight/passive_attack_speed.png",
+            "name": "Passive Attack Speed",
+            "max_level": 10
+        },
+        {
+            "image": "assets/images/knight/passive_all_elemental_resistance.png",
+            "name": "Passive All Elemental Resistance",
+            "max_level": 10
+        }
+    ],
+    "level70": [
+        {
+            "image": "assets/images/knight/passive_damage_reduction.png",
+            "name": "Passive Damage Reduction",
+            "max_level": 10
+        },
+        {
+            "image": "assets/images/knight/passive_attack_damage.png",
+            "name": "Passive Attack Damage",
+            "max_level": 10
+        }
+    ]
+}

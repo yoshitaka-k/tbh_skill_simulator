@@ -1,0 +1,26 @@
+[
+    {
+        "image": "assets/images/heros/hero_knight.png",
+        "name": "knight"
+    },
+    {
+        "image": "assets/images/heros/hero_ranger.png",
+        "name": "ranger"
+    },
+    {
+        "image": "assets/images/heros/hero_sorcerer.png",
+        "name": "sorcerer"
+    },
+    {
+        "image": "assets/images/heros/hero_priest.png",
+        "name": "priest"
+    },
+    {
+        "image": "assets/images/heros/hero_hunter.png",
+        "name": "hunter"
+    },
+    {
+        "image": "assets/images/heros/hero_slayer.png",
+        "name": "slayer"
+    }
+]
