@@ -1,11 +1,16 @@
-#![warn(clippy::all, rust_2018_idioms)]
-#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")] // リリースビルド時に Windows でコンソールウィンドウを隠す
+use tbh_skill_simulator::{App, Rendar};
+
+#[warn(clippy::all, rust_2018_idioms)]
+// リリースビルド時に Windows でコンソールウィンドウを隠す
+#[cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 const WINDOW_WIDTH: f32 = 572.0;
 const WINDOW_HEIGHT: f32 = 480.0;
 
 fn main() -> eframe::Result {
     env_logger::init();
+
+    let app = App::new();
 
     let native_options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
@@ -17,6 +22,6 @@ fn main() -> eframe::Result {
     eframe::run_native(
         "TBH Skill Simulator",
         native_options,
-        Box::new(|cc| Ok(Box::new(tbh_skill_simulator::Rendar::new(cc)))),
+        Box::new(|cc| Ok(Box::new(Rendar::new(cc, app)))),
     )
 }

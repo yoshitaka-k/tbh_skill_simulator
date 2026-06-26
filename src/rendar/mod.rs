@@ -6,8 +6,7 @@ use crate::app;
 use panel::{hero, level, skill};
 
 /// UI の状態を保存する。
-#[derive(Default, Getters, Setters, serde::Deserialize, serde::Serialize)]
-#[serde(default)]
+#[derive(Getters, Setters, serde::Deserialize, serde::Serialize)]
 pub struct Rendar {
     #[getset(get = "pub", set = "pub")]
     app: app::App,
@@ -16,7 +15,7 @@ pub struct Rendar {
 /// UI new メソッドを定義する。
 impl Rendar {
     /// 最初のフレームの前に一度だけ呼ばれる。
-    pub fn new(cc: &eframe::CreationContext<'_>) -> Self {
+    pub fn new(cc: &eframe::CreationContext<'_>, app: app::App) -> Self {
         // ここで `cc.egui_ctx.set_visuals` や `cc.egui_ctx.set_fonts` を使って
         // egui の見た目をカスタマイズすることもできる。
         egui_extras::install_image_loaders(&cc.egui_ctx);
@@ -24,9 +23,9 @@ impl Rendar {
         // 前回のアプリ状態を読み込む（あれば）。
         // これを動かすには `persistence` フィーチャーを有効にする必要がある。
         if let Some(storage) = cc.storage {
-            eframe::get_value(storage, eframe::APP_KEY).unwrap_or_default()
+            eframe::get_value(storage, eframe::APP_KEY).unwrap_or(Rendar { app })
         } else {
-            Default::default()
+            Rendar { app }
         }
     }
 }

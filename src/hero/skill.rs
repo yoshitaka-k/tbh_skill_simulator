@@ -1,5 +1,4 @@
-#[derive(Default, serde::Deserialize, serde::Serialize)]
-#[serde(default)]
+#[derive(serde::Deserialize, serde::Serialize)]
 pub struct Skill {
     pub name: String,
     pub description: String,
@@ -8,7 +7,12 @@ pub struct Skill {
 }
 
 impl Skill {
-    pub fn new(name: String, description: String, level: u32, skill_type: String) -> Self {
-        Self { name, description, level, skill_type }
+    pub fn new() -> Self {
+        Self {
+            name: String::new(),
+            description: String::new(),
+            level: 0,
+            skill_type: String::new()
+        }
     }
 }
