@@ -14,7 +14,7 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, skills: &[SkillData], current_level: 
                         egui::Image::new(skill.image.clone()).fit_to_original_size(1.0),
                     ).frame(false),
                 ).clicked() {
-                    println!("{}", skill.name);
+                    println!("{}: {}", skill.id, skill.name);
                 }
                 ui.label(format!("{}/{}", current_level, skill.max_level));
             });

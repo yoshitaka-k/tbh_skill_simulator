@@ -14,8 +14,11 @@ struct HeroEntry {
 /// スキルエントリを表す。
 #[derive(Deserialize)]
 struct SkillEntry {
+    id: u32,
     image: String,
     name: String,
+    description: String,
+    skill_type: String,
     max_level: u8,
 }
 
@@ -113,7 +116,7 @@ fn generate_heros_generated(heros_dir: &Path, out_dir: &String) {
             output.push_str(&format!("{row_name},\n"));
         }
         output.push_str("];\n");
-        output.push_str("}\n\n");
+        output.push_str("}\n");
     }
 
     // println!("cargo:warning=output: {:?}", output);
@@ -173,9 +176,12 @@ fn generate_skills_generated(skills_dir: &Path, out_dir: &String) {
 
             for skill in &levels[level_key] {
                 output.push_str(&format!(
-                    "SkillData::new(\negui::include_image!({}),\n\"{}\",\n{},\n),\n",
+                    "SkillData::new(\negui::include_image!({}),\n{},\n\"{}\",\n\"{}\",\n\"{}\",\n{},\n),\n",
                     include_image_path(&skill.image),
+                    skill.id,
                     skill.name.replace('\\', "\\\\").replace('"', "\\\""),
+                    skill.description.replace('\\', "\\\\").replace('"', "\\\""),
+                    skill.skill_type.replace('\\', "\\\\").replace('"', "\\\""),
                     skill.max_level,
                 ));
             }
@@ -188,7 +194,7 @@ fn generate_skills_generated(skills_dir: &Path, out_dir: &String) {
             output.push_str(&format!("{row_name},\n"));
         }
         output.push_str("];\n");
-        output.push_str("}\n\n");
+        output.push_str("}\n");
     }
 
     // println!("cargo:warning=output: {:?}", output);

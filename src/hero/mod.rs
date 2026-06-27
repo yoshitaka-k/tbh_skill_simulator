@@ -1,7 +1,9 @@
-pub(crate) mod data;
 mod skill;
 
+pub(crate) mod data;
 pub(crate) use skill::Skill;
+
+use crate::hero::data::{HeroData, SkillData};
 
 /// 英雄の基底クラス
 #[derive(serde::Deserialize, serde::Serialize)]
@@ -13,12 +15,22 @@ pub struct Hero {
 }
 
 impl Hero {
-    pub fn new(name: &str) -> Self {
+    pub fn new(hero_data: &HeroData, skills_data: &[&[SkillData]]) -> Self {
+        // println!("skills_data: {:?}", skills_data);
+
+        let mut skills: Vec<Skill> = Vec::new();
+
+        for skill_data in skills_data {
+            for skill in skill_data.iter() {
+                skills.push(Skill::new(&skill));
+            }
+        }
+
         Self {
-            name: name.to_string(),
-            level: 0,
-            skill_points: 0,
-            skills: Vec::new()
+            name: hero_data.name.to_string(),
+            level: 1,
+            skill_points: 1,
+            skills: skills,
         }
     }
 }
