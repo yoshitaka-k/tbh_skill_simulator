@@ -23,7 +23,10 @@ impl Rendar {
         // 前回のアプリ状態を読み込む（あれば）。
         // これを動かすには `persistence` フィーチャーを有効にする必要がある。
         if let Some(storage) = cc.storage {
-            eframe::get_value(storage, eframe::APP_KEY).unwrap_or(Rendar { app })
+            let mut rendar: Rendar =
+                eframe::get_value(storage, eframe::APP_KEY).unwrap_or(Rendar { app });
+            rendar.app.restore_images();
+            rendar
         } else {
             Rendar { app }
         }

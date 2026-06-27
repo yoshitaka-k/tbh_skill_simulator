@@ -70,4 +70,14 @@ impl App {
             CurrentHero::Slayer => &mut self.slayer,
         }
     }
+
+    /// 永続化された状態を復元したあと、静的データからスキル画像を再設定する。
+    pub fn restore_images(&mut self) {
+        self.knight.restore_images(knight::SKILL_DATA);
+        self.ranger.restore_images(ranger::SKILL_DATA);
+        self.sorcerer.restore_images(knight::SKILL_DATA);
+        self.priest.restore_images(knight::SKILL_DATA);
+        self.hunter.restore_images(knight::SKILL_DATA);
+        self.slayer.restore_images(knight::SKILL_DATA);
+    }
 }

@@ -52,4 +52,15 @@ impl Hero {
             false
         }
     }
+
+    /// 永続化された状態を復元したあと、静的データからスキル画像を再設定する。
+    pub fn restore_images(&mut self, skills_data: &[&[SkillData]]) {
+        for skills in &mut self.skill_list {
+            for skill in skills {
+                for data in skills_data.iter().flat_map(|row| row.iter()) {
+                    skill.restore_image(data);
+                }
+            }
+        }
+    }
 }

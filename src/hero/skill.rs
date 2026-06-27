@@ -46,6 +46,13 @@ impl Skill {
         }
     }
 
+    /// 永続化された状態を復元したあと、静的データから画像を再設定する。
+    pub fn restore_image(&mut self, skill_data: &SkillData) {
+        if self.id == skill_data.id {
+            self.image = skill_data.image.clone();
+        }
+    }
+
     pub fn increase_level(&mut self) {
         if self.level < self.max_level {
             self.level += 1;
