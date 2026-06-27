@@ -1,9 +1,12 @@
-pub(crate) use crate::hero::data::SkillData;
+pub(crate) use crate::hero::Skill;
+use crate::hero::Hero;
 
 /// スキル一覧を横並びで表示する。
-pub(crate) fn skill_row(ui: &mut egui::Ui, skills: &[SkillData], current_level: u8) {
+pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, index: usize) {
+    let skills: &mut Vec<Skill> = &mut hero.skill_list[index];
+
     ui.horizontal(|ui| {
-        for (i, skill) in skills.iter().enumerate() {
+        for (i, skill) in skills.into_iter().enumerate() {
             if i > 0 {
                 ui.separator();
             }
@@ -15,8 +18,12 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, skills: &[SkillData], current_level: 
                     ).frame(false),
                 ).clicked() {
                     println!("{}: {}", skill.id, skill.name);
+                    if hero.skill_points > 0 {
+                        hero.skill_points -= 1;
+                        skill.increase_level();
+                    }
                 }
-                ui.label(format!("{}/{}", current_level, skill.max_level));
+                ui.label(format!("{}/{}", skill.level, skill.max_level));
             });
         }
     });

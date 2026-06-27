@@ -1,4 +1,4 @@
-use crate::{App, capitalize};
+use crate::{App, capitalize, MAX_LEVEL};
 
 /// レベルパネルを表示する。
 pub(crate) fn level_panel(ui: &mut egui::Ui, app: &mut App) {
@@ -7,7 +7,7 @@ pub(crate) fn level_panel(ui: &mut egui::Ui, app: &mut App) {
 
     ui.horizontal(|ui| {
         ui.label("Level:");
-        if ui.add(egui::Slider::new(&mut app.hero_mut().level, 1..=100)).changed() {
+        if ui.add(egui::Slider::new(&mut app.hero_mut().level, 1..=MAX_LEVEL)).changed() {
             app.hero_mut().skill_points = app.hero_mut().level;
         }
 
@@ -22,7 +22,7 @@ pub(crate) fn level_panel(ui: &mut egui::Ui, app: &mut App) {
             }
             if ui.button("Up").clicked() {
                 app.hero_mut().level += 1;
-                if app.hero_mut().skill_points < 100 {
+                if app.hero().skill_points < app.hero().level {
                     app.hero_mut().skill_points += 1;
                 }
             }
@@ -31,6 +31,6 @@ pub(crate) fn level_panel(ui: &mut egui::Ui, app: &mut App) {
 
     ui.horizontal(|ui| {
         ui.label("Skill Points:");
-        ui.label(app.hero_mut().skill_points.to_string());
+        ui.label(app.hero().skill_points.to_string());
     });
 }

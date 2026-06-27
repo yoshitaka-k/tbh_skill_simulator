@@ -8,6 +8,8 @@ pub use app::App;
 pub use app::CurrentHero;
 pub use rendar::Rendar;
 
+pub const MAX_LEVEL: u32 = 100;
+
 /// 頭文字だけ大文字にする簡単な関数っ
 pub fn capitalize(s: &str) -> String {
     let mut c = s.chars();

@@ -6,31 +6,50 @@ pub(crate) use skill::Skill;
 use crate::hero::data::{HeroData, SkillData};
 
 /// 英雄の基底クラス
-#[derive(serde::Deserialize, serde::Serialize)]
+#[derive(Debug, Default, serde::Deserialize, serde::Serialize)]
+#[serde(default)]
 pub struct Hero {
     pub name: String,
     pub level: u32,
     pub skill_points: u32,
-    pub skills: Vec<Skill>,
+    pub skill_list: Vec<Vec<Skill>>,
 }
 
 impl Hero {
     pub fn new(hero_data: &HeroData, skills_data: &[&[SkillData]]) -> Self {
-        // println!("skills_data: {:?}", skills_data);
-
-        let mut skills: Vec<Skill> = Vec::new();
+        let mut skills_list: Vec<Vec<Skill>> = Vec::new();
 
         for skill_data in skills_data {
+            let mut skills: Vec<Skill> = Vec::new();
             for skill in skill_data.iter() {
                 skills.push(Skill::new(&skill));
             }
+            skills_list.push(skills);
         }
 
         Self {
             name: hero_data.name.to_string(),
             level: 1,
             skill_points: 1,
-            skills: skills,
+            skill_list: skills_list,
+        }
+    }
+
+    pub fn increase_skill_points(&mut self) -> bool{
+        if self.skill_points < self.level {
+            self.skill_points += 1;
+            true
+        } else {
+            false
+        }
+    }
+
+    pub fn decrease_skill_points(&mut self) -> bool {
+        if self.skill_points > 0 {
+            self.skill_points -= 1;
+            true
+        } else {
+            false
         }
     }
 }

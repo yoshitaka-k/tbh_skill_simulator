@@ -2,8 +2,9 @@ use crate::hero::Hero;
 use crate::hero::data::heros::HERO_DATA;
 use crate::hero::data::{knight, ranger};
 
-#[derive(serde::Deserialize, serde::Serialize)]
+#[derive(Default, serde::Deserialize, serde::Serialize)]
 pub enum CurrentHero {
+    #[default]
     Knight,
     Ranger,
     Sorcerer,
@@ -15,6 +16,7 @@ pub enum CurrentHero {
 /// Deserialize/Serialize を derive して、終了時にアプリの状態を保存できるようにする。
 #[derive(serde::Deserialize, serde::Serialize)]
 // 新しいフィールドを追加したとき、古い状態を復元する際にデフォルト値を使う
+#[serde(default)]
 pub struct App {
     pub current_hero: CurrentHero,
     knight: Hero,
@@ -23,6 +25,12 @@ pub struct App {
     priest: Hero,
     hunter: Hero,
     slayer: Hero,
+}
+
+impl Default for App {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 /// App のデフォルト値を設定する。

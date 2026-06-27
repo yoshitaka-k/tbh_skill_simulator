@@ -27,7 +27,7 @@ pub struct SkillData {
     pub name: &'static str,
     pub description: &'static str,
     pub skill_type: &'static str,
-    pub max_level: u8,
+    pub max_level: u32,
 }
 
 impl SkillData {
@@ -38,7 +38,7 @@ impl SkillData {
         name: &'static str,
         description: &'static str,
         skill_type: &'static str,
-        max_level: u8,
+        max_level: u32,
     ) -> Self {
         Self { id, image, name, description, skill_type, max_level }
     }
