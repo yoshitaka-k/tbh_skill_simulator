@@ -11,13 +11,16 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, index: usize) {
                 ui.separator();
             }
 
-            ui.vertical(|ui| {
-                let button = ui.add(
-                    egui::Button::image(
-                        egui::Image::new(skill.image.clone()).fit_to_original_size(1.0),
-                    ).frame(false),
-                );
+            let tint = if skill.level > 0 {
+                egui::Color32::WHITE
+            } else {
+                egui::Color32::from_gray(100)
+            };
 
+            let image = egui::Image::new(skill.image.clone()).fit_to_original_size(1.0).tint(tint);
+
+            ui.vertical(|ui| {
+                let button = ui.add(egui::Button::image(image).frame(false));
                 if button.clicked() {
                     println!("{}: {}", skill.id, skill.name);
                     if hero.skill_points > 0 {

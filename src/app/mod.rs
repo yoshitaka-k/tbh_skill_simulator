@@ -13,6 +13,19 @@ pub enum CurrentHero {
     Slayer,
 }
 
+impl CurrentHero {
+    pub fn to_string(&self) -> String {
+        match self {
+            CurrentHero::Knight => "knight".to_string(),
+            CurrentHero::Ranger => "ranger".to_string(),
+            CurrentHero::Sorcerer => "sorcerer".to_string(),
+            CurrentHero::Priest => "priest".to_string(),
+            CurrentHero::Hunter => "hunter".to_string(),
+            CurrentHero::Slayer => "slayer".to_string(),
+        }
+    }
+}
+
 /// Deserialize/Serialize を derive して、終了時にアプリの状態を保存できるようにする。
 #[derive(serde::Deserialize, serde::Serialize)]
 // 新しいフィールドを追加したとき、古い状態を復元する際にデフォルト値を使う
