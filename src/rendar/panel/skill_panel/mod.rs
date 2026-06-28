@@ -12,7 +12,10 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, index: usize) {
             }
 
             ui.vertical(|ui| {
-                let button = ui.add(egui::Button::image(image(&skill)).frame(false));
+                let tint_color = tint_color(skill.level);
+                let image = skill_image(skill, tint_color);
+
+                let button = ui.add(egui::Button::image(image).frame(false));
                 let border_color = if button.hovered() {
                     hover_border_color(skill.level)
                 } else {
@@ -49,10 +52,10 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, index: usize) {
 }
 
 /// スキル画像を作成する。
-fn image(skill: &Skill) -> egui::Image<'_> {
+fn skill_image(skill: &Skill, tint_color: egui::Color32) -> egui::Image<'_> {
     egui::Image::new(skill.image.clone())
         .fit_to_original_size(1.0)
-        .tint(tint_color(skill.level))
+        .tint(tint_color)
 }
 
 /// スキルレベルに応じて tint 色を返す。
