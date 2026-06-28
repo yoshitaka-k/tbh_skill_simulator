@@ -4,6 +4,7 @@ pub(crate) mod data;
 pub(crate) use skill::Skill;
 
 use crate::hero::data::{HeroData, SkillData};
+use std::collections::HashMap;
 
 /// 英雄の基底クラス
 #[derive(Debug, Default, serde::Deserialize, serde::Serialize)]
@@ -13,6 +14,7 @@ pub struct Hero {
     pub level: u32,
     pub skill_points: u32,
     pub skill_list: Vec<Vec<Skill>>,
+    pub skill_group_sum_list: HashMap<String, u32>,
 }
 
 impl Hero {
@@ -27,11 +29,19 @@ impl Hero {
             skills_list.push(skills);
         }
 
+        let mut skill_group_sum_list: HashMap<String, u32> = HashMap::new();
+        for row in skills_list.iter() {
+            for skill in row {
+                let _ = skill_group_sum_list.entry(skill.group.clone()).or_insert(0);
+            }
+        }
+
         Self {
             name: hero_data.name.to_string(),
             level: 1,
             skill_points: 1,
             skill_list: skills_list,
+            skill_group_sum_list: skill_group_sum_list,
         }
     }
 
@@ -50,6 +60,20 @@ impl Hero {
             true
         } else {
             false
+        }
+    }
+
+    /// スキルグループの合計を増やす。
+    pub fn increase_skill_group_sum(&mut self, group: &str) {
+        if let Some(sum) = self.skill_group_sum_list.get_mut(group) {
+            *sum += 1;
+        }
+    }
+
+    /// スキルグループの合計を減らす。
+    pub fn decrease_skill_group_sum(&mut self, group: &str) {
+        if let Some(sum) = self.skill_group_sum_list.get_mut(group) {
+            *sum -= 1;
         }
     }
 

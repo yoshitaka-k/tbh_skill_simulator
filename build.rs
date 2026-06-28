@@ -176,9 +176,10 @@ fn generate_skills_generated(skills_dir: &Path, out_dir: &String) {
 
             for skill in &levels[level_key] {
                 output.push_str(&format!(
-                    "SkillData::new(\negui::include_image!({}),\n{},\n\"{}\",\n\"{}\",\n\"{}\",\n{},\n),\n",
+                    "SkillData::new(\negui::include_image!({}),\n{},\n\"{}\",\n\"{}\",\n\"{}\",\n\"{}\",\n{},\n),\n",
                     include_image_path(&skill.image),
                     skill.id,
+                    level_key,
                     skill.name.replace('\\', "\\\\").replace('"', "\\\""),
                     skill.description.replace('\\', "\\\\").replace('"', "\\\""),
                     skill.skill_type.replace('\\', "\\\\").replace('"', "\\\""),
