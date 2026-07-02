@@ -18,6 +18,11 @@ pub struct App {
     priest: Hero,
     hunter: Hero,
     slayer: Hero,
+
+    #[serde(skip)]
+    hover_skill_detail: Option<String>,
+    #[serde(skip)]
+    click_skill_detail: Option<String>,
 }
 
 impl Default for App {
@@ -37,6 +42,8 @@ impl App {
             priest: Hero::new(&HERO_DATA[4], &knight::SKILL_DATA),
             hunter: Hero::new(&HERO_DATA[5], &knight::SKILL_DATA),
             slayer: Hero::new(&HERO_DATA[2], &knight::SKILL_DATA),
+            hover_skill_detail: None,
+            click_skill_detail: None,
         }
     }
 
@@ -72,5 +79,25 @@ impl App {
         self.priest.restore_images(knight::SKILL_DATA);
         self.hunter.restore_images(knight::SKILL_DATA);
         self.slayer.restore_images(knight::SKILL_DATA);
+    }
+
+    /// ホバーされたスキルの詳細を設定する。
+    pub fn set_hover_skill_detail(&mut self, text: Option<String>) {
+        self.hover_skill_detail = text;
+    }
+
+    /// クリックされたスキルの詳細を設定する。
+    pub fn set_click_skill_detail(&mut self, text: Option<String>) {
+        self.click_skill_detail = text;
+    }
+
+    /// ホバーされたスキルの詳細を返す。
+    pub fn hover_skill_detail(&self) -> Option<&String> {
+        self.hover_skill_detail.as_ref()
+    }
+
+    /// クリックされたスキルの詳細を返す。
+    pub fn click_skill_detail(&self) -> Option<&String> {
+        self.click_skill_detail.as_ref()
     }
 }

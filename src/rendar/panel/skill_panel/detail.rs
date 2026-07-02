@@ -14,7 +14,11 @@ pub(crate) fn skill_detail_panel(ui: &mut egui::Ui, app: &mut App) {
             .id_salt("skill_detail")
             .max_height(DETAIL_HEIGHT)
             .show(ui, |ui| {
-                ui.label(&app.hero().skill_detail);
+                if let Some(hover_detail) = app.hover_skill_detail() {
+                    ui.label(hover_detail);
+                } else if let Some(click_detail) = app.click_skill_detail() {
+                    ui.label(click_detail);
+                }
             });
     });
 

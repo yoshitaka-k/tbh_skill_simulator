@@ -50,6 +50,15 @@ impl Hero {
             .sum()
     }
 
+    /// スキルを取得する。
+    pub fn skill(&self, group: &LevelGroup, index: usize) -> Option<&Skill> {
+        if let Some(skills) = self.skill_list.get(group) {
+            Some(&skills[index])
+        } else {
+            None
+        }
+    }
+
     /// スキルのレベルを取得する。
     pub fn skill_level(&self, group: &LevelGroup, index: usize) -> u32 {
         if let Some(skills) = self.skill_list.get(group) {

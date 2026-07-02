@@ -5,7 +5,7 @@
             "id": 1,
             "skill_type": "passive",
             "name": "Attack Damage",
-            "description": "Passive\nAttack Damage\n\nGrants Attack Damage.",
+            "description": "Grants Attack Damage.",
             "effect": "lv.1 +1 / lv.2 +2 / lv.3 +3",
             "max_level": 3
         },
@@ -14,8 +14,8 @@
             "id": 2,
             "skill_type": "passive",
             "name": "Max HP",
-            "description": "Passive\nMax HP\n\nGrants Max HP.",
-            "effect": "lv.1 +15 / lv.2 +30 / lv.3 +45 / lv.4 +60,\nlv.5 +75 / lv.6 +90 / lv.7 +105 / lv.8 +120",
+            "description": "Grants Max HP.",
+            "effect": "lv.1 +15 / lv.2 +30 / lv.3 +45 / lv.4 +60 / lv.5 +75 / lv.6 +90 / lv.7 +105 / lv.8 +120",
             "max_level": 8
         },
         {
@@ -23,7 +23,7 @@
             "id": 3,
             "skill_type": "skill",
             "name": "Piercing Thrust",
-            "description": "Skill\nThrust your sword deeply forward, dealing physical damage to enemies in range.",
+            "description": "Thrust your sword deeply forward, dealing physical damage to enemies in range.",
             "effect": "lv.1 250% / lv.2 270% / lv.3 290% / lv.4 310% / lv.5 330%",
             "max_level": 5
         },

@@ -1,7 +1,7 @@
 pub(crate) mod detail;
 
 pub(crate) use crate::hero::Skill;
-use crate::hero::Hero;
+use crate::app::App;
 use crate::app::level_group::LevelGroup;
 
 enum SkillChange {
@@ -9,10 +9,17 @@ enum SkillChange {
     Decrease { group: LevelGroup, index: usize },
 }
 
+enum SkillDetail {
+    Hover { group: LevelGroup, index: usize },
+    Click { group: LevelGroup, index: usize },
+}
+
 /// スキル一覧を横並びで表示する。
-pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, group: &LevelGroup) {
+pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
+    let hero = app.hero_mut();
     let skills = &hero.skill_list[group];
     let mut pending_changes: Vec<SkillChange> = Vec::new();
+    let mut pending_details: Vec<SkillDetail> = Vec::new();
 
     ui.horizontal(|ui| {
         for (i, skill) in skills.iter().enumerate() {
@@ -41,7 +48,10 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, group: &LevelGroup) 
                 );
 
                 if button.hovered() {
-                    hero.skill_detail = skill.description.clone();
+                    pending_details.push(SkillDetail::Hover {
+                        group: *group,
+                        index: i,
+                    });
                 }
 
                 if button.clicked() {
@@ -51,11 +61,19 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, group: &LevelGroup) 
                             group: *group,
                             index: i,
                         });
+                        pending_details.push(SkillDetail::Click {
+                            group: *group,
+                            index: i,
+                        });
                     }
                 } else if button.secondary_clicked() {
                     if skill.active {
                         println!("{}: {} decrease", skill.id, skill.name);
                         pending_changes.push(SkillChange::Decrease {
+                            group: *group,
+                            index: i,
+                        });
+                        pending_details.push(SkillDetail::Click {
                             group: *group,
                             index: i,
                         });
@@ -70,14 +88,12 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, group: &LevelGroup) 
     for change in pending_changes {
         match change {
             SkillChange::Increase { group, index } => {
-                println!("Increase {}: {}, level: {}", group.to_string(), index, hero.skill_level(&group, index));
                 if hero.skill_points > 0 && hero.skill_level(&group, index) < hero.skill_max_level(&group, index) {
                     hero.skill_points -= 1;
                     hero.increase_skill_level(&group, index);
                 }
-            }
+            },
             SkillChange::Decrease { group, index } => {
-                println!("Decrease {}: {}, level: {}", group.to_string(), index, hero.skill_level(&group, index));
                 if hero.skill_level(&group, index) > 0 {
                     hero.skill_points += 1;
                     hero.decrease_skill_level(&group, index);
@@ -86,6 +102,33 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, group: &LevelGroup) 
         }
 
         hero.update_active_skill();
+    }
+
+    for detail in pending_details {
+        match detail {
+            SkillDetail::Hover { group, index } => {
+                if let Some(skill) = &app.hero().skill(&group, index) {
+                    app.set_hover_skill_detail(Some(format!(
+                        "{}\n{}\n\n{}\n{}",
+                        skill.skill_type.clone(),
+                        skill.name.clone(),
+                        skill.description.clone(),
+                        skill.effects.clone()
+                    )));
+                }
+            },
+            SkillDetail::Click { group, index } => {
+                if let Some(skill) = &app.hero().skill(&group, index) {
+                    app.set_click_skill_detail(Some(format!(
+                        "{}\n{}\n\n{}\n{}",
+                        skill.skill_type.clone(),
+                        skill.name.clone(),
+                        skill.description.clone(),
+                        skill.effects.clone()
+                    )));
+                }
+            }
+        }
     }
 }
 
