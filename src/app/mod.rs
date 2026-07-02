@@ -1,30 +1,10 @@
+pub mod current_hero;
+pub mod level_group;
+
+use crate::app::current_hero::CurrentHero;
 use crate::hero::Hero;
 use crate::hero::data::heros::HERO_DATA;
 use crate::hero::data::{knight, ranger};
-
-#[derive(Default, serde::Deserialize, serde::Serialize)]
-pub enum CurrentHero {
-    #[default]
-    Knight,
-    Ranger,
-    Sorcerer,
-    Priest,
-    Hunter,
-    Slayer,
-}
-
-impl CurrentHero {
-    pub fn to_string(&self) -> String {
-        match self {
-            CurrentHero::Knight => "knight".to_string(),
-            CurrentHero::Ranger => "ranger".to_string(),
-            CurrentHero::Sorcerer => "sorcerer".to_string(),
-            CurrentHero::Priest => "priest".to_string(),
-            CurrentHero::Hunter => "hunter".to_string(),
-            CurrentHero::Slayer => "slayer".to_string(),
-        }
-    }
-}
 
 /// Deserialize/Serialize を derive して、終了時にアプリの状態を保存できるようにする。
 #[derive(serde::Deserialize, serde::Serialize)]

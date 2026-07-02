@@ -1,6 +1,7 @@
 pub(crate) use crate::hero::data::HeroData;
 
-use crate::{app::CurrentHero, App};
+use crate::app::current_hero::CurrentHero;
+use crate::App;
 
 /// キャラクターパネルを表示する。
 pub(crate) fn hero_row(ui: &mut egui::Ui, hero: &HeroData, app: &mut App) {

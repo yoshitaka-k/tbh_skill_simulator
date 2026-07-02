@@ -5,7 +5,6 @@ mod hero;
 mod rendar;
 
 pub use app::App;
-pub use app::CurrentHero;
 pub use rendar::Rendar;
 
 pub const MAX_LEVEL: u32 = 100;

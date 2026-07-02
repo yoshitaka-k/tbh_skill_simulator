@@ -3,8 +3,9 @@ mod skill;
 pub(crate) mod data;
 pub(crate) use skill::Skill;
 
+use std::collections::BTreeMap;
 use crate::hero::data::{HeroData, SkillData};
-use std::collections::HashMap;
+use crate::app::level_group::LevelGroup;
 
 /// 英雄の基底クラス
 #[derive(Debug, Default, serde::Deserialize, serde::Serialize)]
@@ -14,7 +15,7 @@ pub struct Hero {
     pub level: u32,
     pub skill_points: u32,
     pub skill_list: Vec<Vec<Skill>>,
-    pub skill_group_sum_list: HashMap<String, u32>,
+    pub skill_group_sum_list: BTreeMap<LevelGroup, u32>,
 }
 
 impl Hero {
@@ -29,10 +30,10 @@ impl Hero {
             skills_list.push(skills);
         }
 
-        let mut skill_group_sum_list: HashMap<String, u32> = HashMap::new();
+        let mut skill_group_sum_list: BTreeMap<LevelGroup, u32> = BTreeMap::new();
         for row in skills_list.iter() {
             for skill in row {
-                let _ = skill_group_sum_list.entry(skill.group.clone()).or_insert(0);
+                let _ = skill_group_sum_list.entry(skill.group).or_insert(0);
             }
         }
 
@@ -64,14 +65,14 @@ impl Hero {
     }
 
     /// スキルグループの合計を増やす。
-    pub fn increase_skill_group_sum(&mut self, group: &str) {
+    pub fn increase_skill_group_sum(&mut self, group: &LevelGroup) {
         if let Some(sum) = self.skill_group_sum_list.get_mut(group) {
             *sum += 1;
         }
     }
 
     /// スキルグループの合計を減らす。
-    pub fn decrease_skill_group_sum(&mut self, group: &str) {
+    pub fn decrease_skill_group_sum(&mut self, group: &LevelGroup) {
         if let Some(sum) = self.skill_group_sum_list.get_mut(group) {
             *sum -= 1;
         }
@@ -85,6 +86,13 @@ impl Hero {
                     skill.restore_image(data);
                 }
             }
+        }
+    }
+
+    /// スキルがアクティブかどうかを更新する。
+    pub fn update_active_skill(&mut self) {
+        for (group_key, group_sum) in self.skill_group_sum_list.iter() {
+            println!("cargo:warning=group_key: {:?}, group_sum: {:?}", group_key, group_sum);
         }
     }
 }

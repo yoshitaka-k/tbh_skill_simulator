@@ -1,6 +1,7 @@
 use std::borrow::Cow;
 
 use crate::hero::data::SkillData;
+use crate::app::level_group::LevelGroup;
 
 #[derive(Debug, serde::Deserialize, serde::Serialize)]
 #[serde(default)]
@@ -9,7 +10,7 @@ pub struct Skill {
     pub image: egui::ImageSource<'static>,
 
     pub id: u32,
-    pub group: String,
+    pub group: LevelGroup,
     pub name: String,
     pub description: String,
     pub skill_type: String,
@@ -26,7 +27,7 @@ impl Default for Skill {
                 bytes: egui::load::Bytes::Static(&[]),
             },
             id: 0,
-            group: String::new(),
+            group: LevelGroup::Level0,
             name: String::new(),
             description: String::new(),
             skill_type: String::new(),
@@ -39,7 +40,8 @@ impl Default for Skill {
 
 impl Skill {
     pub fn new(skill_data: &SkillData) -> Self {
-        let active = if skill_data.group == "level0" {
+        let group = LevelGroup::from_string(skill_data.group).unwrap();
+        let active = if group == LevelGroup::Level0 {
             true
         } else {
             false
@@ -48,7 +50,7 @@ impl Skill {
         Self {
             image: skill_data.image.clone(),
             id: skill_data.id,
-            group: skill_data.group.to_string(),
+            group: group,
             name: skill_data.name.to_string(),
             description: skill_data.description.to_string(),
             skill_type: skill_data.skill_type.to_string(),

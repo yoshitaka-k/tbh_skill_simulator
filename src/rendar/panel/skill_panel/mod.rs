@@ -1,9 +1,10 @@
 pub(crate) use crate::hero::Skill;
 use crate::hero::Hero;
+use crate::app::level_group::LevelGroup;
 
 enum SkillChange {
-    Increase { index: usize, group: String },
-    Decrease { index: usize, group: String },
+    Increase { index: usize, group: LevelGroup },
+    Decrease { index: usize, group: LevelGroup },
 }
 
 /// スキル一覧を横並びで表示する。
@@ -78,10 +79,11 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, index: usize) {
                 }
             }
         }
-        // println!(
-        //     "cargo:warning=skill_group_sum_list: {:?}",
-        //     hero.skill_group_sum_list
-        // );
+        println!(
+            "cargo:warning=skill_group_sum_list: {:?}",
+            hero.skill_group_sum_list
+        );
+        hero.update_active_skill();
     }
 }
 
