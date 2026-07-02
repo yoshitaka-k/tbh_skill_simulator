@@ -3,33 +3,37 @@
         {
             "image": "assets/images/ranger/passive_attack_damage.png",
             "id": 1,
+            "skill_type": "passive",
             "name": "Attack Damage",
             "description": "Attack Damage",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 3
         },
         {
             "image": "assets/images/ranger/passive_attack_speed.png",
             "id": 2,
+            "skill_type": "passive",
             "name": "Attack Speed",
             "description": "Attack Speed",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 8
         },
         {
             "image": "assets/images/ranger/skill_rapid_fire.png",
             "id": 3,
+            "skill_type": "skill",
             "name": "Rapid Fire",
             "description": "Rapid Fire",
-            "skill_type": "skill",
+            "effect": "",
             "max_level": 5
         },
         {
             "image": "assets/images/ranger/skill_scatter_shot.png",
             "id": 4,
+            "skill_type": "skill",
             "name": "Scatter Shot",
             "description": "Scatter Shot",
-            "skill_type": "skill",
+            "effect": "",
             "max_level": 5
         }
     ],
@@ -37,25 +41,28 @@
         {
             "image": "assets/images/ranger/passive_critical_chance.png",
             "id": 101,
+            "skill_type": "passive",
             "name": "Critical Chance",
             "description": "Critical Chance",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 8
         },
         {
             "image": "assets/images/ranger/passive_critical_damage.png",
             "id": 102,
+            "skill_type": "passive",
             "name": "Critical Damage",
             "description": "Critical Damage",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 5
         },
         {
             "image": "assets/images/ranger/skill_arrow_rain.png",
             "id": 103,
+            "skill_type": "skill",
             "name": "Arrow Rain",
             "description": "Arrow Rain",
-            "skill_type": "skill",
+            "effect": "",
             "max_level": 5
         }
     ],
@@ -63,25 +70,28 @@
         {
             "image": "assets/images/ranger/passive_dodge_chance.png",
             "id": 201,
+            "skill_type": "passive",
             "name": "Dodge Chance",
             "description": "Dodge Chance",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/ranger/passive_projectile_damage.png",
             "id": 202,
+            "skill_type": "passive",
             "name": "Increase Projectile Damage",
             "description": "Increase Projectile Damage",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/ranger/skill_swift_surge.png",
             "id": 203,
+            "skill_type": "skill",
             "name": "Swift Surge",
             "description": "Swift Surge",
-            "skill_type": "skill",
+            "effect": "",
             "max_level": 5
         }
     ],
@@ -89,25 +99,28 @@
         {
             "image": "assets/images/ranger/passive_dodge_chance.png",
             "id": 301,
+            "skill_type": "passive",
             "name": "Dodge Chance",
             "description": "Dodge Chance",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/ranger/passive_attack_speed.png",
             "id": 302,
+            "skill_type": "passive",
             "name": "Attack Speed",
             "description": "Attack Speed",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/ranger/skill_piercing_arrow.png",
             "id": 303,
+            "skill_type": "skill",
             "name": "Piercing Arrow",
             "description": "Piercing Arrow",
-            "skill_type": "skill",
+            "effect": "",
             "max_level": 5
         }
     ],
@@ -115,25 +128,28 @@
         {
             "image": "assets/images/ranger/passive_dodge_chance.png",
             "id": 401,
+            "skill_type": "passive",
             "name": "Elemental Dodge Chance",
             "description": "Elemental Dodge Chance",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/ranger/passive_movement_speed.png",
             "id": 402,
+            "skill_type": "passive",
             "name": "Movement Speed",
             "description": "Movement Speed",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/ranger/skill_skewer_shot.png",
             "id": 403,
+            "skill_type": "skill",
             "name": "Skewer Shot",
             "description": "Skewer Shot",
-            "skill_type": "skill",
+            "effect": "",
             "max_level": 5
         }
     ],
@@ -141,17 +157,19 @@
         {
             "image": "assets/images/ranger/passive_dodge_chance.png",
             "id": 501,
+            "skill_type": "passive",
             "name": "Dodge Chance",
             "description": "Dodge Chance",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/ranger/passive_hp_leech.png",
             "id": 502,
+            "skill_type": "passive",
             "name": "HP Leech",
             "description": "HP Leech",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         }
     ],
@@ -159,17 +177,19 @@
         {
             "image": "assets/images/ranger/passive_area_of_effect_damage.png",
             "id": 601,
+            "skill_type": "passive",
             "name": "Increase Area Of Effect Damage",
             "description": "Increase Area Of Effect Damage",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/ranger/passive_projectile_damage.png",
             "id": 602,
+            "skill_type": "passive",
             "name": "Increase Projectile Damage",
             "description": "Increase Projectile Damage",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         }
     ],
@@ -177,17 +197,19 @@
         {
             "image": "assets/images/ranger/passive_dodge_chance.png",
             "id": 701,
+            "skill_type": "passive",
             "name": "Dodge Chance",
             "description": "Dodge Chance",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/ranger/passive_attack_speed.png",
             "id": 702,
+            "skill_type": "passive",
             "name": "Attack Speed",
             "description": "Attack Speed",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         }
     ]

@@ -14,11 +14,12 @@ struct HeroEntry {
 /// スキルエントリを表す。
 #[derive(Deserialize)]
 struct SkillEntry {
-    id: u32,
     image: String,
+    id: u32,
+    skill_type: String,
     name: String,
     description: String,
-    skill_type: String,
+    effect: String,
     max_level: u8,
 }
 
@@ -176,13 +177,14 @@ fn generate_skills_generated(skills_dir: &Path, out_dir: &String) {
 
             for skill in &levels[level_key] {
                 output.push_str(&format!(
-                    "SkillData::new(\negui::include_image!({}),\n{},\n\"{}\",\n\"{}\",\n\"{}\",\n\"{}\",\n{},\n),\n",
+                    "SkillData::new(\negui::include_image!({}),\n{},\n\"{}\",\n\"{}\",\n\"{}\",\n\"{}\",\n\"{}\",\n{},\n),\n",
                     include_image_path(&skill.image),
                     skill.id,
                     level_key,
+                    skill.skill_type.replace('\\', "\\\\").replace('"', "\\\""),
                     skill.name.replace('\\', "\\\\").replace('"', "\\\""),
                     skill.description.replace('\\', "\\\\").replace('"', "\\\""),
-                    skill.skill_type.replace('\\', "\\\\").replace('"', "\\\""),
+                    skill.effect.replace('\\', "\\\\").replace('"', "\\\""),
                     skill.max_level,
                 ));
             }

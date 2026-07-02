@@ -3,33 +3,37 @@
         {
             "image": "assets/images/knight/passive_attack_damage.png",
             "id": 1,
-            "name": "Attack Damage",
-            "description": "Passive\nAttack Damage\n\nGrants Attack Damage.\nlv.1 +1, lv.2 +2, lv.3 +3 ",
             "skill_type": "passive",
+            "name": "Attack Damage",
+            "description": "Passive\nAttack Damage\n\nGrants Attack Damage.",
+            "effect": "lv.1 +1 / lv.2 +2 / lv.3 +3",
             "max_level": 3
         },
         {
             "image": "assets/images/knight/passive_max_hp.png",
             "id": 2,
-            "name": "Max HP",
-            "description": "Passive\nMax HP\n\nGrants Max HP.\nlv.1 +15, lv.2 +30, lv.3 +45, lv.4 +60,\nlv.5 +75, lv.6 +90, lv.7 +105, lv.8 +120",
             "skill_type": "passive",
+            "name": "Max HP",
+            "description": "Passive\nMax HP\n\nGrants Max HP.",
+            "effect": "lv.1 +15 / lv.2 +30 / lv.3 +45 / lv.4 +60,\nlv.5 +75 / lv.6 +90 / lv.7 +105 / lv.8 +120",
             "max_level": 8
         },
         {
             "image": "assets/images/knight/skill_piercing_thrust.png",
             "id": 3,
-            "name": "Piercing Thrust",
-            "description": "Piercing Thrust",
             "skill_type": "skill",
+            "name": "Piercing Thrust",
+            "description": "Skill\nThrust your sword deeply forward, dealing physical damage to enemies in range.",
+            "effect": "lv.1 250% / lv.2 270% / lv.3 290% / lv.4 310% / lv.5 330%",
             "max_level": 5
         },
         {
             "image": "assets/images/knight/skill_shield_charge.png",
             "id": 4,
+            "skill_type": "skill",
             "name": "Shield Charge",
             "description": "Shield Charge",
-            "skill_type": "skill",
+            "effect": "",
             "max_level": 5
         }
     ],
@@ -37,25 +41,28 @@
         {
             "image": "assets/images/knight/passive_armor.png",
             "id": 101,
+            "skill_type": "passive",
             "name": "Armor",
             "description": "Armor",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 8
         },
         {
             "image": "assets/images/knight/passive_hp_regen_per_sec.png",
             "id": 102,
+            "skill_type": "passive",
             "name": "HP Regen Per Sec",
             "description": "HP Regen Per Sec",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 5
         },
         {
             "image": "assets/images/knight/skill_retribution_strike.png",
             "id": 103,
+            "skill_type": "skill",
             "name": "Retribution Strike",
             "description": "Retribution Strike",
-            "skill_type": "skill",
+            "effect": "",
             "max_level": 5
         }
     ],
@@ -63,25 +70,28 @@
         {
             "image": "assets/images/knight/passive_add_hp_per_kill.png",
             "id": 201,
+            "skill_type": "passive",
             "name": "Add HP Per Kill",
             "description": "Add HP Per Kill",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/knight/passive_block_chance.png",
             "id": 202,
+            "skill_type": "passive",
             "name": "Block Chance",
             "description": "Block Chance",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/knight/skill_aegis_field.png",
             "id": 203,
+            "skill_type": "skill",
             "name": "Aegis Field",
             "description": "Aegis Field",
-            "skill_type": "skill",
+            "effect": "",
             "max_level": 5
         }
     ],
@@ -89,25 +99,28 @@
         {
             "image": "assets/images/knight/passive_physical_damage_percent.png",
             "id": 301,
+            "skill_type": "passive",
             "name": "Physical Damage Percent",
             "description": "Physical Damage Percent",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/knight/passive_max_hp.png",
             "id": 302,
+            "skill_type": "passive",
             "name": "Max HP",
             "description": "Max HP",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/knight/skill_sacred_blade.png",
             "id": 303,
+            "skill_type": "skill",
             "name": "Sacred Blade",
             "description": "Sacred Blade",
-            "skill_type": "skill",
+            "effect": "",
             "max_level": 5
         }
     ],
@@ -115,25 +128,28 @@
         {
             "image": "assets/images/knight/passive_cooldown_reduction.png",
             "id": 401,
+            "skill_type": "passive",
             "name": "Cooldown Reduction",
             "description": "Cooldown Reduction",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/knight/passive_hp_regen_per_sec.png",
             "id": 402,
+            "skill_type": "passive",
             "name": "HP Regen Per Sec",
             "description": "HP Regen Per Sec",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/knight/skill_unyielding_will.png",
             "id": 403,
+            "skill_type": "skill",
             "name": "Unyielding Will",
             "description": "Unyielding Will",
-            "skill_type": "skill",
+            "effect": "",
             "max_level": 5
         }
     ],
@@ -141,17 +157,19 @@
         {
             "image": "assets/images/knight/passive_add_hp_per_kill.png",
             "id": 501,
+            "skill_type": "passive",
             "name": "Add HP Per Kill",
             "description": "Add HP Per Kill",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/knight/passive_block_chance.png",
             "id": 502,
+            "skill_type": "passive",
             "name": "Block Chance",
             "description": "Block Chance",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         }
     ],
@@ -159,17 +177,19 @@
         {
             "image": "assets/images/knight/passive_attack_speed.png",
             "id": 601,
+            "skill_type": "passive",
             "name": "Attack Speed",
             "description": "Attack Speed",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/knight/passive_all_elemental_resistance.png",
             "id": 602,
+            "skill_type": "passive",
             "name": "All Elemental Resistance",
             "description": "All Elemental Resistance",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         }
     ],
@@ -177,17 +197,19 @@
         {
             "image": "assets/images/knight/passive_damage_reduction.png",
             "id": 701,
+            "skill_type": "passive",
             "name": "Damage Reduction",
             "description": "Damage Reduction",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         },
         {
             "image": "assets/images/knight/passive_attack_damage.png",
             "id": 702,
+            "skill_type": "passive",
             "name": "Attack Damage",
             "description": "Attack Damage",
-            "skill_type": "passive",
+            "effect": "",
             "max_level": 10
         }
     ]
