@@ -79,7 +79,7 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, group: &LevelGroup) 
             }
         }
 
-        // hero.update_active_skill();
+        hero.update_active_skill();
     }
 }
 

@@ -22,6 +22,19 @@ pub enum LevelGroup {
 }
 
 impl LevelGroup {
+    pub fn threshold(&self) -> u32 {
+        match self {
+            LevelGroup::Level0 => 0,
+            LevelGroup::Level10 => 10,
+            LevelGroup::Level20 => 20,
+            LevelGroup::Level30 => 30,
+            LevelGroup::Level40 => 40,
+            LevelGroup::Level50 => 50,
+            LevelGroup::Level60 => 60,
+            LevelGroup::Level70 => 70,
+        }
+    }
+
     pub fn from_string(string: &str) -> Option<LevelGroup> {
         match string {
             "level0" => Some(LevelGroup::Level0),

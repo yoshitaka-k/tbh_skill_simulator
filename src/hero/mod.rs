@@ -86,6 +86,14 @@ impl Hero {
 
     /// スキルレベルを減らす。
     pub fn decrease_skill_level(&mut self, group: &LevelGroup, index: usize) {
+        if let Some(next_group) = group.next() {
+            // 現在のグループのレベル合計が10未満で、次のグループのレベル合計が0以上の場合は、スキルレベルを減らせない。
+            if self.skill_group_level_sum(group) <= 10 && self.skill_group_level_sum(&next_group) > 0 {
+                println!("cargo:warning=next_group: {:?} level_sum: {:?}", next_group, self.skill_group_level_sum(&next_group));
+                return;
+            }
+        }
+
         if let Some(skills) = self.skill_list.get_mut(group) {
             skills[index].decrease_level();
         }
@@ -102,15 +110,31 @@ impl Hero {
         }
     }
 
-    /// スキルがアクティブかどうかを更新する。
-    pub fn update_active_skill(&mut self) {
+    /// スキルグループのレベル合計を取得する。
+    pub fn skill_group_level_sum(&self, group: &LevelGroup) -> u32 {
         let mut level_sum = 0;
-        for (_, skills) in &mut self.skill_list.iter_mut() {
+        if let Some(skills) = self.skill_list.get(group) {
             for skill in skills {
-                skill.active = false;
                 level_sum += skill.level;
             }
         }
+        level_sum
+    }
+
+    /// スキルがアクティブかどうかを更新する。
+    pub fn update_active_skill(&mut self) {
+        let level_sum: u32 = self.skill_list
+            .values()
+            .flat_map(|skills| skills.iter())
+            .map(|skill| skill.level)
+            .sum();
         println!("cargo:warning=level_sum: {:?}", level_sum);
+
+        for (group, skills) in &mut self.skill_list.iter_mut() {
+            let active = level_sum >= group.threshold();
+            for skill in skills {
+                skill.active = active;
+            }
+        }
     }
 }
