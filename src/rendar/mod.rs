@@ -3,7 +3,7 @@ use getset::{Getters, Setters};
 mod panel;
 
 use crate::app;
-use panel::{hero, level, skill};
+use panel::{hero, level, skill, skill_panel};
 
 /// UI の状態を保存する。
 #[derive(Getters, Setters, serde::Deserialize, serde::Serialize)]
@@ -58,8 +58,13 @@ impl eframe::App for Rendar {
 
             ui.separator();
 
-            skill::skill_list_panel(ui, &mut self.app);
+            ui.columns(2, |columns| {
+                columns[0].vertical(|ui| {
+                    skill::skill_list_panel(ui, &mut self.app);
+                });
 
+                skill_panel::detail::skill_detail_panel(&mut columns[1], &mut self.app);
+            });
             // デバッグビルドの警告を表示する。
             ui.with_layout(egui::Layout::bottom_up(egui::Align::LEFT), |ui| {
                 egui::warn_if_debug_build(ui);

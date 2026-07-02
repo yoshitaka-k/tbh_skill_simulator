@@ -1,3 +1,5 @@
+pub(crate) mod detail;
+
 pub(crate) use crate::hero::Skill;
 use crate::hero::Hero;
 use crate::app::level_group::LevelGroup;
@@ -37,6 +39,10 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, group: &LevelGroup) 
                     egui::Stroke::new(1.0, border_color),
                     egui::StrokeKind::Inside,
                 );
+
+                if button.hovered() {
+                    hero.skill_detail = skill.description.clone();
+                }
 
                 if button.clicked() {
                     if skill.active {

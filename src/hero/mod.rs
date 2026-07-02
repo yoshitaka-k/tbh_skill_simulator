@@ -15,6 +15,7 @@ pub struct Hero {
     pub level: u32,
     pub skill_points: u32,
     pub skill_list: BTreeMap<LevelGroup, Vec<Skill>>,
+    pub skill_detail: String,
 }
 
 impl Hero {
@@ -36,6 +37,7 @@ impl Hero {
             level: 1,
             skill_points: 1,
             skill_list: skills_list,
+            skill_detail: String::new(),
         }
     }
 

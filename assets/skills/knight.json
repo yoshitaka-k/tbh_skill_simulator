@@ -4,7 +4,7 @@
             "image": "assets/images/knight/passive_attack_damage.png",
             "id": 1,
             "name": "Attack Damage",
-            "description": "Attack Damage",
+            "description": "Passive\nAttack Damage\n\nGrants Attack Damage.\nlv.1 +1, lv.2 +2, lv.3 +3 ",
             "skill_type": "passive",
             "max_level": 3
         },
@@ -12,7 +12,7 @@
             "image": "assets/images/knight/passive_max_hp.png",
             "id": 2,
             "name": "Max HP",
-            "description": "Max HP",
+            "description": "Passive\nMax HP\n\nGrants Max HP.\nlv.1 +15, lv.2 +30, lv.3 +45, lv.4 +60,\nlv.5 +75, lv.6 +90, lv.7 +105, lv.8 +120",
             "skill_type": "passive",
             "max_level": 8
         },
