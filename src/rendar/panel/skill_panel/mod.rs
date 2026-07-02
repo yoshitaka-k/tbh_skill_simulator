@@ -3,20 +3,19 @@ use crate::hero::Hero;
 use crate::app::level_group::LevelGroup;
 
 enum SkillChange {
-    Increase { index: usize, group: LevelGroup },
-    Decrease { index: usize, group: LevelGroup },
+    Increase { group: LevelGroup, index: usize },
+    Decrease { group: LevelGroup, index: usize },
 }
 
 /// スキル一覧を横並びで表示する。
-pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, index: usize) {
-    let skills = &hero.skill_list[index];
+pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, group: &LevelGroup) {
+    let skills = &hero.skill_list[group];
     let mut pending_changes: Vec<SkillChange> = Vec::new();
 
     ui.horizontal(|ui| {
         for (i, skill) in skills.iter().enumerate() {
             let tint_color = tint_color(skill.active);
             let image = skill_image(skill, tint_color);
-            let skill_group = skill.group.clone();
 
             if i > 0 {
                 ui.separator();
@@ -43,16 +42,16 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, index: usize) {
                     if skill.active {
                         println!("{}: {} increase", skill.id, skill.name);
                         pending_changes.push(SkillChange::Increase {
+                            group: *group,
                             index: i,
-                            group: skill_group,
                         });
                     }
                 } else if button.secondary_clicked() {
                     if skill.active {
                         println!("{}: {} decrease", skill.id, skill.name);
                         pending_changes.push(SkillChange::Decrease {
+                            group: *group,
                             index: i,
-                            group: skill_group,
                         });
                     }
                 }
@@ -64,26 +63,23 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, hero: &mut Hero, index: usize) {
 
     for change in pending_changes {
         match change {
-            SkillChange::Increase { index: i, group } => {
-                if hero.skill_points > 0 && hero.skill_list[index][i].level < hero.skill_list[index][i].max_level {
+            SkillChange::Increase { group, index } => {
+                println!("Increase {}: {}, level: {}", group.to_string(), index, hero.skill_level(&group, index));
+                if hero.skill_points > 0 && hero.skill_level(&group, index) < hero.skill_max_level(&group, index) {
                     hero.skill_points -= 1;
-                    hero.skill_list[index][i].increase_level();
-                    hero.increase_skill_group_sum(&group);
+                    hero.increase_skill_level(&group, index);
                 }
             }
-            SkillChange::Decrease { index: i, group } => {
-                if hero.skill_list[index][i].level > 0 {
+            SkillChange::Decrease { group, index } => {
+                println!("Decrease {}: {}, level: {}", group.to_string(), index, hero.skill_level(&group, index));
+                if hero.skill_level(&group, index) > 0 {
                     hero.skill_points += 1;
-                    hero.skill_list[index][i].decrease_level();
-                    hero.decrease_skill_group_sum(&group);
+                    hero.decrease_skill_level(&group, index);
                 }
             }
         }
-        println!(
-            "cargo:warning=skill_group_sum_list: {:?}",
-            hero.skill_group_sum_list
-        );
-        hero.update_active_skill();
+
+        // hero.update_active_skill();
     }
 }
 

@@ -1,5 +1,4 @@
-
-#[derive(Default, serde::Deserialize, serde::Serialize)]
+#[derive(Default, Clone, Copy, serde::Deserialize, serde::Serialize)]
 pub enum CurrentHero {
     #[default]
     Knight,

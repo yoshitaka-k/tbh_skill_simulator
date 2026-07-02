@@ -6,8 +6,11 @@ pub(crate) fn skill_list_panel(ui: &mut egui::Ui, app: &mut App) {
     egui::ScrollArea::vertical().show(ui, |ui| {
         ui.add_space(10.0);
 
-        for i in 0..app.hero().skill_list.len() {
-            skill_row(ui, &mut app.hero_mut(), i);
+        let hero = app.hero_mut();
+        let groups: Vec<_> = hero.skill_list.keys().copied().collect();
+
+        for group in groups {
+            skill_row(ui, hero, &group);
             ui.separator();
         }
 

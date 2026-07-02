@@ -14,27 +14,21 @@ pub struct Hero {
     pub name: String,
     pub level: u32,
     pub skill_points: u32,
-    pub skill_list: Vec<Vec<Skill>>,
-    pub skill_group_sum_list: BTreeMap<LevelGroup, u32>,
+    pub skill_list: BTreeMap<LevelGroup, Vec<Skill>>,
 }
 
 impl Hero {
     pub fn new(hero_data: &HeroData, skills_data: &[&[SkillData]]) -> Self {
-        let mut skills_list: Vec<Vec<Skill>> = Vec::new();
+        let mut skills_list: BTreeMap<LevelGroup, Vec<Skill>> = BTreeMap::new();
 
-        for skill_data in skills_data {
+        for (i, skill_data) in skills_data.iter().enumerate() {
+            let group = LevelGroup::from_string(&format!("level{}", i * 10)).unwrap();
+
             let mut skills: Vec<Skill> = Vec::new();
             for skill in skill_data.iter() {
                 skills.push(Skill::new(&skill));
             }
-            skills_list.push(skills);
-        }
-
-        let mut skill_group_sum_list: BTreeMap<LevelGroup, u32> = BTreeMap::new();
-        for row in skills_list.iter() {
-            for skill in row {
-                let _ = skill_group_sum_list.entry(skill.group).or_insert(0);
-            }
+            skills_list.entry(group).or_insert(skills);
         }
 
         Self {
@@ -42,10 +36,28 @@ impl Hero {
             level: 1,
             skill_points: 1,
             skill_list: skills_list,
-            skill_group_sum_list: skill_group_sum_list,
         }
     }
 
+    /// スキルのレベルを取得する。
+    pub fn skill_level(&self, group: &LevelGroup, index: usize) -> u32 {
+        if let Some(skills) = self.skill_list.get(group) {
+            skills[index].level
+        } else {
+            0
+        }
+    }
+
+    /// スキルの最大レベルを取得する。
+    pub fn skill_max_level(&self, group: &LevelGroup, index: usize) -> u32 {
+        if let Some(skills) = self.skill_list.get(group) {
+            skills[index].max_level
+        } else {
+            0
+        }
+    }
+
+    /// スキルポイントを増やす。
     pub fn increase_skill_points(&mut self) -> bool{
         if self.skill_points < self.level {
             self.skill_points += 1;
@@ -55,6 +67,7 @@ impl Hero {
         }
     }
 
+    /// スキルポイントを減らす。
     pub fn decrease_skill_points(&mut self) -> bool {
         if self.skill_points > 0 {
             self.skill_points -= 1;
@@ -64,23 +77,23 @@ impl Hero {
         }
     }
 
-    /// スキルグループの合計を増やす。
-    pub fn increase_skill_group_sum(&mut self, group: &LevelGroup) {
-        if let Some(sum) = self.skill_group_sum_list.get_mut(group) {
-            *sum += 1;
+    /// スキルレベルを増やす。
+    pub fn increase_skill_level(&mut self, group: &LevelGroup, index: usize) {
+        if let Some(skills) = self.skill_list.get_mut(group) {
+            skills[index].increase_level();
         }
     }
 
-    /// スキルグループの合計を減らす。
-    pub fn decrease_skill_group_sum(&mut self, group: &LevelGroup) {
-        if let Some(sum) = self.skill_group_sum_list.get_mut(group) {
-            *sum -= 1;
+    /// スキルレベルを減らす。
+    pub fn decrease_skill_level(&mut self, group: &LevelGroup, index: usize) {
+        if let Some(skills) = self.skill_list.get_mut(group) {
+            skills[index].decrease_level();
         }
     }
 
     /// 永続化された状態を復元したあと、静的データからスキル画像を再設定する。
     pub fn restore_images(&mut self, skills_data: &[&[SkillData]]) {
-        for skills in &mut self.skill_list {
+        for (_, skills) in &mut self.skill_list.iter_mut() {
             for skill in skills {
                 for data in skills_data.iter().flat_map(|row| row.iter()) {
                     skill.restore_image(data);
@@ -91,8 +104,13 @@ impl Hero {
 
     /// スキルがアクティブかどうかを更新する。
     pub fn update_active_skill(&mut self) {
-        for (group_key, group_sum) in self.skill_group_sum_list.iter() {
-            println!("cargo:warning=group_key: {:?}, group_sum: {:?}", group_key, group_sum);
+        let mut level_sum = 0;
+        for (_, skills) in &mut self.skill_list.iter_mut() {
+            for skill in skills {
+                skill.active = false;
+                level_sum += skill.level;
+            }
         }
+        println!("cargo:warning=level_sum: {:?}", level_sum);
     }
 }

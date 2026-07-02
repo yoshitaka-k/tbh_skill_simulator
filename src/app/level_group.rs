@@ -36,6 +36,19 @@ impl LevelGroup {
         }
     }
 
+    pub fn to_string(&self) -> String {
+        match self {
+            LevelGroup::Level0 => "level0".to_string(),
+            LevelGroup::Level10 => "level10".to_string(),
+            LevelGroup::Level20 => "level20".to_string(),
+            LevelGroup::Level30 => "level30".to_string(),
+            LevelGroup::Level40 => "level40".to_string(),
+            LevelGroup::Level50 => "level50".to_string(),
+            LevelGroup::Level60 => "level60".to_string(),
+            LevelGroup::Level70 => "level70".to_string(),
+        }
+    }
+
     pub fn next(&self) -> Option<LevelGroup> {
         match self {
             LevelGroup::Level0 => Some(LevelGroup::Level10),
