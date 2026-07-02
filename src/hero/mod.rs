@@ -39,6 +39,15 @@ impl Hero {
         }
     }
 
+    /// スキルのレベル合計を取得する。
+    pub fn skill_level_sum(&self) -> u32 {
+        self.skill_list
+            .values()
+            .flat_map(|skills| skills.iter())
+            .map(|skill| skill.level)
+            .sum()
+    }
+
     /// スキルのレベルを取得する。
     pub fn skill_level(&self, group: &LevelGroup, index: usize) -> u32 {
         if let Some(skills) = self.skill_list.get(group) {
