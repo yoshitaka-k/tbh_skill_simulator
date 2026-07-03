@@ -1,0 +1,388 @@
+{
+    "level0": [
+        {
+            "image": "assets/images/passive/passive_attack_damage.png",
+            "id": 1,
+            "skill_type": "passive",
+            "name": "Attack Damage",
+            "description": "Grants Attack Damage {effect}.",
+            "effects": [
+                "+2",
+                "+4",
+                "+6"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_critical_chance.png",
+            "id": 2,
+            "skill_type": "passive",
+            "name": "Critical Chance",
+            "description": "Grants Critical Chance {effect}.",
+            "effects": [
+                "+20%",
+                "+40%",
+                "+60%",
+                "+80%",
+                "+100%",
+                "+120%",
+                "+140%",
+                "+160%"
+            ]
+        },
+        {
+            "image": "assets/images/hunter/skill_explosive_bolt.png",
+            "id": 3,
+            "skill_type": "skill",
+            "name": "Explosive Bolt",
+            "description": "Fire a crossbow bolt that explodes on impact, dealing {effect} area fire damage.",
+            "effects": [
+                "484%",
+                "535%",
+                "586%",
+                "637%",
+                "688%"
+            ]
+        },
+        {
+            "image": "assets/images/hunter/skill_frost_bolt.png",
+            "id": 4,
+            "skill_type": "skill",
+            "name": "Frost Bolt",
+            "description": "Fire a crossbow bolt that explodes on impact, dealing {effect} area cold damage and freezing enemies hit.",
+            "effects": [
+                "210%",
+                "225%",
+                "240%",
+                "255%",
+                "270%"
+            ]
+        }
+    ],
+    "level10": [
+        {
+            "image": "assets/images/passive/passive_critical_damage.png",
+            "id": 101,
+            "skill_type": "passive",
+            "name": "Critical Damage",
+            "description": "Grants Critical Damage {effect}.",
+            "effects": [
+                "+10%",
+                "+20%",
+                "+30%",
+                "+40%",
+                "+50%",
+                "+60%",
+                "+70%",
+                "+80%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_dodge_chance.png",
+            "id": 102,
+            "skill_type": "passive",
+            "name": "Dodge Chance",
+            "description": "Grants Dodge Chance {effect}.",
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%"
+            ]
+        },
+        {
+            "image": "assets/images/hunter/skill_quick_loader.png",
+            "id": 103,
+            "skill_type": "skill",
+            "name": "Quick Loader",
+            "description": "Rapidly reload crossbow bolts. Attack speed increases by {effect} for attacks.",
+            "effects": [
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
+            ]
+        }
+    ],
+    "level20": [
+        {
+            "image": "assets/images/passive/passive_fire_damage_percent.png",
+            "id": 201,
+            "skill_type": "passive",
+            "name": "Fire Damage Percent",
+            "description": "Grants Fire Damage Percent {effect}.",
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_cold_damage_percent.png",
+            "id": 202,
+            "skill_type": "passive",
+            "name": "Cold Damage Percent",
+            "description": "Grants Cold Damage Percent {effect}.",
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
+        },
+        {
+            "image": "assets/images/hunter/skill_charge_trap.png",
+            "id": 203,
+            "skill_type": "skill",
+            "name": "Charge Trap",
+            "description": "Launch {effect} traps that explode when struck by elemental damage.",
+            "effects": [
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ]
+        }
+    ],
+    "level30": [
+        {
+            "image": "assets/images/passive/passive_cooldown_reduction.png",
+            "id": 301,
+            "skill_type": "passive",
+            "name": "Cooldown Reduction",
+            "description": "Grants Cooldown Reduction {effect}.",
+            "effects": [
+                "+1%",
+                "+2%",
+                "+3%",
+                "+4%",
+                "+5%",
+                "+6%",
+                "+7%",
+                "+8%",
+                "+9%",
+                "+10%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_max_hp.png",
+            "id": 302,
+            "skill_type": "passive",
+            "name": "Max HP",
+            "description": "Grants Max HP {effect}.",
+            "effects": [
+                "+15",
+                "+30",
+                "+45",
+                "+60",
+                "+75",
+                "+90",
+                "+105",
+                "+120",
+                "+135",
+                "+150"
+            ]
+        },
+        {
+            "image": "assets/images/hunter/skill_crossbow_turret.png",
+            "id": 303,
+            "skill_type": "skill",
+            "name": "Crossbow Turret",
+            "description": "Deploy an automated crossbow that fires bolts dealing {effect} physical damage.",
+            "effects": [
+                "175%",
+                "191%",
+                "207%",
+                "223%",
+                "239%"
+            ]
+        }
+    ],
+    "level40": [
+        {
+            "image": "assets/images/passive/passive_physical_damage_percent.png",
+            "id": 401,
+            "skill_type": "passive",
+            "name": "Physical Damage Percent",
+            "description": "Grants Physical Damage Percent {effect}.",
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_critical_chance.png",
+            "id": 402,
+            "skill_type": "passive",
+            "name": "Critical Chance",
+            "description": "Grants Critical Chance {effect}.",
+            "effects": [
+                "+0.3%",
+                "+0.6%",
+                "+0.9%",
+                "+1.2%",
+                "+1.5%",
+                "+1.8%",
+                "+2.1%",
+                "+2.4%",
+                "+2.7%",
+                "+3%"
+            ]
+        },
+        {
+            "image": "assets/images/hunter/skill_shock_bolt.png",
+            "id": 403,
+            "skill_type": "skill",
+            "name": "Shock Bolt",
+            "description": "Fire a crossbow bolt that lodges in an enemy and emits lightning for a time. The bolt releases currents dealing {effect} lightning damage to nearby enemies.",
+            "effects": [
+                "270%",
+                "290%",
+                "310%",
+                "330%",
+                "350%"
+            ]
+        }
+    ],
+    "level50": [
+        {
+            "image": "assets/images/passive/passive_attack_damage.png",
+            "id": 501,
+            "skill_type": "passive",
+            "name": "Attack Damage",
+            "description": "Grants Attack Damage {effect}.",
+            "effects": [
+                "+3",
+                "+6",
+                "+9",
+                "+12",
+                "+15",
+                "+18",
+                "+21",
+                "+24",
+                "+27",
+                "+30"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_area_of_effect.png",
+            "id": 502,
+            "skill_type": "passive",
+            "name": "Area Of Effect",
+            "description": "Grants Area Of Effect {effect}.",
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%",
+                "+27%",
+                "+30%"
+            ]
+        }
+    ],
+    "level60": [
+        {
+            "image": "assets/images/passive/passive_lightning_damage_percent.png",
+            "id": 601,
+            "skill_type": "passive",
+            "name": "Lightning Damage Percent",
+            "description": "Grants Lightning Damage Percent {effect}.",
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_critical_damage.png",
+            "id": 602,
+            "skill_type": "passive",
+            "name": "Critical Damage",
+            "description": "Grants Critical Damage {effect}.",
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
+        }
+    ],
+    "level70": [
+        {
+            "image": "assets/images/passive/passive_attack_speed.png",
+            "id": 701,
+            "skill_type": "passive",
+            "name": "Attack Speed",
+            "description": "Grants Attack Speed {effect}.",
+            "effects": [
+                "+4%",
+                "+8%",
+                "+12%",
+                "+16%",
+                "+20%",
+                "+24%",
+                "+28%",
+                "+32%",
+                "+36%",
+                "+40%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_add_hp_per_hit.png",
+            "id": 702,
+            "skill_type": "passive",
+            "name": "Add HP Per Hit",
+            "description": "Grants Add HP Per Hit {effect}.",
+            "effects": [
+                "+3",
+                "+6",
+                "+9",
+                "+12",
+                "+15",
+                "+18",
+                "+21",
+                "+24",
+                "+27",
+                "+30"
+            ]
+        }
+    ]
+}
