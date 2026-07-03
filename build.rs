@@ -19,8 +19,17 @@ struct SkillEntry {
     skill_type: String,
     name: String,
     description: String,
-    effect: String,
+    effects: Vec<String>,
     max_level: u8,
+}
+
+/// エフェクト配列を Rust リテラルに変換する。
+fn effects_literal(effects: &[String]) -> String {
+    let items: Vec<String> = effects
+        .iter()
+        .map(|effect| format!("\"{}\"", effect.replace('\\', "\\\\").replace('"', "\\\"")))
+        .collect();
+    format!("&[{}]", items.join(", "))
 }
 
 /// レベル番号を取得する。
@@ -177,14 +186,14 @@ fn generate_skills_generated(skills_dir: &Path, out_dir: &String) {
 
             for skill in &levels[level_key] {
                 output.push_str(&format!(
-                    "SkillData::new(\negui::include_image!({}),\n{},\n\"{}\",\n\"{}\",\n\"{}\",\n\"{}\",\n\"{}\",\n{},\n),\n",
+                    "SkillData::new(\negui::include_image!({}),\n{},\n\"{}\",\n\"{}\",\n\"{}\",\n\"{}\",\n{},\n{},\n),\n",
                     include_image_path(&skill.image),
                     skill.id,
                     level_key,
                     skill.skill_type.replace('\\', "\\\\").replace('"', "\\\""),
                     skill.name.replace('\\', "\\\\").replace('"', "\\\""),
                     skill.description.replace('\\', "\\\\").replace('"', "\\\""),
-                    skill.effect.replace('\\', "\\\\").replace('"', "\\\""),
+                    effects_literal(&skill.effects),
                     skill.max_level,
                 ));
             }

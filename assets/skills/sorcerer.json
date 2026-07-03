@@ -5,36 +5,61 @@
             "id": 1,
             "skill_type": "passive",
             "name": "Attack Damage",
-            "description": "Grants Attack Damage.",
-            "effect": "lv.1 +1 / lv.2 +2 / lv.3 +3",
-            "max_level": 3
+            "description": "Grants Attack Damage {effect}.",
+            "max_level": 3,
+            "effects": [
+                "+1",
+                "+2",
+                "+3"
+            ]
         },
         {
             "image": "assets/images/passive/passive_cooldown_reduction.png",
             "id": 2,
             "skill_type": "passive",
             "name": "Cooldown Reduction",
-            "description": "Grants Cooldown Reduction.",
-            "effect": "lv.1 +1% / lv.2 +2% / lv.3 +3% / lv.4 +4% / lv.5 +5% / lv.6 +6% / lv.7 +7% / lv.8 +8%",
-            "max_level": 8
+            "description": "Grants Cooldown Reduction {effect}.",
+            "max_level": 8,
+            "effects": [
+                "+1%",
+                "+2%",
+                "+3%",
+                "+4%",
+                "+5%",
+                "+6%",
+                "+7%",
+                "+8%"
+            ]
         },
         {
             "image": "assets/images/sorcerer/skill_fireball.png",
             "id": 3,
             "skill_type": "skill",
             "name": "Fireball",
-            "description": "A fireball that explodes on impact, dealing AoE fire damage.",
-            "effect": "lv.1 270% / lv.2 295% / lv.3 320% / lv.4 345% / lv.5 370%",
-            "max_level": 5
+            "description": "A fireball that explodes on impact, dealing {effect} AoE fire damage.",
+            "max_level": 5,
+            "effects": [
+                "270%",
+                "295%",
+                "320%",
+                "345%",
+                "370%"
+            ]
         },
         {
             "image": "assets/images/sorcerer/skill_ice_orb.png",
             "id": 4,
             "skill_type": "skill",
             "name": "Ice Orb",
-            "description": "Summon an ice orb and hurl it at enemies. Slows enemies hit and deals multi-hit cold damage.",
-            "effect": "lv.1 150% / lv.2 162% / lv.3 174% / lv.4 186% / lv.5 198%",
-            "max_level": 5
+            "description": "Summon an ice orb and hurl it at enemies. Slows enemies hit and deals {effect} multi-hit cold damage.",
+            "max_level": 5,
+            "effects": [
+                "150%",
+                "162%",
+                "174%",
+                "186%",
+                "198%"
+            ]
         }
     ],
     "level10": [
@@ -43,27 +68,46 @@
             "id": 101,
             "skill_type": "passive",
             "name": "Area Of Effect",
-            "description": "Grants Area Of Effect.",
-            "effect": "lv.1 +3% / lv.2 +6% / lv.3 +9% / lv.4 +12% / lv.5 +15% / lv.6 +18% / lv.7 +21% / lv.8 +24%",
-            "max_level": 8
+            "description": "Grants Area Of Effect {effect}.",
+            "max_level": 8,
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_critical_chance.png",
             "id": 102,
             "skill_type": "passive",
             "name": "Critical Chance",
-            "description": "Grants Critical Chance.",
-            "effect": "lv.1 +20% / lv.2 +40% / lv.3 +60%",
-            "max_level": 3
+            "description": "Grants Critical Chance {effect}.",
+            "max_level": 3,
+            "effects": [
+                "+20%",
+                "+40%",
+                "+60%"
+            ]
         },
         {
             "image": "assets/images/sorcerer/skill_lightning.png",
             "id": 103,
             "skill_type": "skill",
             "name": "Lightning",
-            "description": "Unleash electricity forward, dealing lightning damage to enemies.",
-            "effect": "lv.1 255% / lv.2 282% / lv.3 309% / lv.4 336% / lv.5 363%",
-            "max_level": 5
+            "description": "Unleash electricity forward, dealing {effect} lightning damage to enemies.",
+            "max_level": 5,
+            "effects": [
+                "255%",
+                "282%",
+                "309%",
+                "336%",
+                "363%"
+            ]
         }
     ],
     "level20": [
@@ -72,27 +116,55 @@
             "id": 201,
             "skill_type": "passive",
             "name": "Fire Damage Percent",
-            "description": "Grants Fire Damage Percent.",
-            "effect": "lv.1 +10% / lv.2 +20% / lv.3 +30% / lv.4 +40% / lv.5 +50% / lv.6 +60% / lv.7 +70% / lv.8 +80% / lv.9 +90% / lv.10 +100%",
-            "max_level": 10
+            "description": "Grants Fire Damage Percent {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+10%",
+                "+20%",
+                "+30%",
+                "+40%",
+                "+50%",
+                "+60%",
+                "+70%",
+                "+80%",
+                "+90%",
+                "+100%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_cold_damage_percent.png",
             "id": 202,
             "skill_type": "passive",
             "name": "Cold Damage Percent",
-            "description": "Grants Cold Damage Percent.",
-            "effect": "lv.1 +10% / lv.2 +20% / lv.3 +30% / lv.4 +40% / lv.5 +50% / lv.6 +60% / lv.7 +70% / lv.8 +80% / lv.9 +90% / lv.10 +100%",
-            "max_level": 10
+            "description": "Grants Cold Damage Percent {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+10%",
+                "+20%",
+                "+30%",
+                "+40%",
+                "+50%",
+                "+60%",
+                "+70%",
+                "+80%",
+                "+90%",
+                "+100%"
+            ]
         },
         {
             "image": "assets/images/sorcerer/skill_flame_hydra.png",
             "id": 203,
             "skill_type": "skill",
             "name": "Flame Hydra",
-            "description": "Summon a hydra that fires fireballs dealing damage.",
-            "effect": "lv.1 230% / lv.2 245% / lv.3 260% / lv.4 275% / lv.5 290%",
-            "max_level": 5
+            "description": "Summon a hydra that fires fireballs dealing {effect} damage.",
+            "max_level": 5,
+            "effects": [
+                "230%",
+                "245%",
+                "260%",
+                "275%",
+                "290%"
+            ]
         }
     ],
     "level30": [
@@ -101,27 +173,55 @@
             "id": 301,
             "skill_type": "passive",
             "name": "Lightning Damage Percent",
-            "description": "Grants Lightning Damage Percent.",
-            "effect": "lv.1 +10% / lv.2 +20% / lv.3 +30% / lv.4 +40% / lv.5 +50% / lv.6 +60% / lv.7 +70% / lv.8 +80% / lv.9 +90% / lv.10 +100%",
-            "max_level": 10
+            "description": "Grants Lightning Damage Percent {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+10%",
+                "+20%",
+                "+30%",
+                "+40%",
+                "+50%",
+                "+60%",
+                "+70%",
+                "+80%",
+                "+90%",
+                "+100%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_max_hp.png",
             "id": 302,
             "skill_type": "passive",
             "name": "Max HP",
-            "description": "Grants Max HP",
-            "effect": "lv.1 +10 / lv.2 +20 / lv.3 +30 / lv.4 +40 / lv.5 +50 / lv.6 +60 / lv.7 +70 / lv.8 +80 / lv.9 +90 / lv.10 +100",
-            "max_level": 10
+            "description": "Grants Max HP {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+10",
+                "+20",
+                "+30",
+                "+40",
+                "+50",
+                "+60",
+                "+70",
+                "+80",
+                "+90",
+                "+100"
+            ]
         },
         {
             "image": "assets/images/sorcerer/skill_snowstorm.png",
             "id": 303,
             "skill_type": "skill",
             "name": "Snowstorm",
-            "description": "Summon a mass of ice shards raining on enemies. Deals cold damage per second and chills enemies in the area.",
-            "effect": "lv.1 50% / lv.2 66% / lv.3 82% / lv.4 98% / lv.5 114%",
-            "max_level": 5
+            "description": "Summon a mass of ice shards raining on enemies. Deals {effect} cold damage per second and chills enemies in the area.",
+            "max_level": 5,
+            "effects": [
+                "50%",
+                "66%",
+                "82%",
+                "98%",
+                "114%"
+            ]
         }
     ],
     "level40": [
@@ -130,27 +230,55 @@
             "id": 401,
             "skill_type": "passive",
             "name": "Cooldown Reduction",
-            "description": "Grants Cooldown Reduction.",
-            "effect": "lv.1 +2% / lv.2 +4% / lv.3 +6% / lv.4 +8% / lv.5 +10% / lv.6 +12% / lv.7 +14% / lv.8 +16% / lv.9 +18% / lv.10 +20%",
-            "max_level": 10
+            "description": "Grants Cooldown Reduction {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+2%",
+                "+4%",
+                "+6%",
+                "+8%",
+                "+10%",
+                "+12%",
+                "+14%",
+                "+16%",
+                "+18%",
+                "+20%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_attack_damage.png",
             "id": 402,
             "skill_type": "passive",
             "name": "Attack Damage",
-            "description": "Grants Attack Damage.",
-            "effect": "lv.1 +2 / lv.2 +4 / lv.3 +6 / lv.4 +8 / lv.5 +10 / lv.6 +12 / lv.7 +14 / lv.8 +16 / lv.9 +18 / lv.10 +20",
-            "max_level": 10
+            "description": "Grants Attack Damage {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+2",
+                "+4",
+                "+6",
+                "+8",
+                "+10",
+                "+12",
+                "+14",
+                "+16",
+                "+18",
+                "+20"
+            ]
         },
         {
             "image": "assets/images/sorcerer/skill_meteor_strike.png",
             "id": 403,
             "skill_type": "skill",
             "name": "Meteor Strike",
-            "description": "Summon a meteor, dealing damage to enemies in a wide area.",
-            "effect": "lv.1 550% / lv.2 595% / lv.3 640% / lv.4 685% / lv.5 730%",
-            "max_level": 5
+            "description": "Summon a meteor, dealing {effect} damage to enemies in a wide area.",
+            "max_level": 5,
+            "effects": [
+                "550%",
+                "595%",
+                "640%",
+                "685%",
+                "730%"
+            ]
         }
     ],
     "level50": [
@@ -159,18 +287,40 @@
             "id": 501,
             "skill_type": "passive",
             "name": "Cast Speed",
-            "description": "Grants Cast Speed.",
-            "effect": "lv.1 +7% / lv.2 +14% / lv.3 +21% / lv.4 +28% / lv.5 +35% / lv.6 +42% / lv.7 +49% / lv.8 +56% / lv.9 +63% / lv.10 +70%",
-            "max_level": 10
+            "description": "Grants Cast Speed {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+7%",
+                "+14%",
+                "+21%",
+                "+28%",
+                "+35%",
+                "+42%",
+                "+49%",
+                "+56%",
+                "+63%",
+                "+70%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_critical_damage.png",
             "id": 502,
             "skill_type": "passive",
             "name": "Critical Damage",
-            "description": "Grants Critical Damage.",
-            "effect": "lv.1 +20% / lv.2 +40% / lv.3 +60% / lv.4 +80% / lv.5 +100% / lv.6 +120% / lv.7 +140% / lv.8 +160% / lv.9 +180% / lv.10 +200%",
-            "max_level": 10
+            "description": "Grants Critical Damage {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+20%",
+                "+40%",
+                "+60%",
+                "+80%",
+                "+100%",
+                "+120%",
+                "+140%",
+                "+160%",
+                "+180%",
+                "+200%"
+            ]
         }
     ],
     "level60": [
@@ -179,18 +329,40 @@
             "id": 601,
             "skill_type": "passive",
             "name": "All Elemental Resistance",
-            "description": "Grants All Elemental Resistance.",
-            "effect": "lv.1 +20% / lv.2 +40% / lv.3 +60% / lv.4 +80% / lv.5 +100% / lv.6 +120% / lv.7 +140% / lv.8 +160% / lv.9 +180% / lv.10 +200%",
-            "max_level": 10
+            "description": "Grants All Elemental Resistance {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+20%",
+                "+40%",
+                "+60%",
+                "+80%",
+                "+100%",
+                "+120%",
+                "+140%",
+                "+160%",
+                "+180%",
+                "+200%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_area_of_effect.png",
             "id": 602,
             "skill_type": "passive",
             "name": "Area Of Effect",
-            "description": "Grants Area Of Effect.",
-            "effect": "lv.1 +3% / lv.2 +6% / lv.3 +9% / lv.4 +12% / lv.5 +15% / lv.6 +18% / lv.7 +21% / lv.8 +24% / lv.9 +27% / lv.10 +30%",
-            "max_level": 10
+            "description": "Grants Area Of Effect {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%",
+                "+27%",
+                "+30%"
+            ]
         }
     ],
     "level70": [
@@ -199,18 +371,40 @@
             "id": 701,
             "skill_type": "passive",
             "name": "Critical Chance",
-            "description": "Grants Critical Chance.",
-            "effect": "lv.1 +0.3% / lv.2 +0.6% / lv.3 +0.9% / lv.4 +1.2% / lv.5 +1.5% / lv.6 +1.8% / lv.7 +2.1% / lv.8 +2.4% / lv.9 +2.7% / lv.10 +3%",
-            "max_level": 10
+            "description": "Grants Critical Chance {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+0.3%",
+                "+0.6%",
+                "+0.9%",
+                "+1.2%",
+                "+1.5%",
+                "+1.8%",
+                "+2.1%",
+                "+2.4%",
+                "+2.7%",
+                "+3%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_cooldown_reduction.png",
             "id": 702,
             "skill_type": "passive",
             "name": "Cooldown Reduction",
-            "description": "Grants Cooldown Reduction.",
-            "effect": "lv.1 +2% / lv.2 +4% / lv.3 +6% / lv.4 +8% / lv.5 +10% / lv.6 +12% / lv.7 +14% / lv.8 +16% / lv.9 +18% / lv.10 +20%",
-            "max_level": 10
+            "description": "Grants Cooldown Reduction {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+2%",
+                "+4%",
+                "+6%",
+                "+8%",
+                "+10%",
+                "+12%",
+                "+14%",
+                "+16%",
+                "+18%",
+                "+20%"
+            ]
         }
     ]
 }

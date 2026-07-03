@@ -1,6 +1,6 @@
 use crate::App;
 
-const DETAIL_HEIGHT: f32 = 100.0;
+const DETAIL_HEIGHT: f32 = 140.0;
 
 pub(crate) fn skill_detail_panel(ui: &mut egui::Ui, app: &mut App) {
     let w = ui.available_width();

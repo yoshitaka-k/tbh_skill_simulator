@@ -28,7 +28,7 @@ pub struct SkillData {
     pub skill_type: &'static str,
     pub name: &'static str,
     pub description: &'static str,
-    pub effects: &'static str,
+    pub effects: &'static [&'static str],
     pub max_level: u32,
 }
 
@@ -41,7 +41,7 @@ impl SkillData {
         skill_type: &'static str,
         name: &'static str,
         description: &'static str,
-        effects: &'static str,
+        effects: &'static [&'static str],
         max_level: u32,
     ) -> Self {
         Self {

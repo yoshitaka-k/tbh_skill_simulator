@@ -110,22 +110,22 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
             SkillDetail::Hover { group, index } => {
                 if let Some(skill) = &app.hero().skill(&group, index) {
                     app.set_hover_skill_detail(Some(format!(
-                        "{}\n{}\n\n{}\n{}",
+                        "{}\n{}\n\n{}\n\n{}",
                         skill.skill_type.clone(),
                         skill.name.clone(),
-                        skill.description.clone(),
-                        skill.effects.clone()
+                        skill.description_display(),
+                        skill.effects_display()
                     )));
                 }
             },
             SkillDetail::Click { group, index } => {
                 if let Some(skill) = &app.hero().skill(&group, index) {
                     app.set_click_skill_detail(Some(format!(
-                        "{}\n{}\n\n{}\n{}",
+                        "{}\n{}\n\n{}\n\n{}",
                         skill.skill_type.clone(),
                         skill.name.clone(),
-                        skill.description.clone(),
-                        skill.effects.clone()
+                        skill.description_display(),
+                        skill.effects_display()
                     )));
                 }
             }

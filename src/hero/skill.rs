@@ -14,7 +14,7 @@ pub struct Skill {
     pub skill_type: String,
     pub name: String,
     pub description: String,
-    pub effects: String,
+    pub effects: Vec<String>,
     pub active: bool,
     pub level: u32,
     pub max_level: u32,
@@ -32,7 +32,7 @@ impl Default for Skill {
             skill_type: String::new(),
             name: String::new(),
             description: String::new(),
-            effects: String::new(),
+            effects: Vec::new(),
             active: false,
             level: 0,
             max_level: 0,
@@ -56,7 +56,7 @@ impl Skill {
             skill_type: skill_data.skill_type.to_string(),
             name: skill_data.name.to_string(),
             description: skill_data.description.to_string(),
-            effects: skill_data.effects.to_string(),
+            effects: skill_data.effects.iter().map(|e| e.to_string()).collect(),
             active: active,
             level: 0,
             max_level: skill_data.max_level,
@@ -82,5 +82,26 @@ impl Skill {
         if self.level > 0 {
             self.level -= 1;
         }
+    }
+
+    pub fn description_display(&self) -> String {
+        if self.level > 0 {
+            self.description.clone().replace("{effect}", &self.effects[self.level as usize - 1])
+        } else {
+            let level_min = self.effects[0].clone();
+            let level_max = self.effects[self.effects.len() - 1].clone();
+
+            self.description.clone().replace("{effect}", &format!("[{} : {}]", level_min, level_max))
+        }
+    }
+
+    /// 全レベルの効果を表示用文字列に整形する。
+    pub fn effects_display(&self) -> String {
+        self.effects
+            .iter()
+            .enumerate()
+            .map(|(i, effect)| format!("lv.{} {}", i + 1, effect))
+            .collect::<Vec<_>>()
+            .join(" / ")
     }
 }

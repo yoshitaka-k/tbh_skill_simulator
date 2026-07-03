@@ -5,36 +5,61 @@
             "id": 1,
             "skill_type": "passive",
             "name": "Attack Damage",
-            "description": "Grants Attack Damage.",
-            "effect": "lv.1 +1 / lv.2 +2 / lv.3 +3",
-            "max_level": 3
+            "description": "Grants Attack Damage {effect}.",
+            "max_level": 3,
+            "effects": [
+                "+1",
+                "+2",
+                "+3"
+            ]
         },
         {
             "image": "assets/images/passive/passive_attack_speed.png",
             "id": 2,
             "skill_type": "passive",
             "name": "Attack Speed",
-            "description": "Grants Attack Speed.",
-            "effect": "lv.1 +4% / lv.2 +8% / lv.3 +12% / lv.4 +16% / lv.5 +20% / lv.6 +24% / lv.7 +28% / lv.8 +32%",
-            "max_level": 8
+            "description": "Grants Attack Speed {effect}.",
+            "max_level": 8,
+            "effects": [
+                "+4%",
+                "+8%",
+                "+12%",
+                "+16%",
+                "+20%",
+                "+24%",
+                "+28%",
+                "+32%"
+            ]
         },
         {
             "image": "assets/images/ranger/skill_rapid_fire.png",
             "id": 3,
             "skill_type": "skill",
             "name": "Rapid Fire",
-            "description": "Fire multiple arrows in succession, dealing physical damage per arrow.",
-            "effect": "lv.1 132% / lv.2 144% / lv.3 156% / lv.4 168% / lv.5 180%",
-            "max_level": 5
+            "description": "Fire multiple arrows in succession, dealing {effect} physical damage per arrow.",
+            "max_level": 5,
+            "effects": [
+                "132%",
+                "144%",
+                "156%",
+                "168%",
+                "180%"
+            ]
         },
         {
             "image": "assets/images/ranger/skill_scatter_shot.png",
             "id": 4,
             "skill_type": "skill",
             "name": "Scatter Shot",
-            "description": "Fire multiple homing arrows. Deal physical damage per arrow.",
-            "effect": "lv.1 162% / lv.2 178% / lv.3 194% / lv.4 210% / lv.5 226%",
-            "max_level": 5
+            "description": "Fire multiple homing arrows. Deal {effect} physical damage per arrow.",
+            "max_level": 5,
+            "effects": [
+                "162%",
+                "178%",
+                "194%",
+                "210%",
+                "226%"
+            ]
         }
     ],
     "level10": [
@@ -43,27 +68,46 @@
             "id": 101,
             "skill_type": "passive",
             "name": "Critical Chance",
-            "description": "Grants Critical Chance.",
-            "effect": "lv.1 +20% / lv.2 +40% / lv.3 +60% / lv.4 +80% / lv.5 +100% / lv.6 +120% / lv.7 +140% / lv.8 +160%",
-            "max_level": 8
+            "description": "Grants Critical Chance {effect}.",
+            "max_level": 8,
+            "effects": [
+                "+20%",
+                "+40%",
+                "+60%",
+                "+80%",
+                "+100%",
+                "+120%",
+                "+140%",
+                "+160%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_critical_damage.png",
             "id": 102,
             "skill_type": "passive",
             "name": "Critical Damage",
-            "description": "Grants Critical Damage.",
-            "effect": "lv.1 +13% / lv.2 +26% / lv.3 +39%",
-            "max_level": 3
+            "description": "Grants Critical Damage {effect}.",
+            "max_level": 3,
+            "effects": [
+                "+13%",
+                "+26%",
+                "+39%"
+            ]
         },
         {
             "image": "assets/images/ranger/skill_arrow_rain.png",
             "id": 103,
             "skill_type": "skill",
             "name": "Arrow Rain",
-            "description": "Fire multiple arrows into the sky, dealing physical damage to enemies in a wide area.",
-            "effect": "lv.1 215% / lv.2 241% / lv.3 267% / lv.4 293% / lv.5 319%",
-            "max_level": 5
+            "description": "Fire multiple arrows into the sky, dealing {effect} physical damage to enemies in a wide area.",
+            "max_level": 5,
+            "effects": [
+                "215%",
+                "241%",
+                "267%",
+                "293%",
+                "319%"
+            ]
         }
     ],
     "level20": [
@@ -72,27 +116,55 @@
             "id": 201,
             "skill_type": "passive",
             "name": "Dodge Chance",
-            "description": "Grants Dodge Chance.",
-            "effect": "lv.1 +3% / lv.2 +6% / lv.3 +9% / lv.4 +12% / lv.5 +15% / lv.6 +18% / lv.7 +21% / lv.8 +24% / lv.9 +27% / lv.10 +30%",
-            "max_level": 10
+            "description": "Grants Dodge Chance {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%",
+                "+27%",
+                "+30%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_projectile_damage.png",
             "id": 202,
             "skill_type": "passive",
             "name": "Increase Projectile Damage",
-            "description": "Grants Increase Projectile Damage.",
-            "effect": "lv.1 +15% / lv.2 +30% / lv.3 +45% / lv.4 +60% / lv.5 +75% / lv.6 +90% / lv.7 +105% / lv.8 +120% / lv.9 +135% / lv.10 +150%",
-            "max_level": 10
+            "description": "Grants Increase Projectile Damage {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
         },
         {
             "image": "assets/images/ranger/skill_swift_surge.png",
             "id": 203,
             "skill_type": "skill",
             "name": "Swift Surge",
-            "description": "Temporarily accelerate your metabolism. Attack speed increases by for the duration.",
-            "effect": "lv.1 50% / lv.2 60% / lv.3 70% / lv.4 80% / lv.5 90%",
-            "max_level": 5
+            "description": "Temporarily accelerate your metabolism. Attack speed increases by {effect} for the duration.",
+            "max_level": 5,
+            "effects": [
+                "50%",
+                "60%",
+                "70%",
+                "80%",
+                "90%"
+            ]
         }
     ],
     "level30": [
@@ -101,27 +173,55 @@
             "id": 301,
             "skill_type": "passive",
             "name": "Dodge Chance",
-            "description": "Grants Dodge Chance.",
-            "effect": "lv.1 +3% / lv.2 +6% / lv.3 +9% / lv.4 +12% / lv.5 +15% / lv.6 +18% / lv.7 +21% / lv.8 +24% / lv.9 +27% / lv.10 +30%",
-            "max_level": 10
+            "description": "Grants Dodge Chance {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%",
+                "+27%",
+                "+30%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_attack_speed.png",
             "id": 302,
             "skill_type": "passive",
             "name": "Attack Speed",
-            "description": "Grants Attack Speed.",
-            "effect": "lv.1 +5% / lv.2 +10% / lv.3 +15% / lv.4 +20% / lv.5 +25% / lv.6 +30% / lv.7 +35% / lv.8 +40% / lv.9 +45% / lv.10 +50%",
-            "max_level": 10
+            "description": "Grants Attack Speed {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+5%",
+                "+10%",
+                "+15%",
+                "+20%",
+                "+25%",
+                "+30%",
+                "+35%",
+                "+40%",
+                "+45%",
+                "+50%"
+            ]
         },
         {
             "image": "assets/images/ranger/skill_piercing_arrow.png",
             "id": 303,
             "skill_type": "skill",
             "name": "Piercing Arrow",
-            "description": "Fire a piercing arrow that deals physical damage to enemies hit.",
-            "effect": "lv.1 244% / lv.2 260% / lv.3 276% / lv.4 292% / lv.5 308%",
-            "max_level": 5
+            "description": "Fire a piercing arrow that deals {effect} physical damage to enemies hit.",
+            "max_level": 5,
+            "effects": [
+                "244%",
+                "260%",
+                "276%",
+                "292%",
+                "308%"
+            ]
         }
     ],
     "level40": [
@@ -130,27 +230,55 @@
             "id": 401,
             "skill_type": "passive",
             "name": "Elemental Dodge Chance",
-            "description": "Grants Elemental Dodge Chance.",
-            "effect": "lv.1 +3% / lv.2 +6% / lv.3 +9% / lv.4 +12% / lv.5 +15% / lv.6 +18% / lv.7 +21% / lv.8 +24% / lv.9 +27% / lv.10 +30%",
-            "max_level": 10
+            "description": "Grants Elemental Dodge Chance {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%",
+                "+27%",
+                "+30%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_movement_speed.png",
             "id": 402,
             "skill_type": "passive",
             "name": "Movement Speed",
-            "description": "Grants Movement Speed.",
-            "effect": "lv.1 +20 / lv.2 +40 / lv.3 +60 / lv.4 +80 / lv.5 +100 / lv.6 +120 / lv.7 +140 / lv.8 +160 / lv.9 +180 / lv.10 +200",
-            "max_level": 10
+            "description": "Grants Movement Speed {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+20",
+                "+40",
+                "+60",
+                "+80",
+                "+100",
+                "+120",
+                "+140",
+                "+160",
+                "+180",
+                "+200"
+            ]
         },
         {
             "image": "assets/images/ranger/skill_skewer_shot.png",
             "id": 403,
             "skill_type": "skill",
             "name": "Skewer Shot",
-            "description": "Fire a deep-wounding arrow. Damage increases by per lodged arrow; 3+ arrows cause bleeding.",
-            "effect": "lv.1 100% / lv.2 130% / lv.3 160% / lv.4 190% / lv.5 220%",
-            "max_level": 5
+            "description": "Fire a deep-wounding arrow. Damage increases by {effect} per lodged arrow; 3+ arrows cause bleeding.",
+            "max_level": 5,
+            "effects": [
+                "100%",
+                "130%",
+                "160%",
+                "190%",
+                "220%"
+            ]
         }
     ],
     "level50": [
@@ -159,18 +287,40 @@
             "id": 501,
             "skill_type": "passive",
             "name": "Dodge Chance",
-            "description": "Grants Dodge Chance.",
-            "effect": "lv.1 +3% / lv.2 +6% / lv.3 +9% / lv.4 +12% / lv.5 +15% / lv.6 +18% / lv.7 +21% / lv.8 +24% / lv.9 +27% / lv.10 +30%",
-            "max_level": 10
+            "description": "Grants Dodge Chance {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%",
+                "+27%",
+                "+30%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_hp_leech.png",
             "id": 502,
             "skill_type": "passive",
             "name": "HP Leech",
-            "description": "Grants HP Leech.",
-            "effect": "lv.1 +0.5% / lv.2 +1% / lv.3 +1.5% / lv.4 +2% / lv.5 +2.5% / lv.6 +3% / lv.7 +3.5% / lv.8 +4% / lv.9 +4.5% / lv.10 +5%",
-            "max_level": 10
+            "description": "Grants HP Leech {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+0.5%",
+                "+1%",
+                "+1.5%",
+                "+2%",
+                "+2.5%",
+                "+3%",
+                "+3.5%",
+                "+4%",
+                "+4.5%",
+                "+5%"
+            ]
         }
     ],
     "level60": [
@@ -179,18 +329,40 @@
             "id": 601,
             "skill_type": "passive",
             "name": "Increase Area Of Effect Damage",
-            "description": "Grants Increase Area Of Effect Damage.",
-            "effect": "lv.1 +15% / lv.2 +30% / lv.3 +45% / lv.4 +60% / lv.5 +75% / lv.6 +90% / lv.7 +105% / lv.8 +120% / lv.9 +135% / lv.10 +150%",
-            "max_level": 10
+            "description": "Grants Increase Area Of Effect Damage {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_projectile_damage.png",
             "id": 602,
             "skill_type": "passive",
             "name": "Increase Projectile Damage",
-            "description": "Grants Increase Projectile Damage.",
-            "effect": "lv.1 +15% / lv.2 +30% / lv.3 +45% / lv.4 +60% / lv.5 +75% / lv.6 +90% / lv.7 +105% / lv.8 +120% / lv.9 +135% / lv.10 +150%",
-            "max_level": 10
+            "description": "Grants Increase Projectile Damage {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
         }
     ],
     "level70": [
@@ -199,18 +371,40 @@
             "id": 701,
             "skill_type": "passive",
             "name": "Dodge Chance",
-            "description": "Grants Dodge Chance.",
-            "effect": "lv.1 +3% / lv.2 +6% / lv.3 +9% / lv.4 +12% / lv.5 +15% / lv.6 +18% / lv.7 +21% / lv.8 +24% / lv.9 +27% / lv.10 +30%",
-            "max_level": 10
+            "description": "Grants Dodge Chance {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%",
+                "+27%",
+                "+30%"
+            ]
         },
         {
             "image": "assets/images/passive/passive_attack_speed.png",
             "id": 702,
             "skill_type": "passive",
             "name": "Attack Speed",
-            "description": "Grants Attack Speed.",
-            "effect": "lv.1 +5% / lv.2 +10% / lv.3 +15% / lv.4 +20% / lv.5 +25% / lv.6 +30% / lv.7 +35% / lv.8 +40% / lv.9 +45% / lv.10 +50%",
-            "max_level": 10
+            "description": "Grants Attack Speed {effect}.",
+            "max_level": 10,
+            "effects": [
+                "+5%",
+                "+10%",
+                "+15%",
+                "+20%",
+                "+25%",
+                "+30%",
+                "+35%",
+                "+40%",
+                "+45%",
+                "+50%"
+            ]
         }
     ]
 }
