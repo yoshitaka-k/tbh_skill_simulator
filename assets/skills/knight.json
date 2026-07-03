@@ -1,7 +1,7 @@
 {
     "level0": [
         {
-            "image": "assets/images/knight/passive_attack_damage.png",
+            "image": "assets/images/passive/passive_attack_damage.png",
             "id": 1,
             "skill_type": "passive",
             "name": "Attack Damage",
@@ -10,7 +10,7 @@
             "max_level": 3
         },
         {
-            "image": "assets/images/knight/passive_max_hp.png",
+            "image": "assets/images/passive/passive_max_hp.png",
             "id": 2,
             "skill_type": "passive",
             "name": "Max HP",
@@ -39,7 +39,7 @@
     ],
     "level10": [
         {
-            "image": "assets/images/knight/passive_armor.png",
+            "image": "assets/images/passive/passive_armor.png",
             "id": 101,
             "skill_type": "passive",
             "name": "Armor",
@@ -48,7 +48,7 @@
             "max_level": 8
         },
         {
-            "image": "assets/images/knight/passive_hp_regen_per_sec.png",
+            "image": "assets/images/passive/passive_hp_regen_per_sec.png",
             "id": 102,
             "skill_type": "passive",
             "name": "HP Regen Per Sec",
@@ -68,7 +68,7 @@
     ],
     "level20": [
         {
-            "image": "assets/images/knight/passive_add_hp_per_kill.png",
+            "image": "assets/images/passive/passive_add_hp_per_kill.png",
             "id": 201,
             "skill_type": "passive",
             "name": "Add HP Per Kill",
@@ -77,7 +77,7 @@
             "max_level": 10
         },
         {
-            "image": "assets/images/knight/passive_block_chance.png",
+            "image": "assets/images/passive/passive_block_chance.png",
             "id": 202,
             "skill_type": "passive",
             "name": "Block Chance",
@@ -97,7 +97,7 @@
     ],
     "level30": [
         {
-            "image": "assets/images/knight/passive_physical_damage_percent.png",
+            "image": "assets/images/passive/passive_physical_damage_percent.png",
             "id": 301,
             "skill_type": "passive",
             "name": "Physical Damage Percent",
@@ -106,7 +106,7 @@
             "max_level": 10
         },
         {
-            "image": "assets/images/knight/passive_max_hp.png",
+            "image": "assets/images/passive/passive_max_hp.png",
             "id": 302,
             "skill_type": "passive",
             "name": "Max HP",
@@ -126,7 +126,7 @@
     ],
     "level40": [
         {
-            "image": "assets/images/knight/passive_cooldown_reduction.png",
+            "image": "assets/images/passive/passive_cooldown_reduction.png",
             "id": 401,
             "skill_type": "passive",
             "name": "Cooldown Reduction",
@@ -135,7 +135,7 @@
             "max_level": 10
         },
         {
-            "image": "assets/images/knight/passive_hp_regen_per_sec.png",
+            "image": "assets/images/passive/passive_hp_regen_per_sec.png",
             "id": 402,
             "skill_type": "passive",
             "name": "HP Regen Per Sec",
@@ -155,7 +155,7 @@
     ],
     "level50": [
         {
-            "image": "assets/images/knight/passive_add_hp_per_kill.png",
+            "image": "assets/images/passive/passive_add_hp_per_kill.png",
             "id": 501,
             "skill_type": "passive",
             "name": "Add HP Per Kill",
@@ -164,7 +164,7 @@
             "max_level": 10
         },
         {
-            "image": "assets/images/knight/passive_block_chance.png",
+            "image": "assets/images/passive/passive_block_chance.png",
             "id": 502,
             "skill_type": "passive",
             "name": "Block Chance",
@@ -175,7 +175,7 @@
     ],
     "level60": [
         {
-            "image": "assets/images/knight/passive_attack_speed.png",
+            "image": "assets/images/passive/passive_attack_speed.png",
             "id": 601,
             "skill_type": "passive",
             "name": "Attack Speed",
@@ -184,7 +184,7 @@
             "max_level": 10
         },
         {
-            "image": "assets/images/knight/passive_all_elemental_resistance.png",
+            "image": "assets/images/passive/passive_all_elemental_resistance.png",
             "id": 602,
             "skill_type": "passive",
             "name": "All Elemental Resistance",
@@ -195,7 +195,7 @@
     ],
     "level70": [
         {
-            "image": "assets/images/knight/passive_damage_reduction.png",
+            "image": "assets/images/passive/passive_damage_reduction.png",
             "id": 701,
             "skill_type": "passive",
             "name": "Damage Reduction",
@@ -204,7 +204,7 @@
             "max_level": 10
         },
         {
-            "image": "assets/images/knight/passive_attack_damage.png",
+            "image": "assets/images/passive/passive_attack_damage.png",
             "id": 702,
             "skill_type": "passive",
             "name": "Attack Damage",
