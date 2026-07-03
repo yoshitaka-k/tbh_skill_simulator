@@ -6,7 +6,6 @@
             "skill_type": "passive",
             "name": "Attack Damage",
             "description": "Grants Attack Damage {effect}.",
-            "max_level": 3,
             "effects": [
                 "+1",
                 "+2",
@@ -19,7 +18,6 @@
             "skill_type": "passive",
             "name": "Max HP",
             "description": "Grants Max HP  {effect}.",
-            "max_level": 8,
             "effects": [
                 "+15",
                 "+30",
@@ -37,7 +35,6 @@
             "skill_type": "skill",
             "name": "Piercing Thrust",
             "description": "Thrust your sword deeply forward, dealing {effect} physical damage to enemies in range.",
-            "max_level": 5,
             "effects": [
                 "250%",
                 "270%",
@@ -52,7 +49,6 @@
             "skill_type": "skill",
             "name": "Shield Charge",
             "description": "Raise your shield and charge forward. Deal {effect} physical damage to enemies you collide with.",
-            "max_level": 5,
             "effects": [
                 "300%",
                 "330%",
@@ -69,7 +65,6 @@
             "skill_type": "passive",
             "name": "Armor",
             "description": "Grants Armor {effect}.",
-            "max_level": 8,
             "effects": [
                 "+10",
                 "+20",
@@ -87,7 +82,6 @@
             "skill_type": "passive",
             "name": "HP Regen Per Sec",
             "description": "Grants HP Regen Per Sec {effect}.",
-            "max_level": 8,
             "effects": [
                 "+1",
                 "+2",
@@ -102,7 +96,6 @@
             "skill_type": "skill",
             "name": "Retribution Strike",
             "description": "Strike enemies multiple times, dealing {effect} physical damage per hit. The lower the hero's HP, the more strikes.",
-            "max_level": 5,
             "effects": [
                 "150%",
                 "170%",
@@ -119,7 +112,6 @@
             "skill_type": "passive",
             "name": "Add HP Per Kill",
             "description": "Grants Add HP Per Kill {effect}.",
-            "max_level": 10,
             "effects": [
                 "+3",
                 "+6",
@@ -139,7 +131,6 @@
             "skill_type": "passive",
             "name": "Block Chance",
             "description": "Grants Block Chance {effect}.",
-            "max_level": 10,
             "effects": [
                 "+3%",
                 "+6%",
@@ -159,7 +150,6 @@
             "skill_type": "skill",
             "name": "Aegis Field",
             "description": "Deploy a protective aura that blocks {effect} damage for allies within the area.",
-            "max_level": 5,
             "effects": [
                 "50",
                 "65",
@@ -176,7 +166,6 @@
             "skill_type": "passive",
             "name": "Physical Damage Percent",
             "description": "Grants Physical Damage {effect} Percent.",
-            "max_level": 10,
             "effects": [
                 "+15%",
                 "+30%",
@@ -196,7 +185,6 @@
             "skill_type": "passive",
             "name": "Max HP",
             "description": "Grants Max HP {effect}.",
-            "max_level": 10,
             "effects": [
                 "+5%",
                 "+10%",
@@ -216,7 +204,6 @@
             "skill_type": "skill",
             "name": "Sacred Blade",
             "description": "Imbue your sword with holy power. While buffed, attack damage increases by 50% and attacks restore {effect} HP.",
-            "max_level": 5,
             "effects": [
                 "2",
                 "4",
@@ -233,7 +220,6 @@
             "skill_type": "passive",
             "name": "Cooldown Reduction",
             "description": "Grants Cooldown Reduction {effect}.",
-            "max_level": 10,
             "effects": [
                 "+2%",
                 "+4%",
@@ -253,7 +239,6 @@
             "skill_type": "passive",
             "name": "HP Regen Per Sec",
             "description": "Grants HP Regen Per Sec {effect}.",
-            "max_level": 10,
             "effects": [
                 "+1",
                 "+2",
@@ -273,7 +258,6 @@
             "skill_type": "skill",
             "name": "Unyielding Will",
             "description": "Once per stage, when near-death, focus your mind to rise again with {effect} HP.",
-            "max_level": 5,
             "effects": [
                 "30%",
                 "40%",
@@ -290,7 +274,6 @@
             "skill_type": "passive",
             "name": "Add HP Per Kill",
             "description": "Grants Add HP Per Kill {effect}.",
-            "max_level": 10,
             "effects": [
                 "+3",
                 "+6",
@@ -310,7 +293,6 @@
             "skill_type": "passive",
             "name": "Block Chance",
             "description": "Grants Block Chance {effect}.",
-            "max_level": 10,
             "effects": [
                 "+3%",
                 "+6%",
@@ -332,7 +314,6 @@
             "skill_type": "passive",
             "name": "Attack Speed",
             "description": "Grants Attack Speed {effect}.",
-            "max_level": 10,
             "effects": [
                 "+4%",
                 "+8%",
@@ -352,7 +333,6 @@
             "skill_type": "passive",
             "name": "All Elemental Resistance",
             "description": "Grants All Elemental Resistance {effect}.",
-            "max_level": 10,
             "effects": [
                 "+30%",
                 "+60%",
@@ -374,7 +354,6 @@
             "skill_type": "passive",
             "name": "Damage Reduction",
             "description": "Grants Damage Reduction {effect}.",
-            "max_level": 10,
             "effects": [
                 "+2%",
                 "+4%",
@@ -394,7 +373,6 @@
             "skill_type": "passive",
             "name": "Attack Damage",
             "description": "Grants Attack Damage {effect}.",
-            "max_level": 10,
             "effects": [
                 "+1",
                 "+2",

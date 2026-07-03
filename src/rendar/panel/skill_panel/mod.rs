@@ -81,7 +81,7 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
                     });
                 }
 
-                ui.label(format!("{}/{}", skill.level, skill.max_level));
+                ui.label(format!("{}/{}", skill.level, skill.max_level()));
             });
         }
     });

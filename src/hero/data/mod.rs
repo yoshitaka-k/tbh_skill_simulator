@@ -29,7 +29,6 @@ pub struct SkillData {
     pub name: &'static str,
     pub description: &'static str,
     pub effects: &'static [&'static str],
-    pub max_level: u32,
 }
 
 impl SkillData {
@@ -42,7 +41,6 @@ impl SkillData {
         name: &'static str,
         description: &'static str,
         effects: &'static [&'static str],
-        max_level: u32,
     ) -> Self {
         Self {
             image,
@@ -52,7 +50,6 @@ impl SkillData {
             name,
             description,
             effects,
-            max_level,
         }
     }
 }

@@ -17,7 +17,6 @@ pub struct Skill {
     pub effects: Vec<String>,
     pub active: bool,
     pub level: u32,
-    pub max_level: u32,
 }
 
 impl Default for Skill {
@@ -35,7 +34,6 @@ impl Default for Skill {
             effects: Vec::new(),
             active: false,
             level: 0,
-            max_level: 0,
         }
     }
 }
@@ -59,8 +57,12 @@ impl Skill {
             effects: skill_data.effects.iter().map(|e| e.to_string()).collect(),
             active: active,
             level: 0,
-            max_level: skill_data.max_level,
         }
+    }
+
+    /// スキルの最大レベルを取得する。
+    pub fn max_level(&self) -> u32 {
+        self.effects.len() as u32
     }
 
     /// 永続化された状態を復元したあと、静的データから画像を再設定する。
@@ -72,7 +74,7 @@ impl Skill {
 
     /// スキルレベルを増やす。
     pub fn increase_level(&mut self) {
-        if self.level < self.max_level {
+        if self.level < self.effects.len() as u32 {
             self.level += 1;
         }
     }

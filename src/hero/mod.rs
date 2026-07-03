@@ -71,7 +71,7 @@ impl Hero {
     /// スキルの最大レベルを取得する。
     pub fn skill_max_level(&self, group: &LevelGroup, index: usize) -> u32 {
         if let Some(skills) = self.skill_list.get(group) {
-            skills[index].max_level
+            skills[index].max_level()
         } else {
             0
         }

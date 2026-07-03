@@ -6,7 +6,6 @@
             "skill_type": "passive",
             "name": "Attack Damage",
             "description": "Grants Attack Damage {effect}.",
-            "max_level": 3,
             "effects": [
                 "+1",
                 "+2",
@@ -19,7 +18,6 @@
             "skill_type": "passive",
             "name": "Attack Speed",
             "description": "Grants Attack Speed {effect}.",
-            "max_level": 8,
             "effects": [
                 "+4%",
                 "+8%",
@@ -37,7 +35,6 @@
             "skill_type": "skill",
             "name": "Rapid Fire",
             "description": "Fire multiple arrows in succession, dealing {effect} physical damage per arrow.",
-            "max_level": 5,
             "effects": [
                 "132%",
                 "144%",
@@ -52,7 +49,6 @@
             "skill_type": "skill",
             "name": "Scatter Shot",
             "description": "Fire multiple homing arrows. Deal {effect} physical damage per arrow.",
-            "max_level": 5,
             "effects": [
                 "162%",
                 "178%",
@@ -69,7 +65,6 @@
             "skill_type": "passive",
             "name": "Critical Chance",
             "description": "Grants Critical Chance {effect}.",
-            "max_level": 8,
             "effects": [
                 "+20%",
                 "+40%",
@@ -87,7 +82,6 @@
             "skill_type": "passive",
             "name": "Critical Damage",
             "description": "Grants Critical Damage {effect}.",
-            "max_level": 3,
             "effects": [
                 "+13%",
                 "+26%",
@@ -100,7 +94,6 @@
             "skill_type": "skill",
             "name": "Arrow Rain",
             "description": "Fire multiple arrows into the sky, dealing {effect} physical damage to enemies in a wide area.",
-            "max_level": 5,
             "effects": [
                 "215%",
                 "241%",
@@ -117,7 +110,6 @@
             "skill_type": "passive",
             "name": "Dodge Chance",
             "description": "Grants Dodge Chance {effect}.",
-            "max_level": 10,
             "effects": [
                 "+3%",
                 "+6%",
@@ -137,7 +129,6 @@
             "skill_type": "passive",
             "name": "Increase Projectile Damage",
             "description": "Grants Increase Projectile Damage {effect}.",
-            "max_level": 10,
             "effects": [
                 "+15%",
                 "+30%",
@@ -157,7 +148,6 @@
             "skill_type": "skill",
             "name": "Swift Surge",
             "description": "Temporarily accelerate your metabolism. Attack speed increases by {effect} for the duration.",
-            "max_level": 5,
             "effects": [
                 "50%",
                 "60%",
@@ -174,7 +164,6 @@
             "skill_type": "passive",
             "name": "Dodge Chance",
             "description": "Grants Dodge Chance {effect}.",
-            "max_level": 10,
             "effects": [
                 "+3%",
                 "+6%",
@@ -194,7 +183,6 @@
             "skill_type": "passive",
             "name": "Attack Speed",
             "description": "Grants Attack Speed {effect}.",
-            "max_level": 10,
             "effects": [
                 "+5%",
                 "+10%",
@@ -214,7 +202,6 @@
             "skill_type": "skill",
             "name": "Piercing Arrow",
             "description": "Fire a piercing arrow that deals {effect} physical damage to enemies hit.",
-            "max_level": 5,
             "effects": [
                 "244%",
                 "260%",
@@ -231,7 +218,6 @@
             "skill_type": "passive",
             "name": "Elemental Dodge Chance",
             "description": "Grants Elemental Dodge Chance {effect}.",
-            "max_level": 10,
             "effects": [
                 "+3%",
                 "+6%",
@@ -251,7 +237,6 @@
             "skill_type": "passive",
             "name": "Movement Speed",
             "description": "Grants Movement Speed {effect}.",
-            "max_level": 10,
             "effects": [
                 "+20",
                 "+40",
@@ -271,7 +256,6 @@
             "skill_type": "skill",
             "name": "Skewer Shot",
             "description": "Fire a deep-wounding arrow. Damage increases by {effect} per lodged arrow; 3+ arrows cause bleeding.",
-            "max_level": 5,
             "effects": [
                 "100%",
                 "130%",
@@ -288,7 +272,6 @@
             "skill_type": "passive",
             "name": "Dodge Chance",
             "description": "Grants Dodge Chance {effect}.",
-            "max_level": 10,
             "effects": [
                 "+3%",
                 "+6%",
@@ -308,7 +291,6 @@
             "skill_type": "passive",
             "name": "HP Leech",
             "description": "Grants HP Leech {effect}.",
-            "max_level": 10,
             "effects": [
                 "+0.5%",
                 "+1%",
@@ -330,7 +312,6 @@
             "skill_type": "passive",
             "name": "Increase Area Of Effect Damage",
             "description": "Grants Increase Area Of Effect Damage {effect}.",
-            "max_level": 10,
             "effects": [
                 "+15%",
                 "+30%",
@@ -350,7 +331,6 @@
             "skill_type": "passive",
             "name": "Increase Projectile Damage",
             "description": "Grants Increase Projectile Damage {effect}.",
-            "max_level": 10,
             "effects": [
                 "+15%",
                 "+30%",
@@ -372,7 +352,6 @@
             "skill_type": "passive",
             "name": "Dodge Chance",
             "description": "Grants Dodge Chance {effect}.",
-            "max_level": 10,
             "effects": [
                 "+3%",
                 "+6%",
@@ -392,7 +371,6 @@
             "skill_type": "passive",
             "name": "Attack Speed",
             "description": "Grants Attack Speed {effect}.",
-            "max_level": 10,
             "effects": [
                 "+5%",
                 "+10%",

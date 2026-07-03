@@ -6,7 +6,6 @@
             "skill_type": "passive",
             "name": "Attack Damage",
             "description": "Grants Attack Damage {effect}.",
-            "max_level": 3,
             "effects": [
                 "+1",
                 "+2",
@@ -19,7 +18,6 @@
             "skill_type": "passive",
             "name": "Cooldown Reduction",
             "description": "Grants Cooldown Reduction {effect}.",
-            "max_level": 8,
             "effects": [
                 "+1%",
                 "+2%",
@@ -37,7 +35,6 @@
             "skill_type": "skill",
             "name": "Fireball",
             "description": "A fireball that explodes on impact, dealing {effect} AoE fire damage.",
-            "max_level": 5,
             "effects": [
                 "270%",
                 "295%",
@@ -52,7 +49,6 @@
             "skill_type": "skill",
             "name": "Ice Orb",
             "description": "Summon an ice orb and hurl it at enemies. Slows enemies hit and deals {effect} multi-hit cold damage.",
-            "max_level": 5,
             "effects": [
                 "150%",
                 "162%",
@@ -69,7 +65,6 @@
             "skill_type": "passive",
             "name": "Area Of Effect",
             "description": "Grants Area Of Effect {effect}.",
-            "max_level": 8,
             "effects": [
                 "+3%",
                 "+6%",
@@ -87,7 +82,6 @@
             "skill_type": "passive",
             "name": "Critical Chance",
             "description": "Grants Critical Chance {effect}.",
-            "max_level": 3,
             "effects": [
                 "+20%",
                 "+40%",
@@ -100,7 +94,6 @@
             "skill_type": "skill",
             "name": "Lightning",
             "description": "Unleash electricity forward, dealing {effect} lightning damage to enemies.",
-            "max_level": 5,
             "effects": [
                 "255%",
                 "282%",
@@ -117,7 +110,6 @@
             "skill_type": "passive",
             "name": "Fire Damage Percent",
             "description": "Grants Fire Damage Percent {effect}.",
-            "max_level": 10,
             "effects": [
                 "+10%",
                 "+20%",
@@ -137,7 +129,6 @@
             "skill_type": "passive",
             "name": "Cold Damage Percent",
             "description": "Grants Cold Damage Percent {effect}.",
-            "max_level": 10,
             "effects": [
                 "+10%",
                 "+20%",
@@ -157,7 +148,6 @@
             "skill_type": "skill",
             "name": "Flame Hydra",
             "description": "Summon a hydra that fires fireballs dealing {effect} damage.",
-            "max_level": 5,
             "effects": [
                 "230%",
                 "245%",
@@ -174,7 +164,6 @@
             "skill_type": "passive",
             "name": "Lightning Damage Percent",
             "description": "Grants Lightning Damage Percent {effect}.",
-            "max_level": 10,
             "effects": [
                 "+10%",
                 "+20%",
@@ -194,7 +183,6 @@
             "skill_type": "passive",
             "name": "Max HP",
             "description": "Grants Max HP {effect}.",
-            "max_level": 10,
             "effects": [
                 "+10",
                 "+20",
@@ -214,7 +202,6 @@
             "skill_type": "skill",
             "name": "Snowstorm",
             "description": "Summon a mass of ice shards raining on enemies. Deals {effect} cold damage per second and chills enemies in the area.",
-            "max_level": 5,
             "effects": [
                 "50%",
                 "66%",
@@ -231,7 +218,6 @@
             "skill_type": "passive",
             "name": "Cooldown Reduction",
             "description": "Grants Cooldown Reduction {effect}.",
-            "max_level": 10,
             "effects": [
                 "+2%",
                 "+4%",
@@ -251,7 +237,6 @@
             "skill_type": "passive",
             "name": "Attack Damage",
             "description": "Grants Attack Damage {effect}.",
-            "max_level": 10,
             "effects": [
                 "+2",
                 "+4",
@@ -271,7 +256,6 @@
             "skill_type": "skill",
             "name": "Meteor Strike",
             "description": "Summon a meteor, dealing {effect} damage to enemies in a wide area.",
-            "max_level": 5,
             "effects": [
                 "550%",
                 "595%",
@@ -288,7 +272,6 @@
             "skill_type": "passive",
             "name": "Cast Speed",
             "description": "Grants Cast Speed {effect}.",
-            "max_level": 10,
             "effects": [
                 "+7%",
                 "+14%",
@@ -308,7 +291,6 @@
             "skill_type": "passive",
             "name": "Critical Damage",
             "description": "Grants Critical Damage {effect}.",
-            "max_level": 10,
             "effects": [
                 "+20%",
                 "+40%",
@@ -330,7 +312,6 @@
             "skill_type": "passive",
             "name": "All Elemental Resistance",
             "description": "Grants All Elemental Resistance {effect}.",
-            "max_level": 10,
             "effects": [
                 "+20%",
                 "+40%",
@@ -350,7 +331,6 @@
             "skill_type": "passive",
             "name": "Area Of Effect",
             "description": "Grants Area Of Effect {effect}.",
-            "max_level": 10,
             "effects": [
                 "+3%",
                 "+6%",
@@ -372,7 +352,6 @@
             "skill_type": "passive",
             "name": "Critical Chance",
             "description": "Grants Critical Chance {effect}.",
-            "max_level": 10,
             "effects": [
                 "+0.3%",
                 "+0.6%",
@@ -392,7 +371,6 @@
             "skill_type": "passive",
             "name": "Cooldown Reduction",
             "description": "Grants Cooldown Reduction {effect}.",
-            "max_level": 10,
             "effects": [
                 "+2%",
                 "+4%",
