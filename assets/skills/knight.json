@@ -32,8 +32,8 @@
             "id": 4,
             "skill_type": "skill",
             "name": "Shield Charge",
-            "description": "Shield Charge",
-            "effect": "",
+            "description": "Raise your shield and charge forward. Deal physical damage to enemies you collide with.",
+            "effect": "lv.1 300% / lv.2 330% / lv.3 360% / lv.4 390% / lv.5 420%",
             "max_level": 5
         }
     ],
@@ -43,8 +43,8 @@
             "id": 101,
             "skill_type": "passive",
             "name": "Armor",
-            "description": "Armor",
-            "effect": "",
+            "description": "Grants Armor.",
+            "effect": "lv.1 +10 / lv.2 +20 / lv.3 +30 / lv.4 +40 / lv.5 +50 / lv.6 +60 / lv.7 +70 / lv.8 +80",
             "max_level": 8
         },
         {
@@ -52,17 +52,17 @@
             "id": 102,
             "skill_type": "passive",
             "name": "HP Regen Per Sec",
-            "description": "HP Regen Per Sec",
-            "effect": "",
-            "max_level": 5
+            "description": "Grants HP Regen Per Sec.",
+            "effect": "lv.1 +1 / lv.2 +2 / lv.3 +3 / lv.4 +4 / lv.5 +5",
+            "max_level": 8
         },
         {
             "image": "assets/images/knight/skill_retribution_strike.png",
             "id": 103,
             "skill_type": "skill",
             "name": "Retribution Strike",
-            "description": "Retribution Strike",
-            "effect": "",
+            "description": "Strike enemies multiple times, dealing physical damage per hit. The lower the hero's HP, the more strikes.",
+            "effect": "lv.1 150% / lv.2 170% / lv.3 190% / lv.4 210% / lv.5 230%",
             "max_level": 5
         }
     ],
@@ -72,8 +72,8 @@
             "id": 201,
             "skill_type": "passive",
             "name": "Add HP Per Kill",
-            "description": "Add HP Per Kill",
-            "effect": "",
+            "description": "Grants Add HP Per Kill.",
+            "effect": "lv.1 +3 / lv.2 +6 / lv.3 +9 / lv.4 +12 / lv.5 +15 / lv.6 +18 / lv.7 +21 / lv.8 +24 / lv.9 +27 / lv.10+30",
             "max_level": 10
         },
         {
@@ -81,8 +81,8 @@
             "id": 202,
             "skill_type": "passive",
             "name": "Block Chance",
-            "description": "Block Chance",
-            "effect": "",
+            "description": "Grants Block Chance.",
+            "effect": "lv.1 +3% / lv.2 +6% / lv.3 +9% / lv.4 +12% / lv.5 +15% / lv.6 +18% / lv.7 +21% / lv.8 +24% / lv.9 +27% / lv.10+30%",
             "max_level": 10
         },
         {
@@ -90,8 +90,8 @@
             "id": 203,
             "skill_type": "skill",
             "name": "Aegis Field",
-            "description": "Aegis Field",
-            "effect": "",
+            "description": "Deploy a protective aura that blocks damage for allies within the area.",
+            "effect": "lv.1 50 / lv.2 65 / lv.3 80 / lv.4 95 / lv.5 110",
             "max_level": 5
         }
     ],
@@ -101,8 +101,8 @@
             "id": 301,
             "skill_type": "passive",
             "name": "Physical Damage Percent",
-            "description": "Physical Damage Percent",
-            "effect": "",
+            "description": "Grants Physical Damage Percent.",
+            "effect": "lv.1 +15% / lv.2 +30% / lv.3 +45% / lv.4 +60% / lv.5 +75% / lv.6 +90% / lv.7 +105% / lv.8 +120% / lv.9 +135% / lv.10+150%",
             "max_level": 10
         },
         {
@@ -110,8 +110,8 @@
             "id": 302,
             "skill_type": "passive",
             "name": "Max HP",
-            "description": "Max HP",
-            "effect": "",
+            "description": "Grants Max HP.",
+            "effect": "lv.1 +5% / lv.2 +10% / lv.3 +15% / lv.4 +20% / lv.5 +25% / lv.6 +30% / lv.7 +35% / lv.8 +40% / lv.9 +45% / lv.10+50%",
             "max_level": 10
         },
         {
@@ -119,8 +119,8 @@
             "id": 303,
             "skill_type": "skill",
             "name": "Sacred Blade",
-            "description": "Sacred Blade",
-            "effect": "",
+            "description": "Imbue your sword with holy power. While buffed, attack damage increases by 50% and attacks restore HP.",
+            "effect": "lv.1 2 / lv.2 4 / lv.3 6 / lv.4 8 / lv.5 10",
             "max_level": 5
         }
     ],
@@ -130,8 +130,8 @@
             "id": 401,
             "skill_type": "passive",
             "name": "Cooldown Reduction",
-            "description": "Cooldown Reduction",
-            "effect": "",
+            "description": "Grants Cooldown Reduction.",
+            "effect": "lv.1 +2% / lv.2 +4% / lv.3 +6% / lv.4 +8% / lv.5 +10% / lv.6 +12% / lv.7 +14% / lv.8 +16% / lv.9 +18% / lv.10 +20%",
             "max_level": 10
         },
         {
@@ -139,8 +139,8 @@
             "id": 402,
             "skill_type": "passive",
             "name": "HP Regen Per Sec",
-            "description": "HP Regen Per Sec",
-            "effect": "",
+            "description": "Grants HP Regen Per Sec.",
+            "effect": "lv.1 +1 / lv.2 +2 / lv.3 +3 / lv.4 +4 / lv.5 +5 / lv.6 +6 / lv.7 +7 / lv.8 +8 / lv.9 +9 / lv.10 +10",
             "max_level": 10
         },
         {
@@ -148,8 +148,8 @@
             "id": 403,
             "skill_type": "skill",
             "name": "Unyielding Will",
-            "description": "Unyielding Will",
-            "effect": "",
+            "description": "Once per stage, when near-death, focus your mind to rise again with HP.",
+            "effect": "lv.1 30% / lv.2 40% / lv.3 50% / lv.4 60% / lv.5 70%",
             "max_level": 5
         }
     ],
@@ -159,8 +159,8 @@
             "id": 501,
             "skill_type": "passive",
             "name": "Add HP Per Kill",
-            "description": "Add HP Per Kill",
-            "effect": "",
+            "description": "Grants Add HP Per Kill.",
+            "effect": "lv.1 +3 / lv.2 +6 / lv.3 +9 / lv.4 +12 / lv.5 +15 / lv.6 +18 / lv.7 +21 / lv.8 +24 / lv.9 +27 / lv.10+30",
             "max_level": 10
         },
         {
@@ -168,8 +168,8 @@
             "id": 502,
             "skill_type": "passive",
             "name": "Block Chance",
-            "description": "Block Chance",
-            "effect": "",
+            "description": "Grants Block Chance.",
+            "effect": "lv.1 +3% / lv.2 +6% / lv.3 +9% / lv.4 +12% / lv.5 +15% / lv.6 +18% / lv.7 +21% / lv.8 +24% / lv.9 +27% / lv.10+30%",
             "max_level": 10
         }
     ],
@@ -179,8 +179,8 @@
             "id": 601,
             "skill_type": "passive",
             "name": "Attack Speed",
-            "description": "Attack Speed",
-            "effect": "",
+            "description": "Grants Attack Speed.",
+            "effect": "lv.1 +4% / lv.2 +8% / lv.3 +12% / lv.4 +16% / lv.5 +20% / lv.6 +24% / lv.7 +28% / lv.8 +32% / lv.9 +36% / lv.10 +40%",
             "max_level": 10
         },
         {
@@ -188,8 +188,8 @@
             "id": 602,
             "skill_type": "passive",
             "name": "All Elemental Resistance",
-            "description": "All Elemental Resistance",
-            "effect": "",
+            "description": "Grants All Elemental Resistance.",
+            "effect": "lv.1 +30% / lv.2 +60% / lv.3 +90% / lv.4 +120% / lv.5 +150% / lv.6 +180% / lv.7 +210% / lv.8 +240% / lv.9 +270% / lv.10 +300%",
             "max_level": 10
         }
     ],
@@ -199,8 +199,8 @@
             "id": 701,
             "skill_type": "passive",
             "name": "Damage Reduction",
-            "description": "Damage Reduction",
-            "effect": "",
+            "description": "Grants Damage Reduction.",
+            "effect": "lv.1 +2% / lv.2 +4% / lv.3 +6% / lv.4 +8% / lv.5 +10% / lv.6 +12% / lv.7 +14% / lv.8 +16% / lv.9 +18% / lv.10 +20%",
             "max_level": 10
         },
         {
@@ -208,8 +208,8 @@
             "id": 702,
             "skill_type": "passive",
             "name": "Attack Damage",
-            "description": "Attack Damage",
-            "effect": "",
+            "description": "Grants Attack Damage.",
+            "effect": "lv.1 +1 / lv.2 +2 / lv.3 +3 / lv.4 +4 / lv.5 +5 / lv.6 +6 / lv.7 +7 / lv.8 +8 / lv.9 +9 / lv.10 +10",
             "max_level": 10
         }
     ]
