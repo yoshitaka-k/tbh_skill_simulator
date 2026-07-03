@@ -4,7 +4,7 @@ pub mod level_group;
 use crate::app::current_hero::CurrentHero;
 use crate::hero::Hero;
 use crate::hero::data::heros::HERO_DATA;
-use crate::hero::data::{knight, ranger, sorcerer};
+use crate::hero::data::{knight, ranger, sorcerer, priest};
 
 /// Deserialize/Serialize を derive して、終了時にアプリの状態を保存できるようにする。
 #[derive(serde::Deserialize, serde::Serialize)]
@@ -39,7 +39,7 @@ impl App {
             knight: Hero::new(&HERO_DATA[0], &knight::SKILL_DATA),
             ranger: Hero::new(&HERO_DATA[1], &ranger::SKILL_DATA),
             sorcerer: Hero::new(&HERO_DATA[2], &sorcerer::SKILL_DATA),
-            priest: Hero::new(&HERO_DATA[3], &knight::SKILL_DATA),
+            priest: Hero::new(&HERO_DATA[3], &priest::SKILL_DATA),
             hunter: Hero::new(&HERO_DATA[4], &knight::SKILL_DATA),
             slayer: Hero::new(&HERO_DATA[5], &knight::SKILL_DATA),
             hover_skill_detail: None,
@@ -76,7 +76,7 @@ impl App {
         self.knight.restore_images(knight::SKILL_DATA);
         self.ranger.restore_images(ranger::SKILL_DATA);
         self.sorcerer.restore_images(sorcerer::SKILL_DATA);
-        self.priest.restore_images(knight::SKILL_DATA);
+        self.priest.restore_images(priest::SKILL_DATA);
         self.hunter.restore_images(knight::SKILL_DATA);
         self.slayer.restore_images(knight::SKILL_DATA);
     }

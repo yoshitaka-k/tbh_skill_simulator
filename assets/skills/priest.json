@@ -1,0 +1,388 @@
+{
+    "level0": [
+        {
+            "image": "assets/images/passive/passive_attack_damage.png",
+            "id": 1,
+            "skill_type": "passive",
+            "name": "Attack Damage",
+            "description": "Grants Attack Damage {effect}.",
+            "effects": [
+                "+1",
+                "+2",
+                "+3"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_max_hp.png",
+            "id": 2,
+            "skill_type": "passive",
+            "name": "Max HP",
+            "description": "Grants Max HP {effect}.",
+            "effects": [
+                "+10",
+                "+20",
+                "+30",
+                "+40",
+                "+50",
+                "+60",
+                "+70",
+                "+80"
+            ]
+        },
+        {
+            "image": "assets/images/priest/skill_heal.png",
+            "id": 3,
+            "skill_type": "skill",
+            "name": "Heal",
+            "description": "Restore one ally's HP by an amount equal to {effect} of their maximum HP.",
+            "effects": [
+                "10%",
+                "12%",
+                "14%",
+                "16%",
+                "18%"
+            ]
+        },
+        {
+            "image": "assets/images/priest/skill_blessing_of_might.png",
+            "id": 4,
+            "skill_type": "skill",
+            "name": "Blessing Of Might",
+            "description": "A blessing active while equipped. Increases attack damage of self and nearby party members by {effect}.",
+            "effects": [
+                "50%",
+                "60%",
+                "70%",
+                "80%",
+                "90%"
+            ]
+        }
+    ],
+    "level10": [
+        {
+            "image": "assets/images/passive/passive_armor.png",
+            "id": 101,
+            "skill_type": "passive",
+            "name": "Armor",
+            "description": "Grants Armor {effect}.",
+            "effects": [
+                "+10",
+                "+20",
+                "+30",
+                "+40",
+                "+50",
+                "+60",
+                "+70",
+                "+80"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_damage_absorption.png",
+            "id": 102,
+            "skill_type": "passive",
+            "name": "Damage Absorption",
+            "description": "Grants Damage Absorption {effect}.",
+            "effects": [
+                "+0.5",
+                "+1",
+                "+1.5"
+            ]
+        },
+        {
+            "image": "assets/images/priest/skill_wrath_of_heaven.png",
+            "id": 103,
+            "skill_type": "skill",
+            "name": "Wrath of Heaven",
+            "description": "Imbue your scepter with divine lightning. For the duration, attacks deal {effect} lightning area damage.",
+            "effects": [
+                "430%",
+                "470%",
+                "510%",
+                "550%",
+                "590%"
+            ]
+        }
+    ],
+    "level20": [
+        {
+            "image": "assets/images/passive/passive_cooldown_reduction.png",
+            "id": 201,
+            "skill_type": "passive",
+            "name": "Cooldown Reduction",
+            "description": "Grants Cooldown Reduction {effect}.",
+            "effects": [
+                "+2%",
+                "+4%",
+                "+6%",
+                "+8%",
+                "+10%",
+                "+12%",
+                "+14%",
+                "+16%",
+                "+18%",
+                "+20%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_skill_heal_increase.png",
+            "id": 202,
+            "skill_type": "passive",
+            "name": "Skill Heal Increase",
+            "description": "Grants Skill Heal Increase {effect}.",
+            "effects": [
+                "+7%",
+                "+14%",
+                "+21%",
+                "+28%",
+                "+35%",
+                "+42%",
+                "+49%",
+                "+56%",
+                "+63%",
+                "+70%"
+            ]
+        },
+        {
+            "image": "assets/images/priest/skill_sanctuary.png",
+            "id": 203,
+            "skill_type": "skill",
+            "name": "Sanctuary",
+            "description": "Deploy a holy sanctuary across the battlefield. For the duration, all allies inside regenerate {effect} HP per second.",
+            "effects": [
+                "30",
+                "40",
+                "52",
+                "66",
+                "82"
+            ]
+        }
+    ],
+    "level30": [
+        {
+            "image": "assets/images/passive/passive_max_hp.png",
+            "id": 301,
+            "skill_type": "passive",
+            "name": "Max HP",
+            "description": "Grants Max HP {effect}.",
+            "effects": [
+                "+15",
+                "+30",
+                "+45",
+                "+60",
+                "+75",
+                "+90",
+                "+105",
+                "+120",
+                "+135",
+                "+150"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_damage_absorption.png",
+            "id": 302,
+            "skill_type": "passive",
+            "name": "Damage Absorption",
+            "description": "Grants Damage Absorption {effect}.",
+            "effects": [
+                "+0.5",
+                "+1",
+                "+1.5",
+                "+2",
+                "+2.5",
+                "+3",
+                "+3.5",
+                "+4",
+                "+4.5",
+                "+5"
+            ]
+        },
+        {
+            "image": "assets/images/priest/skill_blessing_of_warding.png",
+            "id": 303,
+            "skill_type": "skill",
+            "name": "Blessing of Warding",
+            "description": "A blessing active while equipped. Increases elemental resistance of self and nearby party members by {effect}.",
+            "effects": [
+                "10",
+                "15",
+                "20",
+                "25",
+                "30"
+            ]
+        }
+    ],
+    "level40": [
+        {
+            "image": "assets/images/passive/passive_cast_speed.png",
+            "id": 401,
+            "skill_type": "passive",
+            "name": "Cast Speed",
+            "description": "Grants Cast Speed {effect}.",
+            "effects": [
+                "+7%",
+                "+14%",
+                "+21%",
+                "+28%",
+                "+35%",
+                "+42%",
+                "+49%",
+                "+56%",
+                "+63%",
+                "+70%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_block_chance.png",
+            "id": 402,
+            "skill_type": "passive",
+            "name": "Block Chance",
+            "description": "Grants Block Chance {effect}.",
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%",
+                "+27%",
+                "+30%"
+            ]
+        },
+        {
+            "image": "assets/images/priest/skill_resurrection.png",
+            "id": 403,
+            "skill_type": "skill",
+            "name": "Resurrection",
+            "description": "Revive a fallen party member with {effect} of their max HP.",
+            "effects": [
+                "30%",
+                "35%",
+                "40%",
+                "45%",
+                "50%"
+            ]
+        }
+    ],
+    "level50": [
+        {
+            "image": "assets/images/passive/passive_physical_damage_percent.png",
+            "id": 501,
+            "skill_type": "passive",
+            "name": "Physical Damage Percent",
+            "description": "Grants Physical Damage Percent {effect}.",
+            "effects": [
+                "+15",
+                "+30",
+                "+45",
+                "+60",
+                "+75",
+                "+90",
+                "+105",
+                "+120",
+                "+135",
+                "+150"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_all_elemental_resistance.png",
+            "id": 502,
+            "skill_type": "passive",
+            "name": "All Elemental Resistance",
+            "description": "Grants All Elemental Resistance {effect}.",
+            "effects": [
+                "+20%",
+                "+40%",
+                "+60%",
+                "+80%",
+                "+100%",
+                "+120%",
+                "+140%",
+                "+160%",
+                "+180%",
+                "+200%"
+            ]
+        }
+    ],
+    "level60": [
+        {
+            "image": "assets/images/passive/passive_cooldown_reduction.png",
+            "id": 601,
+            "skill_type": "passive",
+            "name": "Cooldown Reduction",
+            "description": "Grants Cooldown Reduction {effect}.",
+            "effects": [
+                "+2%",
+                "+4%",
+                "+6%",
+                "+8%",
+                "+10%",
+                "+12%",
+                "+14%",
+                "+16%",
+                "+18%",
+                "+20%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_armor.png",
+            "id": 602,
+            "skill_type": "passive",
+            "name": "Armor",
+            "description": "Grants Armor {effect}.",
+            "effects": [
+                "+50",
+                "+100",
+                "+150",
+                "+200",
+                "+250",
+                "+300",
+                "+350",
+                "+400",
+                "+450",
+                "+500"
+            ]
+        }
+    ],
+    "level70": [
+        {
+            "image": "assets/images/passive/passive_area_of_effect.png",
+            "id": 701,
+            "skill_type": "passive",
+            "name": "Area Of Effect",
+            "description": "Grants Area Of Effect {effect}.",
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%",
+                "+27%",
+                "+30%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_cast_speed.png",
+            "id": 702,
+            "skill_type": "passive",
+            "name": "Cast Speed",
+            "description": "Grants Cast Speed {effect}.",
+            "effects": [
+                "+7%",
+                "+14%",
+                "+21%",
+                "+28%",
+                "+35%",
+                "+42%",
+                "+49%",
+                "+56%",
+                "+63%",
+                "+70%"
+            ]
+        }
+    ]
+}
