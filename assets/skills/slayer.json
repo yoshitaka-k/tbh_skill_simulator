@@ -1,0 +1,388 @@
+{
+    "level0": [
+        {
+            "image": "assets/images/passive/passive_attack_damage.png",
+            "id": 1,
+            "skill_type": "passive",
+            "name": "Attack Damage",
+            "description": "Grants Attack Damage {effect}.",
+            "effects": [
+                "+2",
+                "+4",
+                "+6"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_max_hp.png",
+            "id": 2,
+            "skill_type": "passive",
+            "name": "Max HP",
+            "description": "Grants Max HP {effect}.",
+            "effects": [
+                "+15",
+                "+30",
+                "+45",
+                "+60",
+                "+75",
+                "+90",
+                "+105",
+                "+120"
+            ]
+        },
+        {
+            "image": "assets/images/slayer/skill_slam_jump.png",
+            "id": 3,
+            "skill_type": "skill",
+            "name": "Slam Jump",
+            "description": "Leap at the enemy and, upon landing, generate a shockwave that deals {effect} physical damage to surrounding enemies.",
+            "effects": [
+                "310%",
+                "335%",
+                "360%",
+                "385%",
+                "410%"
+            ]
+        },
+        {
+            "image": "assets/images/slayer/skill_crushing_blow.png",
+            "id": 4,
+            "skill_type": "skill",
+            "name": "Crushing Blow",
+            "description": "Gather strength and smash an enemy for {effect} physical damage. If it kills the enemy, a shockwave deals 350% damage to nearby enemies.",
+            "effects": [
+                "620%",
+                "660%",
+                "700%",
+                "740%",
+                "780%"
+            ]
+        }
+    ],
+    "level10": [
+        {
+            "image": "assets/images/passive/passive_area_of_effect.png",
+            "id": 101,
+            "skill_type": "passive",
+            "name": "Area Of Effect",
+            "description": "Grants Area Of Effect {effect}.",
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_add_hp_per_kill.png",
+            "id": 102,
+            "skill_type": "passive",
+            "name": "Add HP Per Kill",
+            "description": "Grants Add HP Per Kill {effect}.",
+            "effects": [
+                "+5",
+                "+10",
+                "+15"
+            ]
+        },
+        {
+            "image": "assets/images/slayer/skill_commanders_cry.png",
+            "id": 103,
+            "skill_type": "skill",
+            "name": "Commander’s Cry",
+            "description": "Let out a cry that stuns nearby enemies and increases party critical chance multiplier by {effect}.",
+            "effects": [
+                "50%",
+                "55%",
+                "60%",
+                "65%",
+                "70%"
+            ]
+        }
+    ],
+    "level20": [
+        {
+            "image": "assets/images/passive/passive_physical_damage_percent.png",
+            "id": 201,
+            "skill_type": "passive",
+            "name": "Physical Damage Percent",
+            "description": "Grants Physical Damage Percent {effect}.",
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_hp_leech.png",
+            "id": 202,
+            "skill_type": "passive",
+            "name": "HP Leech",
+            "description": "Grants HP Leech {effect}.",
+            "effects": [
+                "+0.5%",
+                "+1%",
+                "+1.5%",
+                "+2%",
+                "+2.5%",
+                "+3%",
+                "+3.5%",
+                "+4%",
+                "+4.5%",
+                "+5%"
+            ]
+        },
+        {
+            "image": "assets/images/slayer/skill_ground_slam.png",
+            "id": 203,
+            "skill_type": "skill",
+            "name": "Ground Slam",
+            "description": "Smash the ground hard, causing an earthquake that deals {effect} physical damage to enemies. Rocks created by the earthquake explode when hit by AoE physical attacks.",
+            "effects": [
+                "370%",
+                "395%",
+                "420%",
+                "445%",
+                "470%"
+            ]
+        }
+    ],
+    "level30": [
+        {
+            "image": "assets/images/passive/passive_attack_damage.png",
+            "id": 301,
+            "skill_type": "passive",
+            "name": "Attack Damage",
+            "description": "Grants Attack Damage {effect}.",
+            "effects": [
+                "+2",
+                "+4",
+                "+6",
+                "+8",
+                "+10",
+                "+12",
+                "+14",
+                "+16",
+                "+18",
+                "+20"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_max_hp.png",
+            "id": 302,
+            "skill_type": "passive",
+            "name": "Max HP",
+            "description": "Grants Max HP {effect}.",
+            "effects": [
+                "+15",
+                "+30",
+                "+45",
+                "+60",
+                "+75",
+                "+90",
+                "+105",
+                "+120",
+                "+135",
+                "+150"
+            ]
+        },
+        {
+            "image": "assets/images/slayer/skill_axe_spin.png",
+            "id": 303,
+            "skill_type": "skill",
+            "name": "Axe Spin",
+            "description": "Spin with an axe, dealing {effect} physical damage per second to nearby enemies and a chance to apply bleeding. Attacks against bleeding enemies deal bonus damage.",
+            "effects": [
+                "100%",
+                "108%",
+                "116%",
+                "124%",
+                "132%"
+            ]
+        }
+    ],
+    "level40": [
+        {
+            "image": "assets/images/passive/passive_critical_damage.png",
+            "id": 401,
+            "skill_type": "passive",
+            "name": "Critical Damage",
+            "description": "Grants Critical Damage {effect}.",
+            "effects": [
+                "+10%",
+                "+20%",
+                "+30%",
+                "+40%",
+                "+50%",
+                "+60%",
+                "+70%",
+                "+80%",
+                "+90%",
+                "+100%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_physical_damage_percent.png",
+            "id": 402,
+            "skill_type": "passive",
+            "name": "Physical Damage Percent",
+            "description": "Grants Physical Damage Percent {effect}.",
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
+        },
+        {
+            "image": "assets/images/slayer/skill_bloodlust.png",
+            "id": 403,
+            "skill_type": "skill",
+            "name": "Bloodlust",
+            "description": "Consume half of current HP to increase attack damage by {effect} for a time.",
+            "effects": [
+                "400%",
+                "430%",
+                "460%",
+                "490%",
+                "520%"
+            ]
+        }
+    ],
+    "level50": [
+        {
+            "image": "assets/images/passive/passive_increase_area_of_effect_damage.png",
+            "id": 501,
+            "skill_type": "passive",
+            "name": "Increase Area Of Effect Damage",
+            "description": "Grants Increase Area Of Effect Damage {effect}.",
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_area_of_effect.png",
+            "id": 502,
+            "skill_type": "passive",
+            "name": "Area Of Effect",
+            "description": "Grants Area Of Effect {effect}.",
+            "effects": [
+                "+3%",
+                "+6%",
+                "+9%",
+                "+12%",
+                "+15%",
+                "+18%",
+                "+21%",
+                "+24%",
+                "+27%",
+                "+30%"
+            ]
+        }
+    ],
+    "level60": [
+        {
+            "image": "assets/images/passive/passive_max_hp.png",
+            "id": 601,
+            "skill_type": "passive",
+            "name": "Max HP",
+            "description": "Grants Max HP {effect}.",
+            "effects": [
+                "+20",
+                "+40",
+                "+60",
+                "+80",
+                "+100",
+                "+120",
+                "+140",
+                "+160",
+                "+180",
+                "+200"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_movement_speed.png",
+            "id": 602,
+            "skill_type": "passive",
+            "name": "Movement Speed",
+            "description": "Grants Movement Speed {effect}.",
+            "effects": [
+                "+2%",
+                "+4%",
+                "+6%",
+                "+8%",
+                "+10%",
+                "+12%",
+                "+14%",
+                "+16%",
+                "+18%",
+                "+20%"
+            ]
+        }
+    ],
+    "level70": [
+        {
+            "image": "assets/images/passive/passive_increase_area_of_effect_damage.png",
+            "id": 701,
+            "skill_type": "passive",
+            "name": "Increase Area Of Effect Damage",
+            "description": "Grants Increase Area Of Effect Damage {effect}.",
+            "effects": [
+                "+15%",
+                "+30%",
+                "+45%",
+                "+60%",
+                "+75%",
+                "+90%",
+                "+105%",
+                "+120%",
+                "+135%",
+                "+150%"
+            ]
+        },
+        {
+            "image": "assets/images/passive/passive_skill_duration_increase.png",
+            "id": 702,
+            "skill_type": "passive",
+            "name": "Skill Duration Increase",
+            "description": "Grants Skill Duration Increase {effect}.",
+            "effects": [
+                "+8%",
+                "+16%",
+                "+24%",
+                "+32%",
+                "+40%",
+                "+48%",
+                "+56%",
+                "+64%",
+                "+72%",
+                "+80%"
+            ]
+        }
+    ]
+}

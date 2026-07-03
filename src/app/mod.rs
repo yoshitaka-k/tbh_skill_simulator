@@ -4,7 +4,7 @@ pub mod level_group;
 use crate::app::current_hero::CurrentHero;
 use crate::hero::Hero;
 use crate::hero::data::heros::HERO_DATA;
-use crate::hero::data::{knight, ranger, sorcerer, priest, hunter};
+use crate::hero::data::{knight, ranger, sorcerer, priest, hunter, slayer};
 
 /// Deserialize/Serialize を derive して、終了時にアプリの状態を保存できるようにする。
 #[derive(serde::Deserialize, serde::Serialize)]
@@ -41,7 +41,7 @@ impl App {
             sorcerer: Hero::new(&HERO_DATA[2], &sorcerer::SKILL_DATA),
             priest: Hero::new(&HERO_DATA[3], &priest::SKILL_DATA),
             hunter: Hero::new(&HERO_DATA[4], &hunter::SKILL_DATA),
-            slayer: Hero::new(&HERO_DATA[5], &knight::SKILL_DATA),
+            slayer: Hero::new(&HERO_DATA[5], &slayer::SKILL_DATA),
             hover_skill_detail: None,
             click_skill_detail: None,
         }
@@ -78,7 +78,7 @@ impl App {
         self.sorcerer.restore_images(sorcerer::SKILL_DATA);
         self.priest.restore_images(priest::SKILL_DATA);
         self.hunter.restore_images(hunter::SKILL_DATA);
-        self.slayer.restore_images(knight::SKILL_DATA);
+        self.slayer.restore_images(slayer::SKILL_DATA);
     }
 
     /// ホバーされたスキルの詳細を設定する。

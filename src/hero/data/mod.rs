@@ -2,7 +2,7 @@ mod hero;
 mod skill;
 
 pub(crate) use hero::heros;
-pub(crate) use skill::{knight, ranger, sorcerer, priest, hunter};
+pub(crate) use skill::{knight, ranger, sorcerer, priest, hunter, slayer};
 
 /// キャラクター情報を表す。
 pub struct HeroData {
