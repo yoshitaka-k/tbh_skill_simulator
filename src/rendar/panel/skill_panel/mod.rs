@@ -61,11 +61,12 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
                             group: *group,
                             index: i,
                         });
-                        pending_details.push(SkillDetail::Click {
-                            group: *group,
-                            index: i,
-                        });
                     }
+                    pending_details.push(SkillDetail::Click {
+                        group: *group,
+                        index: i,
+                    });
+
                 } else if button.secondary_clicked() {
                     if skill.active {
                         println!("{}: {} decrease", skill.id, skill.name);
@@ -73,11 +74,11 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
                             group: *group,
                             index: i,
                         });
-                        pending_details.push(SkillDetail::Click {
-                            group: *group,
-                            index: i,
-                        });
                     }
+                    pending_details.push(SkillDetail::Click {
+                        group: *group,
+                        index: i,
+                    });
                 }
 
                 ui.label(format!("{}/{}", skill.level, skill.max_level));
