@@ -65,7 +65,7 @@ impl Hero {
         self.skill_list
             .values()
             .flat_map(|skills| skills.iter())
-            .map(|skill| skill.level)
+            .map(|skill| skill.level())
             .sum()
     }
 
@@ -81,7 +81,7 @@ impl Hero {
     /// スキルのレベルを取得する。
     pub fn skill_level(&self, group: &LevelGroup, index: usize) -> u32 {
         if let Some(skills) = self.skill_list.get(group) {
-            skills[index].level
+            *skills[index].level()
         } else {
             0
         }
@@ -155,7 +155,7 @@ impl Hero {
         let mut level_sum = 0;
         if let Some(skills) = self.skill_list.get(group) {
             for skill in skills {
-                level_sum += skill.level;
+                level_sum += skill.level();
             }
         }
         level_sum
@@ -166,7 +166,7 @@ impl Hero {
         let level_sum: u32 = self.skill_list
             .values()
             .flat_map(|skills| skills.iter())
-            .map(|skill| skill.level)
+            .map(|skill| skill.level())
             .sum();
 
         println!("level_sum: {:?}", level_sum);
@@ -174,7 +174,7 @@ impl Hero {
         for (group, skills) in &mut self.skill_list.iter_mut() {
             let active = level_sum >= group.threshold();
             for skill in skills {
-                skill.active = active;
+                skill.set_active(active);
             }
         }
     }

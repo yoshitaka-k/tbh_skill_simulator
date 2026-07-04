@@ -1,22 +1,28 @@
 use std::borrow::Cow;
+use getset::{Setters, Getters};
 
 use crate::hero::data::SkillData;
 use crate::app::level_group::LevelGroup;
 
-#[derive(Clone, serde::Deserialize, serde::Serialize)]
+#[derive(Clone, Setters, Getters, serde::Deserialize, serde::Serialize)]
 #[serde(default)]
 pub struct Skill {
     #[serde(skip)]
-    pub image: egui::ImageSource<'static>,
+    #[getset(get = "pub")]
+    image: egui::ImageSource<'static>,
 
-    pub id: u32,
-    pub group: LevelGroup,
-    pub skill_type: String,
-    pub name: String,
-    pub description: String,
-    pub effects: Vec<String>,
-    pub active: bool,
-    pub level: u32,
+    #[getset(get = "pub")]
+    id: u32,
+    group: LevelGroup,
+    skill_type: String,
+    #[getset(get = "pub")]
+    name: String,
+    description: String,
+    effects: Vec<String>,
+    #[getset(set = "pub", get = "pub")]
+    active: bool,
+    #[getset(get = "pub")]
+    level: u32,
 }
 
 impl Default for Skill {
@@ -89,12 +95,12 @@ impl Skill {
     /// スキルの説明を表示用文字列に変換する。
     pub fn description_display(&self) -> String {
         if self.level > 0 {
-            self.description.clone().replace("{effect}", &self.effects[self.level as usize - 1])
+            self.description.replace("{effect}", &self.effects[self.level as usize - 1])
         } else {
-            let level_min = self.effects[0].clone();
-            let level_max = self.effects[self.effects.len() - 1].clone();
+            let level_min = &self.effects[0];
+            let level_max = &self.effects[self.effects.len() - 1];
 
-            self.description.clone().replace("{effect}", &format!("[{} : {}]", level_min, level_max))
+            self.description.replace("{effect}", &format!("[{} : {}]", level_min, level_max))
         }
     }
 

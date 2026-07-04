@@ -23,7 +23,7 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
 
     ui.horizontal(|ui| {
         for (i, skill) in skills.iter().enumerate() {
-            let tint_color = tint_color(skill.active);
+            let tint_color = tint_color(*skill.active());
             let image = skill_image(skill, tint_color);
 
             if i > 0 {
@@ -33,9 +33,9 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
             ui.vertical(|ui| {
                 let button = ui.add(egui::Button::image(image).frame(false));
                 let border_color = if button.hovered() {
-                    hover_border_color(skill.level, skill.active)
+                    hover_border_color(*skill.level(), *skill.active())
                 } else {
-                    border_color(skill.level)
+                    border_color(*skill.level())
                 };
 
                 // Button の frame/stroke はホバー時に inner_margin が変わりサイズがずれるため、
@@ -55,8 +55,8 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
                 }
 
                 if button.clicked() {
-                    if skill.active {
-                        println!("{}: {} increase", skill.id, skill.name);
+                    if *skill.active() {
+                        println!("{}: {} increase", skill.id(), skill.name());
                         pending_changes.push(SkillChange::Increase {
                             group: *group,
                             index: i,
@@ -68,7 +68,7 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
                     });
 
                 } else if button.secondary_clicked() {
-                    println!("{}: {} decrease", skill.id, skill.name);
+                    println!("{}: {} decrease", skill.id(), skill.name());
                     pending_changes.push(SkillChange::Decrease {
                         group: *group,
                         index: i,
@@ -80,7 +80,7 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
                     });
                 }
 
-                ui.label(format!("{}/{}", skill.level, skill.max_level()));
+                ui.label(format!("{}/{}", skill.level(), skill.max_level()));
             });
         }
     });
@@ -125,7 +125,7 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
 
 /// スキル画像を作成する。
 fn skill_image(skill: &Skill, tint_color: egui::Color32) -> egui::Image<'_> {
-    egui::Image::new(skill.image.clone())
+    egui::Image::new(skill.image().clone())
         .fit_to_original_size(1.0)
         .tint(tint_color)
 }

@@ -38,7 +38,7 @@ pub(crate) fn skill_detail_panel(ui: &mut egui::Ui, app: &mut App) {
 
 /// スキルの詳細を表示する。
 fn detail_panel(ui: &mut egui::Ui, skill: &Skill) {
-    ui.heading(skill.name.clone());
+    ui.heading(skill.name());
 
     ui.separator();
 
