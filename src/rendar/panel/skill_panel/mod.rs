@@ -10,6 +10,7 @@ const COLOR_YELLOW: Color32 = Color32::from_rgb(200, 170, 80);
 const COLOR_GRAY: Color32 = Color32::from_gray(50);
 const HOVER_COLOR_YELLOW: Color32 = Color32::from_rgb(255, 220, 100);
 const HOVER_COLOR_GRAY: Color32 = Color32::from_gray(120);
+const HOVER_COLOR_GRAY_NOT_ACTIVE: Color32 = Color32::from_gray(80);
 
 enum SkillChange {
     Increase { group: LevelGroup, index: usize },
@@ -170,6 +171,6 @@ fn hover_border_color(level: u32, active: bool) -> egui::Color32 {
             HOVER_COLOR_GRAY
         }
     } else {
-        COLOR_GRAY
+        HOVER_COLOR_GRAY_NOT_ACTIVE
     }
 }
