@@ -71,6 +71,11 @@ impl Skill {
         self.effects.len() as u32
     }
 
+    /// スキルが最大レベルに達しているかどうかを取得する。
+    pub fn is_max_level(&self) -> bool {
+        self.level == self.max_level()
+    }
+
     /// 永続化された状態を復元したあと、静的データから画像を再設定する。
     pub fn restore_image(&mut self, skill_data: &SkillData) {
         if self.id == skill_data.id {

@@ -1,8 +1,15 @@
 pub(crate) mod detail;
 
+use egui::Color32;
+
 pub(crate) use crate::hero::Skill;
 use crate::app::App;
 use crate::app::level_group::LevelGroup;
+
+const COLOR_YELLOW: Color32 = Color32::from_rgb(200, 170, 80);
+const COLOR_GRAY: Color32 = Color32::from_gray(50);
+const HOVER_COLOR_YELLOW: Color32 = Color32::from_rgb(255, 220, 100);
+const HOVER_COLOR_GRAY: Color32 = Color32::from_gray(120);
 
 enum SkillChange {
     Increase { group: LevelGroup, index: usize },
@@ -80,7 +87,11 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
                     });
                 }
 
-                ui.label(format!("{}/{}", skill.level(), skill.max_level()));
+                if skill.is_max_level() {
+                    ui.colored_label(COLOR_YELLOW, format!("{}/{}", skill.level(), skill.max_level()));
+                } else {
+                    ui.label(format!("{}/{}", skill.level(), skill.max_level()));
+                }
             });
         }
     });
@@ -142,9 +153,9 @@ fn tint_color(active: bool) -> egui::Color32 {
 /// スキルレベルに応じて border 色を返す。
 fn border_color(level: u32) -> egui::Color32 {
     if level > 0 {
-        egui::Color32::from_rgb(200, 170, 80)
+        COLOR_YELLOW
     } else {
-        egui::Color32::from_gray(50)
+        COLOR_GRAY
     }
 }
 
@@ -152,11 +163,11 @@ fn border_color(level: u32) -> egui::Color32 {
 fn hover_border_color(level: u32, active: bool) -> egui::Color32 {
     if active{
         if level > 0 {
-            egui::Color32::from_rgb(255, 220, 100)
+            HOVER_COLOR_YELLOW
         } else {
-            egui::Color32::from_gray(120)
+            HOVER_COLOR_GRAY
         }
     } else {
-        egui::Color32::from_gray(50)
+        COLOR_GRAY
     }
 }
