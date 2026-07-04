@@ -96,6 +96,7 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
         }
     });
 
+    // スキルレベルの変更を適用する。
     for change in pending_changes {
         match change {
             SkillChange::Increase { group, index } => {
@@ -118,6 +119,7 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
         hero.update_active_skill();
     }
 
+    // スキル詳細の表示を更新する。
     for detail in pending_details {
         match detail {
             SkillDetail::Hover { group, index } => {
