@@ -1,4 +1,5 @@
 use crate::App;
+use crate::hero::Skill;
 
 const DETAIL_HEIGHT: f32 = 140.0;
 
@@ -14,10 +15,10 @@ pub(crate) fn skill_detail_panel(ui: &mut egui::Ui, app: &mut App) {
             .id_salt("skill_detail")
             .max_height(DETAIL_HEIGHT)
             .show(ui, |ui| {
-                if let Some(hover_detail) = app.hover_skill_detail() {
-                    ui.label(hover_detail);
-                } else if let Some(click_detail) = app.click_skill_detail() {
-                    ui.label(click_detail);
+                if let Some(hover_skill) = app.hover_skill() {
+                    detail_panel(ui, hover_skill);
+                } else if let Some(click_skill) = app.click_skill() {
+                    detail_panel(ui, click_skill);
                 }
             });
     });
@@ -33,4 +34,17 @@ pub(crate) fn skill_detail_panel(ui: &mut egui::Ui, app: &mut App) {
                 ui.label("Skill Effects Panel");
             });
     });
+}
+
+/// スキルの詳細を表示する。
+fn detail_panel(ui: &mut egui::Ui, skill: &Skill) {
+    ui.heading(skill.name.clone());
+
+    ui.separator();
+
+    ui.label(skill.description_display());
+
+    ui.separator();
+
+    ui.label(skill.effects_display());
 }

@@ -36,8 +36,8 @@ pub(crate) fn hero_row(ui: &mut egui::Ui, hero: &HeroData, app: &mut App) {
                 _ => CurrentHero::Knight,
             });
 
-            app.set_hover_skill_detail(None);
-            app.set_click_skill_detail(None);
+            app.set_hover_skill(None);
+            app.set_click_skill(None);
         }
     });
 }

@@ -4,7 +4,7 @@ pub mod level_group;
 use getset::{Setters, Getters};
 
 use crate::app::current_hero::CurrentHero;
-use crate::hero::Hero;
+use crate::hero::{Hero, Skill};
 use crate::hero::data::heros::HERO_DATA;
 use crate::hero::data::{knight, ranger, sorcerer, priest, hunter, slayer};
 
@@ -24,9 +24,9 @@ pub struct App {
     slayer: Hero,
 
     #[serde(skip)]
-    hover_skill_detail: Option<String>,
+    hover_skill: Option<Skill>,
     #[serde(skip)]
-    click_skill_detail: Option<String>,
+    click_skill: Option<Skill>,
 }
 
 impl Default for App {
@@ -46,8 +46,8 @@ impl App {
             priest: Hero::new(&HERO_DATA[3], &priest::SKILL_DATA),
             hunter: Hero::new(&HERO_DATA[4], &hunter::SKILL_DATA),
             slayer: Hero::new(&HERO_DATA[5], &slayer::SKILL_DATA),
-            hover_skill_detail: None,
-            click_skill_detail: None,
+            hover_skill: None,
+            click_skill: None,
         }
     }
 
@@ -86,22 +86,22 @@ impl App {
     }
 
     /// ホバーされたスキルの詳細を設定する。
-    pub fn set_hover_skill_detail(&mut self, text: Option<String>) {
-        self.hover_skill_detail = text;
+    pub fn set_hover_skill(&mut self, skill: Option<Skill>) {
+        self.hover_skill = skill;
     }
 
     /// クリックされたスキルの詳細を設定する。
-    pub fn set_click_skill_detail(&mut self, text: Option<String>) {
-        self.click_skill_detail = text;
+    pub fn set_click_skill(&mut self, skill: Option<Skill>) {
+        self.click_skill = skill;
     }
 
     /// ホバーされたスキルの詳細を返す。
-    pub fn hover_skill_detail(&self) -> Option<&String> {
-        self.hover_skill_detail.as_ref()
+    pub fn hover_skill(&self) -> Option<&Skill> {
+        self.hover_skill.as_ref()
     }
 
     /// クリックされたスキルの詳細を返す。
-    pub fn click_skill_detail(&self) -> Option<&String> {
-        self.click_skill_detail.as_ref()
+    pub fn click_skill(&self) -> Option<&Skill> {
+        self.click_skill.as_ref()
     }
 }

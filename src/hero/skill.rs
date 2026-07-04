@@ -3,7 +3,7 @@ use std::borrow::Cow;
 use crate::hero::data::SkillData;
 use crate::app::level_group::LevelGroup;
 
-#[derive(serde::Deserialize, serde::Serialize)]
+#[derive(Clone, serde::Deserialize, serde::Serialize)]
 #[serde(default)]
 pub struct Skill {
     #[serde(skip)]
