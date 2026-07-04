@@ -18,12 +18,8 @@ pub(crate) fn detail_panel(ui: &mut egui::Ui, skill: &Skill) {
 
 /// スキルの効果を表示する。
 pub(crate) fn effects_panel(ui: &mut egui::Ui, hero: &Hero) {
-    ui.heading("Skill Effects");
-
-    ui.separator();
-
     for (_, skills) in hero.skill_list().iter() {
-        for (i, skill) in skills.iter().enumerate() {
+        for skill in skills.iter() {
             if *skill.level() > 0 {
                 detail_rich_label(ui, skill);
 
@@ -31,8 +27,6 @@ pub(crate) fn effects_panel(ui: &mut egui::Ui, hero: &Hero) {
             }
         }
     }
-
-    ui.add_space(10.0);
 }
 
 /// スキルの詳細をリッチテキストで表示する。

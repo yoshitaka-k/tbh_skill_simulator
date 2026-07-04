@@ -5,14 +5,15 @@ use egui::Color32;
 use crate::App;
 use panel::{detail_panel, effects_panel};
 
-const DETAIL_HEIGHT: f32 = 120.0;
+const DETAIL_HEIGHT: f32 = 100.0;
+const HEADER_HEIGHT: f32 = 40.0;
 const COLOR_YELLOW: Color32 = Color32::from_rgb(200, 170, 80);
 
 pub(crate) fn skill_detail_panel(ui: &mut egui::Ui, app: &mut App) {
     let w = ui.available_width();
     let total_h = ui.available_height();
     let sep = ui.spacing().item_spacing.y + 1.0;
-    let bottom_h = (total_h - DETAIL_HEIGHT - sep).max(0.0);
+    let bottom_h = (total_h - DETAIL_HEIGHT - HEADER_HEIGHT - sep).max(0.0);
 
     ui.allocate_ui(egui::vec2(w, DETAIL_HEIGHT), |ui| {
         ui.set_height(DETAIL_HEIGHT);
@@ -25,8 +26,14 @@ pub(crate) fn skill_detail_panel(ui: &mut egui::Ui, app: &mut App) {
                 } else if let Some(click_skill) = app.click_skill() {
                     detail_panel(ui, click_skill);
                 }
+
+                ui.add_space(10.0);
             });
     });
+
+    ui.separator();
+
+    ui.heading("Skill Effects");
 
     ui.separator();
 
@@ -37,6 +44,8 @@ pub(crate) fn skill_detail_panel(ui: &mut egui::Ui, app: &mut App) {
             .max_height(bottom_h)
             .show(ui, |ui| {
                 effects_panel(ui, app.hero());
+
+                ui.add_space(10.0);
             });
     });
 }
