@@ -118,4 +118,37 @@ impl Skill {
             .collect::<Vec<_>>()
             .join(" / ")
     }
+
+    /// スキルの説明を分割する。
+    pub fn description_parts(&self) -> Vec<String> {
+        let mut parts = Vec::new();
+        let lines: Vec<&str> = self.description.split("{effect}").collect();
+
+        let effect = if self.level > 0 {
+            self.effects[self.level as usize - 1].clone()
+        } else {
+            let level_min = &self.effects[0];
+            let level_max = &self.effects[self.effects.len() - 1];
+            format!("[{} : {}]", level_min, level_max)
+        };
+
+        parts.push(lines[0].to_string());
+        parts.push(effect);
+        parts.push(lines[1].to_string());
+
+        parts
+    }
+
+    /// スキルの効果を分割する。
+    pub fn effects_parts(&self) -> Vec<String> {
+        let mut parts = Vec::new();
+        let effects = self.effects_display();
+        let lines: Vec<&str> = effects.split(" / ").collect();
+
+        for line in lines {
+            parts.push(line.to_string());
+        }
+
+        parts
+    }
 }
