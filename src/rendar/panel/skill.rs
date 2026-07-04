@@ -9,7 +9,7 @@ pub(crate) fn skill_list_panel(ui: &mut egui::Ui, app: &mut App) {
         ui.add_space(10.0);
 
         let hero = app.hero_mut();
-        let groups: Vec<_> = hero.skill_list.keys().copied().collect();
+        let groups: Vec<_> = hero.skill_list().keys().copied().collect();
 
         for group in groups {
             skill_row(ui, app, &group);

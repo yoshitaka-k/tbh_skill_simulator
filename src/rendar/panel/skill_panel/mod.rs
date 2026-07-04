@@ -17,7 +17,7 @@ enum SkillDetail {
 /// スキル一覧を横並びで表示する。
 pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
     let hero = app.hero_mut();
-    let skills = &hero.skill_list[group];
+    let skills = &hero.skill_list_by_group(group);
     let mut pending_changes: Vec<SkillChange> = Vec::new();
     let mut pending_details: Vec<SkillDetail> = Vec::new();
 
@@ -90,7 +90,7 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
         match change {
             SkillChange::Increase { group, index } => {
                 // スキルポイントがあり、スキルレベルが最大レベル未満の場合は、スキルレベルを増やす。
-                if hero.skill_points > 0 && hero.skill_level(&group, index) < hero.skill_max_level(&group, index) {
+                if *hero.skill_points() > 0 && hero.skill_level(&group, index) < hero.skill_max_level(&group, index) {
                     hero.decrease_skill_points();
                     hero.increase_skill_level(&group, index);
                 }

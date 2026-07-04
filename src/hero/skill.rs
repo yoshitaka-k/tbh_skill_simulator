@@ -5,7 +5,7 @@ use crate::app::level_group::LevelGroup;
 
 #[derive(serde::Deserialize, serde::Serialize)]
 #[serde(default)]
-pub(crate) struct Skill {
+pub struct Skill {
     #[serde(skip)]
     pub image: egui::ImageSource<'static>,
 

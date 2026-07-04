@@ -1,5 +1,7 @@
 mod skill;
 
+use getset::{Setters, Getters};
+
 pub(crate) mod data;
 pub(crate) use skill::Skill;
 
@@ -8,14 +10,17 @@ use crate::hero::data::{HeroData, SkillData};
 use crate::app::level_group::LevelGroup;
 
 /// 英雄の基底クラス
-#[derive(Default, serde::Deserialize, serde::Serialize)]
+#[derive(Default, Setters, Getters, serde::Deserialize, serde::Serialize)]
 #[serde(default)]
 pub struct Hero {
-    pub name: String,
-    pub level: u32,
-    pub skill_points: u32,
-    pub skill_list: BTreeMap<LevelGroup, Vec<Skill>>,
-    pub skill_detail: String,
+    #[getset(get = "pub")]
+    name: String,
+    #[getset(set = "pub", get = "pub")]
+    level: u32,
+    #[getset(set = "pub", get = "pub")]
+    skill_points: u32,
+    #[getset(set = "pub", get = "pub")]
+    skill_list: BTreeMap<LevelGroup, Vec<Skill>>,
 }
 
 impl Hero {
@@ -37,8 +42,22 @@ impl Hero {
             level: 1,
             skill_points: 1,
             skill_list: skills_list,
-            skill_detail: String::new(),
         }
+    }
+
+    /// グループに属するスキル一覧を取得する。
+    pub fn skill_list_by_group(&self, group: &LevelGroup) -> &Vec<Skill> {
+        self.skill_list().get(group).unwrap()
+    }
+
+    /// レベルを増やす。
+    pub fn increase_level(&mut self) {
+        self.level += 1;
+    }
+
+    /// レベルを減らす。
+    pub fn decrease_level(&mut self) {
+        self.level -= 1;
     }
 
     /// スキルのレベル合計を取得する。
