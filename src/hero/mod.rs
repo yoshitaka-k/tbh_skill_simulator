@@ -8,7 +8,7 @@ use crate::hero::data::{HeroData, SkillData};
 use crate::app::level_group::LevelGroup;
 
 /// 英雄の基底クラス
-#[derive(Debug, Default, serde::Deserialize, serde::Serialize)]
+#[derive(Default, serde::Deserialize, serde::Serialize)]
 #[serde(default)]
 pub struct Hero {
     pub name: String,

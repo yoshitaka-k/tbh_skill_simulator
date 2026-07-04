@@ -3,9 +3,9 @@ use std::borrow::Cow;
 use crate::hero::data::SkillData;
 use crate::app::level_group::LevelGroup;
 
-#[derive(Debug, serde::Deserialize, serde::Serialize)]
+#[derive(serde::Deserialize, serde::Serialize)]
 #[serde(default)]
-pub struct Skill {
+pub(crate) struct Skill {
     #[serde(skip)]
     pub image: egui::ImageSource<'static>,
 

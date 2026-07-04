@@ -1,5 +1,4 @@
 #[derive(
-    Debug,
     Clone,
     Copy,
     PartialEq,
@@ -71,13 +70,13 @@ impl LevelGroup {
             LevelGroup::Level40 => Some(LevelGroup::Level50),
             LevelGroup::Level50 => Some(LevelGroup::Level60),
             LevelGroup::Level60 => Some(LevelGroup::Level70),
-            LevelGroup::Level70 => Some(LevelGroup::Level70),
+            LevelGroup::Level70 => None,
         }
     }
 
     pub fn previous(&self) -> Option<LevelGroup> {
         match self {
-            LevelGroup::Level0 => Some(LevelGroup::Level0),
+            LevelGroup::Level0 => None,
             LevelGroup::Level10 => Some(LevelGroup::Level0),
             LevelGroup::Level20 => Some(LevelGroup::Level10),
             LevelGroup::Level30 => Some(LevelGroup::Level20),
