@@ -32,13 +32,13 @@ pub(crate) fn level_panel(ui: &mut egui::Ui, app: &mut App) {
         ui.label("Skill Points:");
         ui.label(app.hero().skill_points().to_string());
     });
+}
 
-    /// スキルポイントを更新する。
-    fn update_skill_points(hero: &mut Hero) {
-        if *hero.level() as i32 - hero.skill_level_sum() as i32 > 0 {
-            hero.set_skill_points(hero.level() - hero.skill_level_sum());
-        } else {
-            hero.set_skill_points(0);
-        }
+/// スキルポイントを更新する。
+fn update_skill_points(hero: &mut Hero) {
+    if *hero.level() as i32 - hero.skill_level_sum() as i32 > 0 {
+        hero.set_skill_points(hero.level() - hero.skill_level_sum());
+    } else {
+        hero.set_skill_points(0);
     }
 }
