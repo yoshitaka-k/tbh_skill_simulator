@@ -2,7 +2,7 @@ use std::borrow::Cow;
 use getset::{Setters, Getters};
 
 use crate::hero::data::SkillData;
-use crate::app::level_group::LevelGroup;
+use crate::hero::level_group::LevelGroup;
 
 #[derive(Clone, Setters, Getters, serde::Deserialize, serde::Serialize)]
 #[serde(default)]

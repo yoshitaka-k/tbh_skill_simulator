@@ -1,3 +1,4 @@
+pub mod level_group;
 mod skill;
 
 use getset::{Setters, Getters};
@@ -7,7 +8,7 @@ pub(crate) use skill::Skill;
 
 use std::collections::BTreeMap;
 use crate::hero::data::{HeroData, SkillData};
-use crate::app::level_group::LevelGroup;
+use crate::hero::level_group::LevelGroup;
 
 /// 英雄の基底クラス
 #[derive(Default, Setters, Getters, serde::Deserialize, serde::Serialize)]

@@ -4,7 +4,7 @@ use egui::Color32;
 
 pub(crate) use crate::hero::Skill;
 use crate::app::App;
-use crate::app::level_group::LevelGroup;
+use crate::hero::level_group::LevelGroup;
 
 const COLOR_YELLOW: Color32 = Color32::from_rgb(200, 170, 80);
 const COLOR_GRAY: Color32 = Color32::from_gray(50);
