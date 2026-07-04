@@ -68,13 +68,12 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
                     });
 
                 } else if button.secondary_clicked() {
-                    if skill.active {
-                        println!("{}: {} decrease", skill.id, skill.name);
-                        pending_changes.push(SkillChange::Decrease {
-                            group: *group,
-                            index: i,
-                        });
-                    }
+                    println!("{}: {} decrease", skill.id, skill.name);
+                    pending_changes.push(SkillChange::Decrease {
+                        group: *group,
+                        index: i,
+                    });
+
                     pending_details.push(SkillDetail::Click {
                         group: *group,
                         index: i,
