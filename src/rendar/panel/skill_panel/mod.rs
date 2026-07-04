@@ -1,16 +1,9 @@
 pub(crate) mod detail;
 
-use egui::Color32;
-
 pub(crate) use crate::hero::Skill;
+use crate::rendar::panel::{COLOR_YELLOW, COLOR_GRAY, HOVER_COLOR_YELLOW, HOVER_COLOR_GRAY, HOVER_COLOR_GRAY_NOT_ACTIVE};
 use crate::app::App;
 use crate::hero::level_group::LevelGroup;
-
-const COLOR_YELLOW: Color32 = Color32::from_rgb(200, 170, 80);
-const COLOR_GRAY: Color32 = Color32::from_gray(50);
-const HOVER_COLOR_YELLOW: Color32 = Color32::from_rgb(255, 220, 100);
-const HOVER_COLOR_GRAY: Color32 = Color32::from_gray(120);
-const HOVER_COLOR_GRAY_NOT_ACTIVE: Color32 = Color32::from_gray(80);
 
 enum SkillChange {
     Increase { group: LevelGroup, index: usize },

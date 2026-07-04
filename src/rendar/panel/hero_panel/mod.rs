@@ -2,6 +2,7 @@ pub(crate) use crate::hero::data::HeroData;
 
 use crate::app::current_hero::CurrentHero;
 use crate::App;
+use crate::rendar::panel::{COLOR_YELLOW, COLOR_GRAY, HOVER_COLOR_YELLOW, HOVER_COLOR_GRAY, HERO_IMAGE_GRAY_SCALE};
 
 /// キャラクターパネルを表示する。
 pub(crate) fn hero_row(ui: &mut egui::Ui, hero: &HeroData, app: &mut App) {
@@ -54,24 +55,24 @@ fn tint_color(hero: &HeroData, app: &App) -> egui::Color32 {
     if hero.name == app.current_hero().to_string() {
         egui::Color32::WHITE
     } else {
-        egui::Color32::from_gray(100)
+        HERO_IMAGE_GRAY_SCALE
     }
 }
 
 /// キャラクター border 色を返す。
 fn border_color(hero: &HeroData, app: &App) -> egui::Color32 {
     if hero.name == app.current_hero().to_string() {
-        egui::Color32::from_rgb(200, 170, 80)
+        COLOR_YELLOW
     } else {
-        egui::Color32::from_gray(50)
+        COLOR_GRAY
     }
 }
 
 /// キャラクター hover border 色を返す。
 fn hover_border_color(hero: &HeroData, app: &App) -> egui::Color32 {
     if hero.name == app.current_hero().to_string() {
-        egui::Color32::from_rgb(255, 220, 100)
+        HOVER_COLOR_YELLOW
     } else {
-        egui::Color32::from_gray(100)
+        HOVER_COLOR_GRAY
     }
 }
