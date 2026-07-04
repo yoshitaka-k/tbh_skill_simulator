@@ -74,7 +74,7 @@ impl LevelGroup {
         }
     }
 
-    pub fn previous(&self) -> Option<LevelGroup> {
+    pub fn prev(&self) -> Option<LevelGroup> {
         match self {
             LevelGroup::Level0 => None,
             LevelGroup::Level10 => Some(LevelGroup::Level0),

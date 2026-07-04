@@ -48,7 +48,12 @@ impl Hero {
 
     /// グループに属するスキル一覧を取得する。
     pub fn skill_list_by_group(&self, group: &LevelGroup) -> &Vec<Skill> {
-        self.skill_list().get(group).unwrap()
+        self.skill_list.get(group).unwrap()
+    }
+
+    /// グループに属するスキル一覧を取得する。
+    pub fn skill_list_by_group_mut(&mut self, group: &LevelGroup) -> &mut Vec<Skill> {
+        self.skill_list.get_mut(group).unwrap()
     }
 
     /// レベルを増やす。
@@ -169,8 +174,6 @@ impl Hero {
             .flat_map(|skills| skills.iter())
             .map(|skill| skill.level())
             .sum();
-
-        println!("level_sum: {:?}", level_sum);
 
         for (group, skills) in &mut self.skill_list.iter_mut() {
             let active = level_sum >= group.threshold();
