@@ -89,15 +89,18 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
     for change in pending_changes {
         match change {
             SkillChange::Increase { group, index } => {
+                // スキルポイントがあり、スキルレベルが最大レベル未満の場合は、スキルレベルを増やす。
                 if hero.skill_points > 0 && hero.skill_level(&group, index) < hero.skill_max_level(&group, index) {
-                    hero.skill_points -= 1;
+                    hero.decrease_skill_points();
                     hero.increase_skill_level(&group, index);
                 }
             },
             SkillChange::Decrease { group, index } => {
+                // スキルレベルが0より大きい場合は、スキルレベルを減らす。
                 if hero.skill_level(&group, index) > 0 {
-                    hero.skill_points += 1;
-                    hero.decrease_skill_level(&group, index);
+                    if hero.decrease_skill_level(&group, index) {
+                        hero.increase_skill_points();
+                    }
                 }
             }
         }

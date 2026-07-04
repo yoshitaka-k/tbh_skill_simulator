@@ -86,6 +86,7 @@ impl Skill {
         }
     }
 
+    /// スキルの説明を表示用文字列に変換する。
     pub fn description_display(&self) -> String {
         if self.level > 0 {
             self.description.clone().replace("{effect}", &self.effects[self.level as usize - 1])
@@ -97,7 +98,7 @@ impl Skill {
         }
     }
 
-    /// 全レベルの効果を表示用文字列に整形する。
+    /// スキルの効果を表示用文字列に変換する。
     pub fn effects_display(&self) -> String {
         self.effects
             .iter()

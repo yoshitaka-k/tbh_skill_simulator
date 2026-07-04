@@ -105,18 +105,19 @@ impl Hero {
     }
 
     /// スキルレベルを減らす。
-    pub fn decrease_skill_level(&mut self, group: &LevelGroup, index: usize) {
+    pub fn decrease_skill_level(&mut self, group: &LevelGroup, index: usize) -> bool {
         if let Some(next_group) = group.next() {
             // 現在のグループのレベル合計が10未満で、次のグループのレベル合計が0以上の場合は、スキルレベルを減らせない。
             if self.skill_group_level_sum(group) <= 10 && self.skill_group_level_sum(&next_group) > 0 {
-                println!("cargo:warning=next_group: {:?} level_sum: {:?}", next_group, self.skill_group_level_sum(&next_group));
-                return;
+                return false;
             }
         }
 
         if let Some(skills) = self.skill_list.get_mut(group) {
             skills[index].decrease_level();
+            return true;
         }
+        return false;
     }
 
     /// 永続化された状態を復元したあと、静的データからスキル画像を再設定する。
@@ -148,7 +149,8 @@ impl Hero {
             .flat_map(|skills| skills.iter())
             .map(|skill| skill.level)
             .sum();
-        println!("cargo:warning=level_sum: {:?}", level_sum);
+
+        println!("level_sum: {:?}", level_sum);
 
         for (group, skills) in &mut self.skill_list.iter_mut() {
             let active = level_sum >= group.threshold();
