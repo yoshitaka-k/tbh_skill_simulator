@@ -1,5 +1,7 @@
-use crate::{App, capitalize, MAX_LEVEL};
+use crate::{App, capitalize};
 use crate::hero::Hero;
+
+const MAX_LEVEL: u32 = 101;
 
 /// レベルパネルを表示する。
 pub(crate) fn level_panel(ui: &mut egui::Ui, app: &mut App) {
