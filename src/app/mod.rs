@@ -1,17 +1,21 @@
 pub mod current_hero;
 pub mod level_group;
 
+use getset::{Setters, Getters};
+
 use crate::app::current_hero::CurrentHero;
 use crate::hero::Hero;
 use crate::hero::data::heros::HERO_DATA;
 use crate::hero::data::{knight, ranger, sorcerer, priest, hunter, slayer};
 
 /// Deserialize/Serialize を derive して、終了時にアプリの状態を保存できるようにする。
-#[derive(serde::Deserialize, serde::Serialize)]
+#[derive(Setters, Getters, serde::Deserialize, serde::Serialize)]
 // 新しいフィールドを追加したとき、古い状態を復元する際にデフォルト値を使う
 #[serde(default)]
 pub struct App {
-    pub current_hero: CurrentHero,
+    #[getset(get = "pub", set = "pub")]
+    current_hero: CurrentHero,
+
     knight: Hero,
     ranger: Hero,
     sorcerer: Hero,

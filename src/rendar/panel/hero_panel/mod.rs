@@ -26,7 +26,7 @@ pub(crate) fn hero_row(ui: &mut egui::Ui, hero: &HeroData, app: &mut App) {
 
         if button.clicked() {
             println!("{}", hero.name);
-            app.current_hero = match hero.name {
+            app.set_current_hero(match hero.name {
                 "knight" => CurrentHero::Knight,
                 "ranger" => CurrentHero::Ranger,
                 "slayer" => CurrentHero::Slayer,
@@ -34,7 +34,7 @@ pub(crate) fn hero_row(ui: &mut egui::Ui, hero: &HeroData, app: &mut App) {
                 "priest" => CurrentHero::Priest,
                 "hunter" => CurrentHero::Hunter,
                 _ => CurrentHero::Knight,
-            };
+            });
 
             app.set_hover_skill_detail(None);
             app.set_click_skill_detail(None);
@@ -51,7 +51,7 @@ fn hero_image(hero: &HeroData, tint_color: egui::Color32) -> egui::Image<'_> {
 
 /// キャラクター tint 色を返す。
 fn tint_color(hero: &HeroData, app: &App) -> egui::Color32 {
-    if hero.name == app.current_hero.to_string() {
+    if hero.name == app.current_hero().to_string() {
         egui::Color32::WHITE
     } else {
         egui::Color32::from_gray(100)
@@ -60,7 +60,7 @@ fn tint_color(hero: &HeroData, app: &App) -> egui::Color32 {
 
 /// キャラクター border 色を返す。
 fn border_color(hero: &HeroData, app: &App) -> egui::Color32 {
-    if hero.name == app.current_hero.to_string() {
+    if hero.name == app.current_hero().to_string() {
         egui::Color32::from_rgb(200, 170, 80)
     } else {
         egui::Color32::from_gray(50)
@@ -69,7 +69,7 @@ fn border_color(hero: &HeroData, app: &App) -> egui::Color32 {
 
 /// キャラクター hover border 色を返す。
 fn hover_border_color(hero: &HeroData, app: &App) -> egui::Color32 {
-    if hero.name == app.current_hero.to_string() {
+    if hero.name == app.current_hero().to_string() {
         egui::Color32::from_rgb(255, 220, 100)
     } else {
         egui::Color32::from_gray(100)
