@@ -47,12 +47,52 @@ fn include_image_path(image: &str) -> String {
     }
 }
 
+/// Windows 向け exe アイコンとメタデータを埋め込む。
+fn embed_windows_resources(manifest_dir: &Path, out_dir: &Path) {
+    if env::var("CARGO_CFG_TARGET_OS").ok().as_deref() != Some("windows") {
+        return;
+    }
+
+    let png_path = manifest_dir.join("assets/icon.png");
+    println!("cargo:rerun-if-changed={}", png_path.display());
+
+    let ico_path = out_dir.join("app.ico");
+    write_ico_from_png(&png_path, &ico_path);
+
+    winresource::WindowsResource::new()
+        .set_icon(ico_path.to_str().expect("invalid ico path"))
+        .compile()
+        .expect("failed to compile Windows resources");
+}
+
+/// PNG から Windows 用 ICO を生成する。
+fn write_ico_from_png(png_path: &Path, ico_path: &Path) {
+    let image = image::open(png_path).expect("failed to open assets/icon.png");
+    let mut icon_dir = ico::IconDir::new(ico::ResourceType::Icon);
+
+    for size in [256, 128, 64, 48, 32, 16] {
+        let rgba = image
+            .resize_exact(size, size, image::imageops::FilterType::Lanczos3)
+            .to_rgba8();
+        let icon_image = ico::IconImage::from_rgba_data(size, size, rgba.into_raw());
+        let entry = ico::IconDirEntry::encode_as_png(&icon_image).expect("failed to encode icon");
+        icon_dir.add_entry(entry);
+    }
+
+    let file = fs::File::create(ico_path).expect("failed to create ico file");
+    icon_dir.write(file).expect("failed to write ico file");
+}
+
 /// メイン関数
 fn main() {
     let manifest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-    let heros_dir = Path::new(&manifest_dir).join("assets/heros");
-    let skills_dir = Path::new(&manifest_dir).join("assets/skills");
+    let manifest_path = Path::new(&manifest_dir);
+    let heros_dir = manifest_path.join("assets/heros");
+    let skills_dir = manifest_path.join("assets/skills");
     let out_dir = env::var("OUT_DIR").unwrap();
+
+    // Windows 向け exe アイコンとメタデータを埋め込む。
+    embed_windows_resources(manifest_path, Path::new(&out_dir));
 
     // キャラクター用画像を生成する。
     println!("cargo:rerun-if-changed={}", heros_dir.display());
