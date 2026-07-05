@@ -4001,7 +4001,7 @@ dependencies = [
 
 [[package]]
 name = "tbh_skill_simulator"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "eframe",
  "egui",

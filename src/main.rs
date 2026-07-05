@@ -1,10 +1,10 @@
+// リリースビルド時に Windows でコンソールウィンドウを隠す
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+#![warn(clippy::all, rust_2018_idioms)]
+
 use eframe::icon_data::from_png_bytes;
 
 use tbh_skill_simulator::{App, Rendar};
-
-#[warn(clippy::all, rust_2018_idioms)]
-// リリースビルド時に Windows でコンソールウィンドウを隠す
-#[cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 const APP_NAME: &str = "TBH Skill Simulator";
 
