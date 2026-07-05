@@ -26,7 +26,6 @@ pub(crate) fn hero_row(ui: &mut egui::Ui, hero: &HeroData, app: &mut App) {
         );
 
         if button.clicked() {
-            println!("{}", hero.name);
             app.set_current_hero(match hero.name {
                 "knight" => CurrentHero::Knight,
                 "ranger" => CurrentHero::Ranger,

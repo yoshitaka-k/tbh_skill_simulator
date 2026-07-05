@@ -57,7 +57,6 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
 
                 if button.clicked() {
                     if *skill.active() {
-                        println!("{}: {} increase", skill.id(), skill.name());
                         pending_changes.push(SkillChange::Increase {
                             group: *group,
                             index: i,
@@ -69,7 +68,6 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
                     });
 
                 } else if button.secondary_clicked() {
-                    println!("{}: {} decrease", skill.id(), skill.name());
                     pending_changes.push(SkillChange::Decrease {
                         group: *group,
                         index: i,
