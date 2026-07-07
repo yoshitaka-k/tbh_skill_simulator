@@ -42,6 +42,13 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y gcc-mingw-w64-x86-64
 
+    # Install system dependencies for Linux build
+    - name: Install Linux dependencies
+      if: matrix.job.target == 'x86_64-unknown-linux-gnu'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libasound2-dev
+
     - name: Build and bundle
       run: |
         case "${{ matrix.job.target }}" in
