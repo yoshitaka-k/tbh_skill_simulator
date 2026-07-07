@@ -1,6 +1,6 @@
 [package]
 name = "tbh_skill_simulator"
-version = "0.1.3"
+version = "0.2.0"
 edition = "2024"
 description = "Skill build simulator for TBH"
 
@@ -41,3 +41,4 @@ serde = { version = "1.0.219", features = ["derive"] }
 log = "0.4.33"
 env_logger = "0.11.10"
 getset = "0.1.7"
+rodio = "0.22.2"

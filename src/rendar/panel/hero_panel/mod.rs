@@ -1,11 +1,19 @@
 pub(crate) use crate::hero::data::HeroData;
 
+use crate::rendar::ResponseExt;
 use crate::app::current_hero::CurrentHero;
 use crate::App;
 use crate::rendar::panel::{COLOR_YELLOW, COLOR_GRAY, HOVER_COLOR_YELLOW, HOVER_COLOR_GRAY, HERO_IMAGE_GRAY_SCALE};
 
+enum HeroSound {
+    LeftClick,
+    Hover,
+}
+
 /// キャラクターパネルを表示する。
 pub(crate) fn hero_row(ui: &mut egui::Ui, hero: &HeroData, app: &mut App) {
+    let mut pending_sounds: Vec<HeroSound> = Vec::new();
+
     ui.vertical(|ui| {
         let tint_color = tint_color(hero, app);
         let image = hero_image(hero, tint_color);
@@ -25,7 +33,14 @@ pub(crate) fn hero_row(ui: &mut egui::Ui, hero: &HeroData, app: &mut App) {
             egui::StrokeKind::Inside,
         );
 
+        // ホバー開始時に1回だけ音声を再生する。
+        if button.just_hovered(ui) {
+            pending_sounds.push(HeroSound::Hover);
+        }
+
         if button.clicked() {
+            pending_sounds.push(HeroSound::LeftClick);
+
             app.set_current_hero(match hero.name {
                 "knight" => CurrentHero::Knight,
                 "ranger" => CurrentHero::Ranger,
@@ -40,6 +55,14 @@ pub(crate) fn hero_row(ui: &mut egui::Ui, hero: &HeroData, app: &mut App) {
             app.set_click_skill(None);
         }
     });
+
+    // 音声を再生する。
+    for sound in pending_sounds {
+        match sound {
+            HeroSound::LeftClick => app.play_left_click_sound(),
+            HeroSound::Hover => app.play_hover_sound(),
+        }
+    }
 }
 
 /// キャラクター画像を作成する。

@@ -1,6 +1,9 @@
 use getset::{Getters, Setters};
 
 mod panel;
+mod response_ext;
+
+pub(crate) use response_ext::ResponseExt;
 
 use crate::app;
 use panel::{hero, level, skill, skill_panel};

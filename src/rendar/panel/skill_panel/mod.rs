@@ -2,6 +2,7 @@ pub(crate) mod detail;
 
 pub(crate) use crate::hero::Skill;
 use crate::rendar::panel::{COLOR_YELLOW, COLOR_GRAY, HOVER_COLOR_YELLOW, HOVER_COLOR_GRAY, HOVER_COLOR_GRAY_NOT_ACTIVE};
+use crate::rendar::ResponseExt;
 use crate::app::App;
 use crate::hero::level_group::LevelGroup;
 
@@ -15,12 +16,20 @@ enum SkillDetail {
     Click { group: LevelGroup, index: usize },
 }
 
+enum SkillSound {
+    LeftClick,
+    RightClick,
+    Hover,
+    Beep,
+}
+
 /// スキル一覧を横並びで表示する。
 pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
     let hero = app.hero_mut();
     let skills = &hero.skill_list_by_group(group);
     let mut pending_changes: Vec<SkillChange> = Vec::new();
     let mut pending_details: Vec<SkillDetail> = Vec::new();
+    let mut pending_sounds: Vec<SkillSound> = Vec::new();
 
     ui.horizontal(|ui| {
         for (i, skill) in skills.iter().enumerate() {
@@ -48,6 +57,12 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
                     egui::StrokeKind::Inside,
                 );
 
+                // ホバー開始時に1回だけ音声を再生する。
+                if button.just_hovered(ui) {
+                    pending_sounds.push(SkillSound::Hover);
+                }
+
+                // ホバー時に詳細を表示する。
                 if button.hovered() {
                     pending_details.push(SkillDetail::Hover {
                         group: *group,
@@ -57,21 +72,32 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
 
                 if button.clicked() {
                     if *skill.active() {
+                        pending_sounds.push(SkillSound::LeftClick);
+
                         pending_changes.push(SkillChange::Increase {
                             group: *group,
                             index: i,
                         });
+                    } else {
+                        pending_sounds.push(SkillSound::Beep);
                     }
+
                     pending_details.push(SkillDetail::Click {
                         group: *group,
                         index: i,
                     });
 
                 } else if button.secondary_clicked() {
-                    pending_changes.push(SkillChange::Decrease {
-                        group: *group,
-                        index: i,
-                    });
+                    if *skill.active() {
+                        pending_sounds.push(SkillSound::RightClick);
+
+                        pending_changes.push(SkillChange::Decrease {
+                            group: *group,
+                            index: i,
+                        });
+                    } else {
+                        pending_sounds.push(SkillSound::Beep);
+                    }
 
                     pending_details.push(SkillDetail::Click {
                         group: *group,
@@ -124,6 +150,16 @@ pub(crate) fn skill_row(ui: &mut egui::Ui, app: &mut App, group: &LevelGroup) {
                     app.set_click_skill(Some(skill));
                 }
             }
+        }
+    }
+
+    // 音声を再生する。
+    for sound in pending_sounds {
+        match sound {
+            SkillSound::LeftClick => app.play_left_click_sound(),
+            SkillSound::RightClick => app.play_right_click_sound(),
+            SkillSound::Hover => app.play_hover_sound(),
+            SkillSound::Beep => app.play_beep_sound(),
         }
     }
 }

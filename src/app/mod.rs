@@ -1,11 +1,19 @@
 pub mod current_hero;
 
 use getset::{Setters, Getters};
+use std::fs::File;
+use std::io::BufReader;
+use rodio::{Decoder, MixerDeviceSink, Player};
 
 use crate::app::current_hero::CurrentHero;
 use crate::hero::{Hero, Skill};
 use crate::hero::data::heros::HERO_DATA;
 use crate::hero::data::{knight, ranger, sorcerer, priest, hunter, slayer};
+
+const LEFT_CLICK_SOUND_PATH: &str = "assets/sounds/left_click.mp3";
+const RIGHT_CLICK_SOUND_PATH: &str = "assets/sounds/right_click.mp3";
+const HOVER_SOUND_PATH: &str = "assets/sounds/hover.mp3";
+const BEEP_SOUND_PATH: &str = "assets/sounds/beep.mp3";
 
 /// Deserialize/Serialize を derive して、終了時にアプリの状態を保存できるようにする。
 #[derive(Setters, Getters, serde::Deserialize, serde::Serialize)]
@@ -26,6 +34,12 @@ pub struct App {
     hover_skill: Option<Skill>,
     #[serde(skip)]
     click_skill: Option<Skill>,
+
+    #[serde(skip)]
+    _stream: MixerDeviceSink,
+    #[serde(skip)]
+    player: Player,
+
 }
 
 impl Default for App {
@@ -37,6 +51,9 @@ impl Default for App {
 /// App のデフォルト値を設定する。
 impl App {
     pub fn new() -> Self {
+        let handle = rodio::DeviceSinkBuilder::open_default_sink().unwrap();
+        let player = rodio::Player::connect_new(&handle.mixer());
+
         Self {
             current_hero: CurrentHero::Knight,
             knight: Hero::new(&HERO_DATA[0], &knight::SKILL_DATA),
@@ -47,6 +64,9 @@ impl App {
             slayer: Hero::new(&HERO_DATA[5], &slayer::SKILL_DATA),
             hover_skill: None,
             click_skill: None,
+
+            _stream: handle,
+            player,
         }
     }
 
@@ -102,5 +122,45 @@ impl App {
     /// クリックされたスキルの詳細を返す。
     pub fn click_skill(&self) -> Option<&Skill> {
         self.click_skill.as_ref()
+    }
+
+    /// 左クリック音を再生する。
+    pub fn play_left_click_sound(&self) {
+        self.player.stop();
+        if let Ok(file) = File::open(LEFT_CLICK_SOUND_PATH) {
+            if let Ok(source) = Decoder::try_from(BufReader::new(file)) {
+                self.player.append(source);
+            }
+        }
+    }
+
+    /// 右クリック音を再生する。
+    pub fn play_right_click_sound(&self) {
+        self.player.stop();
+        if let Ok(file) = File::open(RIGHT_CLICK_SOUND_PATH) {
+            if let Ok(source) = Decoder::try_from(BufReader::new(file)) {
+                self.player.append(source);
+            }
+        }
+    }
+
+    /// ホバー音を再生する。
+    pub fn play_hover_sound(&self) {
+        self.player.stop();
+        if let Ok(file) = File::open(HOVER_SOUND_PATH) {
+            if let Ok(source) = Decoder::try_from(BufReader::new(file)) {
+                self.player.append(source);
+            }
+        }
+    }
+
+    /// ビープ音を再生する。
+    pub fn play_beep_sound(&self) {
+        self.player.stop();
+        if let Ok(file) = File::open(BEEP_SOUND_PATH) {
+            if let Ok(source) = Decoder::try_from(BufReader::new(file)) {
+                self.player.append(source);
+            }
+        }
     }
 }
