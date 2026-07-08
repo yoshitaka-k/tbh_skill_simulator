@@ -1,19 +1,15 @@
 pub mod current_hero;
+pub mod sound_data;
 
+use std::io::Cursor;
 use getset::{Setters, Getters};
-use std::fs::File;
-use std::io::BufReader;
 use rodio::{Decoder, MixerDeviceSink, Player};
 
 use crate::app::current_hero::CurrentHero;
+use crate::app::sound_data::{BEEP, HOVER, LEFT_CLICK, RIGHT_CLICK};
 use crate::hero::{Hero, Skill};
 use crate::hero::data::heros::HERO_DATA;
 use crate::hero::data::{knight, ranger, sorcerer, priest, hunter, slayer};
-
-const LEFT_CLICK_SOUND_PATH: &str = "assets/sounds/left_click.mp3";
-const RIGHT_CLICK_SOUND_PATH: &str = "assets/sounds/right_click.mp3";
-const HOVER_SOUND_PATH: &str = "assets/sounds/hover.mp3";
-const BEEP_SOUND_PATH: &str = "assets/sounds/beep.mp3";
 
 /// Deserialize/Serialize を derive して、終了時にアプリの状態を保存できるようにする。
 #[derive(Setters, Getters, serde::Deserialize, serde::Serialize)]
@@ -126,41 +122,28 @@ impl App {
 
     /// 左クリック音を再生する。
     pub fn play_left_click_sound(&self) {
-        self.player.stop();
-        if let Ok(file) = File::open(LEFT_CLICK_SOUND_PATH) {
-            if let Ok(source) = Decoder::try_from(BufReader::new(file)) {
-                self.player.append(source);
-            }
-        }
+        self.play_sound(LEFT_CLICK.bytes);
     }
 
     /// 右クリック音を再生する。
     pub fn play_right_click_sound(&self) {
-        self.player.stop();
-        if let Ok(file) = File::open(RIGHT_CLICK_SOUND_PATH) {
-            if let Ok(source) = Decoder::try_from(BufReader::new(file)) {
-                self.player.append(source);
-            }
-        }
+        self.play_sound(RIGHT_CLICK.bytes);
     }
 
     /// ホバー音を再生する。
     pub fn play_hover_sound(&self) {
-        self.player.stop();
-        if let Ok(file) = File::open(HOVER_SOUND_PATH) {
-            if let Ok(source) = Decoder::try_from(BufReader::new(file)) {
-                self.player.append(source);
-            }
-        }
+        self.play_sound(HOVER.bytes);
     }
 
     /// ビープ音を再生する。
     pub fn play_beep_sound(&self) {
+        self.play_sound(BEEP.bytes);
+    }
+
+    fn play_sound(&self, bytes: &'static [u8]) {
         self.player.stop();
-        if let Ok(file) = File::open(BEEP_SOUND_PATH) {
-            if let Ok(source) = Decoder::try_from(BufReader::new(file)) {
-                self.player.append(source);
-            }
+        if let Ok(source) = Decoder::try_from(Cursor::new(bytes)) {
+            self.player.append(source);
         }
     }
 }
