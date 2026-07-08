@@ -4393,7 +4393,7 @@ dependencies = [
 
 [[package]]
 name = "tbh_skill_simulator"
-version = "0.2.0"
+version = "0.2.2"
 dependencies = [
  "eframe",
  "egui",
