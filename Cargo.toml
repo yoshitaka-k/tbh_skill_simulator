@@ -3,6 +3,8 @@ name = "tbh_skill_simulator"
 version = "0.2.2"
 edition = "2024"
 description = "Skill build simulator for TBH"
+authors = ["yoshitaka-k"]
+license = "Apache-2.0"
 
 [package.metadata.bundle]
 identifier = "jp.ktgwya.tbh-skill-simulator"
