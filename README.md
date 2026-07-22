@@ -7,6 +7,3 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/yoshitaka-k/tbh_skill_simulator)
 
 Rust の egui / eframe で、なんか作ってみようと思って TaskBarHero Skill Simurator でも作成なぅ
-
-## License
-[Apache-2.0](https://github.com/yoshitaka-k/tbh_skill_simulator/blob/main/LICENSE)
